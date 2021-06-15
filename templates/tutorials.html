@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        Magog, Université de Sherbrooke, tutorial, GIS, artificial intelligence, python, Django, LoraWan, LoRa, MQTT
+    {% endblocktranslate %}
+{% endblock %}
+
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        Overview of research projects.
+    {% endblocktranslate %}
+{% endblock %}
+
+
+{% block title %}
+    {% translate "Tutorials" %}
+{% endblock %}
+
+{% block head %}
+<a href="{% translate "Tutorials" %}" class="no-decoration">
+    <div class="header" id="tutorial-header" >
+            <div class="section-text-title">
+                <h1><span>{% translate "Tutorials" %}</span></h1>
+            </div>
+    </div>
+</a>
+{% endblock %}
+
+{%  block content %}
+    <div class="main-content-title">
+        <h1>{% translate "Tutorials overview" %}</h1>
+    </div>
+<div class = "main-content-no-border">
+<p>
+        {% blocktranslate trimmed %}
+        I made a few tutorials to help other students and those who are starting in the field of geographic information
+        systems (GIS). I am by no means a software engineer and I do not claim that my code or solutions are the
+        cleanest. However, I have spent countless hours figuring out how all this could work together. There are not a
+        lot of resources online to help GIS professional. I also found the example for Django rather basics which make
+        it difficult to figure out more advanced stuff if you are not a web developer.
+</p>
+<p>
+        In my
+        {% endblocktranslate %}
+            <a href="{% translate "Django_tutorial" %}">{% translate "Django for GIS tutorials" %}</a>
+
+        {% blocktranslate trimmed %}
+        I mainly cover how to create a dashboard with widgets and a map with interpolate temperature layers in it using
+        Folium, Scipy and Matplotlib. You can see the result in the section on
+        {% endblocktranslate %}
+
+            <a href="{% translate "Magog_uhi" %}"
+               >{% translate "urban heat islands monitoring at the Espace Saint-Luc in Magog" %}</a>.
+
+        {% blocktranslate trimmed %}
+        I also add a few tips on part where I struggled, such as how to make a bilingual site and I few things that I
+        took probably way too much time to figure out on my own, such as how Ajax and Django work together. However,
+        I’m not going through the basic stuff, as other do it way better than I could. I will only reference sources I
+        found interesting.
+</p>
+<p>
+        I also cover a bit the
+        {% endblocktranslate %}
+
+            <a href="{% translate "LoRa_tutorial" %}"
+               >{% translate "LoRa, LoRaWan and MQTT" %}</a>
+
+        {% blocktranslate trimmed %}
+        technology to sample real-time data. Again, I am not an expert on those topics, but I have learned a few lessons by trial
+        and errors. If you happen to be an expert or just better than me with those technologies and programming in
+        general, feel free to
+        {% endblocktranslate %}
+
+            <a href="{% translate "About" context "url" %}"
+                >{% translate "contact me" %}</a>.
+
+        {% blocktranslate trimmed%}
+        I will improve those sections based on your comments to help everyone who is facing those challenges. You can
+        also contact me if you have questions regarding the content that would be unclear to you.
+        {% endblocktranslate %}
+</p>
+</div>
+{%  endblock %}
+
+{% block footer %}
+    <div class="footer">
+    </div>
+{% endblock %}

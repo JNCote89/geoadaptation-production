@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        Magog, Université de Sherbrooke, climate change, vulnerability, sensitivity, adaptive capacity,
+        adaptation, geoadaptation, geomatic, GIS, public health, artificial intelligence
+    {% endblocktranslate %}
+{% endblock %}
+
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        Summary and full report of the Magog climate change adaptation plan
+    {% endblocktranslate %}
+{% endblock %}
+
+
+{% block title %}
+    {% translate "Magog's CCAP" %}
+{% endblock %}
+
+
+{% block head %}
+<a href="{% translate "CCAP" %}" class="no-decoration">
+    <div class="header" id="ccap-header">
+            <div class="section-text-title">
+                <h1><span>{% translate "Climate change adaptation plans (CCAP)" %}</span></h1>
+            </div>
+    </div>
+</a>
+{% endblock %}
+
+{%  block content %}
+<div class="main-content-title">
+    <h1>{% translate "Magog's climate change adaptation plan" context 'title '%}</h1>
+</div>
+<div class = "main-content-top">
+    <div class="center">
+        <p>
+            {% translate "The full report is only available in French" %}
+        </p>
+        <a  href="{%  static 'media/PACC_Version1.0_Magog.pdf' %}" type="application/pdf">
+            <img class="pdf-frame" src="{% static 'img/Thumbnail_PACC_Magog.png' %}">
+        </a>
+    </div>
+</div>
+<div class="main-content-no-border">
+    <h5 class="center subtitle">{% translate "Summary" %}</h5>
+    <p>
+        {% blocktranslate trimmed %}
+        The production of the climate change adaptation plan for Magog result from the 241-2020 resolution adopt
+        unanimously by the municipal council on June 1st 2020. The latter wish to follow up to reports from the
+        Federation of Canadian Municipalities and the Union des Municipalités du Québec on the climate question.
+        Both reports are unanimous, the inaction towards this challenge is
+        <span class="h-text">expensive</span> and put at <span class="h-text">risk public
+        health and infrastructure</span>. The conclusions of this plan and the approval of its execution have been
+        endorsed unanimously by the municipal council with the 472-2020 resolution.
+    </p>
+    <p>
+        The consultation of various stakeholders confirmed the significance of climate change adaptation. An
+        online survey who gathers more than 300 answers from citizens reveals that
+        <span class="h-text">97 %</span> of them wish that adaptation strategies are put in place.
+        The <span class="h-text">protection of natural environment</span> was the most popular option
+        with 82 % of support. The consulted environmental organizations also raise the importance of
+        <span class="h-text">protecting natural environment and biodiversity</span>.
+        The consulted divisions within the city underlined the anticipate increased cost associated with climate change
+        but was unable to quantify it due to a lack of data.
+    </p>
+    <p>
+        Magog city is already affected by an <span class="h-text">increase in temperature</span>.
+        About the <span class="h-text">third of its population</span> lives in an
+        <span class="h-text">urban heat island</span>, which amplifies the problem.
+        Regarding precipitation, the annual quantity only increases slightly, but the number of
+        <span class="h-text">heavy precipitations is increasing</span>.
+        <span class="h-text">More than 8&nbsp% of the real estate assessment is in a flood zone</span>,
+        which makes it a current challenge.
+        <span class="h-text">Droughts</span> and <span class="h-text">freeze-thaw cycle</span> are also a problem.
+        <span class="h-text">Lyme disease</span> and <span class="h-text">ragweed</span> is also significant in the region.
+    </p>
+    <p>
+        All the current tendency will be exacerbated in the future. For instance, by 2050, the <span class="h-text">maximal
+        temperature will increase by 3&nbsp°C</span> if the trend continues. The peak flow for the Magog river will increase by
+        7&nbsp% and the minimum flow will <span class="h-text">decrease by 42&nbsp%</span>, which means a wide variety
+        in the precipitation scheme that will require a good management of droughts and heavy precipitations.
+    </p>
+    <p>
+        Among the evaluated adaptation strategies, there was the protection of wetlands and natural environments,
+        the protection of biodiversity, the greening of urban spaces, the continuation of the protection of
+        riparian buffer stripes, the promotion of green infrastructure, the use of white roofs, the optimization
+        of rainwater management, the continuation of the program to monitor the conformity of the rain gutter
+        and the sampling of water streams, as well as improving the culvert management and the initiatives to save
+        drinkable water.
+    </p>
+    <p>
+        A hierarchy of those strategies was necessary. Their assessment is usually done with a risk matrix.
+        However, this traditional method was not deem discriminating enough and too broad to take well-informed
+        decisions. The use of a vulnerability assessment was favoured. The formula V&nbsp=&nbspS&nbsp–&nbspAC was used,
+        where V is the vulnerability, S the sensitivity and AC the adaptive capacity. With this approach, it was possible
+        to include the budget, the strategy efficacy and the number of people affected by the strategy in the
+        adaptive capacity variable.
+    </p>
+    <p>
+        <span class="h-text">The most effective strategy according to this assessment is the protection of wetlands,
+        riparian buffer stripe, biodiversity and natural environment.</span> All the other strategies have their uses,
+        but they are either costly to deploy on the whole territory (green infrastructure and grey infrastructure) or
+        have a more limited effectiveness in regards of co-benefits (gutter conformity that manages only rainwater,
+        etc.). The adaptation plan has objectives to reach by 2030 to become a more resilient city to climate change
+        and to hazards in general. In order to reach those objectives, the city must, among other things:
+            <ul>
+                <li>
+                    <span class="h-text">Include every stakeholder</span> in the adaptation strategies, with the citizen at
+                    the heart of its preoccupations.
+                </li>
+                <li>
+                    Understand the sanitary and economic impacts of climate change, and the urge to act.
+                </li>
+                <li>
+                    <span class="h-text">Acknowledge that environmental externalities cause economic losses </span>in the
+                    long run, especially in a context of climate change. Therefore, all development projects must
+                    consider environmental externalities compared to anticipate economic gains to make sure of the
+                    profitability of those.
+                </li>
+                <li>
+                    <span class="h-text">Prioritize natural environment protection, and especially wetlands, </span>
+                    because this measure is the most advantageous to adapt to climate change and decrease its sanitary
+                    impacts.
+                </li>
+                <li>
+                    Publish the technical document on climate change adaptation to contribute to the advancement of
+                    knowledge and to help other municipalities. In addition, vulgarize information must be
+                    communicated to the public.
+                </li>
+                <li>
+                    <span class="h-text">Improve data collection in the field and encouraged scientific research </span>
+                    on climate change in order to take well-informed decision that rely on the best evidence-based fact
+                    as possible.
+                </li>
+                <li>
+                    Establish a strategy to integrate green infrastructure in the city development.
+                </li>
+            </ul>
+        {% endblocktranslate %}
+    </p>
+</div>
+{%  endblock %}
+
+{% block footer %}
+<div class="footer">
+    <p>
+        {% blocktranslate trimmed %}
+        A big thanks to Magog City and everyone who works there. This project would not have been possible
+        without their massive support.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        <a href="https://www.ville.magog.qc.ca/">
+        <img src="{% static 'img/Magog_logo_267_110.png' %}" alt="Logo Ville de Magog" width="267" height="110">
+        </a>
+    </p>
+</div>
+{% endblock %}

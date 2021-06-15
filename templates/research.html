@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        Magog, Université de Sherbrooke, climate change, vulnerability, sensitivity, adaptive capacity,
+        adaptation, geoadaptation, geomatic, GIS, public health, artificial intelligence
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        Overview of research projects regarding climate change adaptation related to vulnerability, artificial intelligence
+        and GIS.
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block title %}
+    {% translate "Research" %}
+{% endblock %}
+
+
+{% block head %}
+<a href="{% translate "Research" %}" class="no-decoration">
+    <div class="header" id="research-header">
+            <div class="section-text-title">
+                <h1><span>{% translate "Research" %}</span></h1>
+            </div>
+    </div>
+</a>
+{% endblock %}
+
+{%  block content %}
+<div class="main-content-title">
+    <h1>{% translate "Research projects overview" %}</h1>
+</div>
+
+<div class="main-content-no-border">
+
+    <p>
+        {% blocktranslate trimmed %}
+            My primary fields of research are public health and climate change. I am interested in leveraging the power
+            of geographic information systems (GIS) and artificial intelligence to help improve the assessment of
+            vulnerability. The question of vulnerability is very important, because this concept is at the core of
+            creating adaptation plans. Indeed, to make sure we invest at the right place and that we get the best
+            return on our investments, it is fundamental to use a good framework.
+    </p>
+    <p>
+            During my master’s in environment, I wrote an
+        {% endblocktranslate %}
+
+            <a href="{% translate "Vulnerability_essay" %}" id="h-link">{% translate "essay" %}</a>
+
+        {% blocktranslate trimmed %}
+            to better grasp the concept of vulnerability. That led to the
+        {% endblocktranslate %}
+
+            <a href="{% translate "Magog_ccap" %}" id="h-link">{% translate "Magog climate change adaptation plan" %}</a>
+
+        {% blocktranslate trimmed %}
+            and a project on
+        {% endblocktranslate %}
+
+            <a href="{% translate "Magog_uhi" %}" id="h-link">{% translate "monitoring an urban heat island in Magog." %}</a>
+
+        {% blocktranslate trimmed %}
+    </p>
+    <p>
+            However, I am not fully satisfied with the tools we currently have to assess vulnerability and that’s why
+            I’m working on a PhD project to improve the general approach (more details to come).
+        {% endblocktranslate %}
+    </p>
+</div>
+{%  endblock %}
+
+{% block footer %}
+    <div class="footer">
+    </div>
+{% endblock %}

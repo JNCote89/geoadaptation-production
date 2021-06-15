@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        geoadaptation, climate change, vulnerability, sensitivity, adaptive capacity, adaptation, geomatics, GIS,
+        public health, artificial intelligence, AI, python, Django
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        About section on the author of geoadaptation.ca
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block title %}
+    {% translate "About" %}
+{% endblock %}
+
+{% block head %}
+<a href="{% translate "About" context "url" %}" class="no-decoration">
+    <div class="header" id="about-header">
+        <div class="section-text-title">
+            <h1><span>{% translate "About" %}</span></h1>
+        </div>
+    </div>
+</a>
+{% endblock %}
+
+{%  block content %}
+<div class="main-content-title">
+    <h1>Bio</h1>
+</div>
+<div class="main-content-top">
+        <p>
+    {% blocktranslate trimmed %}
+        My name is Jean-Nicolas and I am a former pharmacist who graduates from
+    {% endblocktranslate %}
+
+        <a href="https://www.pha.ulaval.ca/">{% translate "Université Laval" %}</a>
+
+    {% blocktranslate trimmed %}
+        and works as a community pharmacist for 5 years. My curiosity and my passion for environment and public health
+        led me to complete the
+    {% endblocktranslate %}
+
+        <a href="https://www.ulaval.ca/etudes/programmes/microprogramme-de-deuxieme-cycle-en-changements-climatiques"
+            >{% translate "graduate microprogram in climate change at Université Laval" %}</a>,
+
+    {% blocktranslate trimmed %}
+        as well as a
+    {% endblocktranslate %}
+
+        <a href="https://www.usherbrooke.ca/environnement/programmes/2e-cycle/maitrise/"
+           >{% translate "master’s in environmental management and climate change at Université de Sherbrooke" %}</a>
+
+    {% blocktranslate trimmed %}
+        that includes the
+    {% endblocktranslate %}
+
+         <a href="https://www.ubishops.ca/academic-programs/faculty-of-arts-and-science/social-sciences/environment-and-geography/courses-programs/micro-program-in-climate-change/"
+            >{% translate "graduate microprogram in climate change at Bishop’s University" %}</a>.
+
+    {% blocktranslate trimmed %}
+        </p>
+        <p>
+        I am currently studying at the
+    {% endblocktranslate %}
+
+        <a href="https://www.usherbrooke.ca/geomatique/futurs-etudiants/troisieme-cycle/doctorat-en-teledetection/#c15681"
+           >{% translate "apply geomatics department of Université de Sherbrooke" %}</a>
+
+    {% blocktranslate trimmed %}
+        where I try to improve vulnerability assessment on climate change with artificial intelligence and
+        geographic information systems.
+        </p>
+        <p>
+        You can follow me on
+    {% endblocktranslate %}
+
+            <a href="https://www.linkedin.com/in/jean-nicolascote">LinkedIn</a>
+
+    {% blocktranslate trimmed %}
+        to get the latest news about my projects or get in touch. I only work with governmental and nonprofit organizations.
+    {% endblocktranslate %}
+    </p>
+</div>
+<div class="main-content-title">
+    <h1>{% translate "Contact me" %}</h1>
+</div>
+<div class="main-content-no-border">
+<noscript>
+    <p>
+        {% blocktranslate trimmed %}
+        The contact form requires JavaScript to work for security reasons. Contact me via LinkedIn if you don't want
+        or can't turn it on.
+        {% endblocktranslate %}
+    </p>
+</noscript>
+    <br>
+        <form method="post">
+            {% csrf_token %}
+            <table class="table-form-about">
+            {{ form }}
+            </table>
+            <div class="form-actions">
+              <button type="submit" id="send-button-about">{% translate "Send" %}</button>
+            </div>
+        </form>
+</div>
+{%  endblock %}
+
+{% block footer %}
+<div class="footer" id="about-text-footer">
+    {% blocktranslate trimmed %}
+        <h6>Image credit</h6>
+        <p >
+            <ul>
+                <li>External sites: Nasa Images (Tutorial header), Pixabay - Suju-foto (About header)</li>
+                <li>Additionnal images: Jean-Nicolas Côté, Sarah Dubord-Fortin</li>
+            </ul>
+        </p>
+    {% endblocktranslate %}
+</div>
+{% endblock %}

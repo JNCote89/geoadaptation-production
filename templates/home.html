@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        Magog, Université de Sherbrooke, Bishop's University, climate change, vulnerability,
+        sensitivity, adaptive capacity, adaptation, geoadaptation, geomatics, GIS, public health, heat waves, hazards,
+        artificial intelligence, python, Django, Folium, Matplotlib, LoRa, LoRaWan, MQTT, The Thing Stack,
+        The Thing Network
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        Geoadaptation.ca is a collection of projects and tutorials related to climate change and
+        geographic information systems (GIS).
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block title %}
+    {% translate "Geoadaptation" %}
+{% endblock %}
+
+{% block head %}
+<a href="{% translate "Home" %}" class="no-decoration">
+    <div class="header" id="home-header">
+            <div id="home-text-title">
+                <h1><span class="geo">{% translate "Geo" %}</span><span class="adaptation">adaptation</span></h1>
+                <h2>{% translate "Where " %}<span class="geo">{% translate "geomatics" %}</span>
+                    {% translate " meet climate change " %}<span class="adaptation">adaptation</span>
+                    {% translate " " %} </h2>
+            </div>
+    </div>
+</a>
+{% endblock %}
+
+{%  block content %}
+<div class="main-content-title">
+    <h1>{% translate "Available resources" %}</h1>
+</div>
+<div class="container-fluid">
+    <div class="row" id="home-banner-overview">
+        <div class="col-xl-3">
+            <div class="row home-banner-img">
+                <a href="{% translate "CCAP" %}"><img src="{% static "img/forest-border.jpg" %}"></a>
+            </div>
+            <div class="row home-banner-text" >
+                <a href="{% translate "CCAP" %}">{% translate "Climate change adaptation plans (CCAP)" %}</a>
+            </div>
+        </div>
+        <div class="col-xl-3">
+            <div class="row home-banner-img">
+                <a href="{% translate "Research" %}"><img src="{% static "img/forest-path.jpg" %}"></a>
+            </div>
+            <div class="row home-banner-text">
+                <a href="{% translate "Research" %}">{% translate "Research on climate change adaptation and vulnerability" %}</a>
+            </div>
+        </div>
+        <div class="col-xl-3">
+            <div class="row home-banner-img">
+                <a href="{% translate "Tutorials" %}"><img src="{% static "img/earth.jpg" %}"></a>
+            </div>
+            <div class="row home-banner-text">
+                <a href="{% translate "Tutorials" %}">{% translate "Tutorials on geographic information system (GIS) and related technologies" %}</a>
+            </div>
+        </div>
+        <div class="col-xl-3">
+            <div class="row home-banner-img">
+                <a href="{% translate "About" context "url" %}"><img src="{% static "img/owl.jpg" %}"></a>
+            </div>
+            <div class="row home-banner-text">
+                <a href="{% translate "About" context "url" %}">{% translate "About me and contact info" %}</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content-bottom">
+        <p>
+            {% blocktranslate trimmed %}
+                This project is guided by the <span class="h-text">open source</span>
+                and <span class="h-text">open science</span> spirit. The
+                fight against climate change must intensify if we want to mitigate its consequences on our communities.
+        </p>
+        <p>
+                Therefore, <span class="h-text">collaboration</span> and
+                <span class="h-text">knowledge sharing</span> is primordial to overcome all the
+                challenges the future has in store for us and the following generations.
+        </p>
+        <p>
+                This website is a step in this direction to help students, researchers, professionals, citizens and
+                policy makers to make <span class="h-text">well-informed decisions</span>
+                regarding climate change and the stakes surrounding it.
+            {% endblocktranslate %}
+        </p>
+    </div>
+</div>
+
+{%  endblock %}
+
+{% block footer %}
+<div class="footer">
+    <p>
+        {% blocktranslate trimmed %}
+            This website is a personal project financed and maintained by
+        {% endblocktranslate %}
+
+        <a href="{% translate "About" context "url" %}">{% translate "me" %}</a>.
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+            The financing and the support from different nonprofit organizations are clearly stated at the bottom
+            of every project if applicable.
+        {% endblocktranslate %}
+    </p>
+</div>
+{% endblock %}

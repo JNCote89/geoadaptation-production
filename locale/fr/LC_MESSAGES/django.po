@@ -1,0 +1,1361 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-15 17:52-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: coresite/CreateMap.py:59
+msgid "Interpolation scale for temperature"
+msgstr "Échelle d'interpolation des températures"
+
+#: coresite/CreateWidget.py:138
+#, python-brace-format
+msgid "Hourly maximum temperature on {date}"
+msgstr "Température horaire maximum pour le {date}"
+
+#: coresite/CreateWidget.py:141
+#, python-brace-format
+msgid "Hourly average temperature on {date}"
+msgstr "Température horaire moyenne pour le {date}"
+
+#: coresite/CreateWidget.py:150 templates/magog_uhi.html:91
+msgid "Time"
+msgstr "Heure"
+
+#: coresite/CreateWidget.py:227
+#, python-brace-format
+msgid "Daily maximum temperature on {year}-{month}"
+msgstr "Température quotidienne maximum pour le {month}-{year}"
+
+#: coresite/CreateWidget.py:230
+#, python-brace-format
+msgid "Daily average temperature on {year}-{month}"
+msgstr "Température quotidienne moyenne pour le {month}-{year}"
+
+#: coresite/CreateWidget.py:239
+msgid "Day"
+msgstr "Jour"
+
+#: coresite/forms.py:11
+msgid "Email"
+msgstr "Courriel"
+
+#: coresite/forms.py:12
+msgid "Subject"
+msgstr "Sujet"
+
+#: coresite/forms.py:13
+msgid "Message"
+msgstr "Message"
+
+#: coresite/views.py:136
+msgid ""
+"To avoid any spamming of my inbox, only 3 messages can be sent per hour per "
+"user based on your IP address. Thank you for your comprehension."
+msgstr ""
+"Pour éviter le spamming de ma boîte courriel, seulement 3 messages par heure "
+"peuvent être envoyés par usager basé sur l'adresse IP. Merci de votre "
+"compréhension."
+
+#: geoadaptation/urls.py:55 templates/base.html:51 templates/base.html:62
+#: templates/base.html:63 templates/home.html:26
+msgid "Home"
+msgstr "Accueil"
+
+#: geoadaptation/urls.py:56 templates/base.html:66 templates/base.html:67
+#: templates/ccap.html:23 templates/home.html:46 templates/home.html:49
+#: templates/magog_ccap.html:27
+msgid "CCAP"
+msgstr "PACC"
+
+#: geoadaptation/urls.py:57 templates/base.html:70 templates/ccap.html:48
+#: templates/research.html:59
+msgid "Magog_ccap"
+msgstr "Magog_pacc"
+
+#: geoadaptation/urls.py:58 templates/base.html:75 templates/base.html:77
+#: templates/home.html:54 templates/home.html:57 templates/magog_uhi.html:32
+#: templates/magog_uhi.html:35 templates/research.html:20
+#: templates/research.html:25 templates/research.html:28
+#: templates/vulnerability_essay.html:23 templates/vulnerability_essay.html:26
+msgid "Research"
+msgstr "Recherche"
+
+#: geoadaptation/urls.py:59 templates/base.html:80 templates/research.html:65
+#: templates/tutorials.html:57
+msgid "Magog_uhi"
+msgstr "Magog_idc"
+
+#: geoadaptation/urls.py:60 templates/base.html:84 templates/ccap.html:59
+#: templates/research.html:53
+msgid "Vulnerability_essay"
+msgstr "Essai_vulnerabilite"
+
+#: geoadaptation/urls.py:62 templates/base.html:90 templates/base.html:92
+#: templates/django_tutorial.html:26 templates/home.html:62
+#: templates/home.html:65 templates/lora_tutorial.html:30
+#: templates/tutorials.html:21 templates/tutorials.html:25
+#: templates/tutorials.html:28
+msgid "Tutorials"
+msgstr "Tutoriels"
+
+#: geoadaptation/urls.py:63 templates/base.html:99 templates/magog_uhi.html:190
+#: templates/magog_uhi.html:239
+msgid "LoRa_tutorial"
+msgstr "Tutoriel_LoRa"
+
+#: geoadaptation/urls.py:64 templates/base.html:95 templates/tutorials.html:50
+msgid "Django_tutorial"
+msgstr "Tutoriel_Django"
+
+#: geoadaptation/urls.py:65 templates/about.html:23 templates/base.html:108
+#: templates/email_sent.html:28 templates/home.html:70 templates/home.html:73
+#: templates/home.html:107 templates/tutorials.html:79
+msgctxt "url"
+msgid "About"
+msgstr "A_propos"
+
+#: geoadaptation/urls.py:66
+msgctxt "url"
+msgid "Email_sent"
+msgstr "Courriel_envoye"
+
+#: templates/about.html:6
+msgid ""
+"geoadaptation, climate change, vulnerability, sensitivity, adaptive "
+"capacity, adaptation, geomatics, GIS, public health, artificial "
+"intelligence, AI, python, Django"
+msgstr ""
+"géoadaptation, changements climatiques, vulnérabilité, sensibilité, capacité "
+"d'adaptation, adaptation, SIG, santé publique, intelligence artificielle, "
+"IA, python, Django"
+
+#: templates/about.html:13
+msgid "About section on the author of geoadaptation.ca"
+msgstr "Section à propos de l'auteur du geoadaptation.ca"
+
+#: templates/about.html:19 templates/about.html:26 templates/base.html:109
+#: templates/email_sent.html:31
+msgid "About"
+msgstr "À propos"
+
+#: templates/about.html:38
+msgid "My name is Jean-Nicolas and I am a former pharmacist who graduates from"
+msgstr ""
+"Mon nom est Jean-Nicolas et je suis un ancien pharmacien qui a gradué de"
+
+#: templates/about.html:42
+msgid "Université Laval"
+msgstr "l'Université Laval"
+
+#: templates/about.html:44
+msgid ""
+"and works as a community pharmacist for 5 years. My curiosity and my passion "
+"for environment and public health led me to complete the"
+msgstr ""
+"et qui a travaillé comme pharmacien communautaire pendant 5 ans. Ma "
+"curiosité et ma passion pour l'environnement et la santé publique m'ont "
+"amené à compléter le"
+
+#: templates/about.html:50
+msgid "graduate microprogram in climate change at Université Laval"
+msgstr ""
+"microprogramme de deuxième cycle sur les changements climatiques de "
+"l'Université Laval"
+
+#: templates/about.html:52
+msgid "as well as a"
+msgstr "ainsi que la"
+
+#: templates/about.html:57
+msgid ""
+"master’s in environmental management and climate change at Université de "
+"Sherbrooke"
+msgstr ""
+"maîtrise en gestion de l'environnement et des changements climatiques de "
+"l'Université de Sherbrooke "
+
+#: templates/about.html:59
+msgid "that includes the"
+msgstr "qui inclut le"
+
+#: templates/about.html:64
+msgid "graduate microprogram in climate change at Bishop’s University"
+msgstr ""
+"microprogramme sur les changements climatiques de l'Université Bishop's"
+
+#: templates/about.html:66
+msgid "</p> <p> I am currently studying at the"
+msgstr "</p> <p> J'étudie présentement au "
+
+#: templates/about.html:73
+msgid "apply geomatics department of Université de Sherbrooke"
+msgstr "département de géomatique appliquée de l'Université de Sherbrooke"
+
+#: templates/about.html:75
+msgid ""
+"where I try to improve vulnerability assessment on climate change with "
+"artificial intelligence and geographic information systems. </p> <p> You can "
+"follow me on"
+msgstr ""
+"où j'essaie d'améliorer le calcul de la vulnérabilité aux changements "
+"climatiques avec l'intelligence artificielle et les systèmes d'information "
+"géographique. </p> <p> Vous pouvez me suivre sur "
+
+#: templates/about.html:85
+msgid ""
+"to get the latest news about my projects or get in touch. I only work with "
+"governmental and nonprofit organizations."
+msgstr ""
+"pour avoir les dernières nouvelles sur mes projets ou pour me rejoindre. Je "
+"travaille seulement avec des organisations gouvernementales ou sans but "
+"lucratifs."
+
+#: templates/about.html:91
+msgid "Contact me"
+msgstr "Me contacter"
+
+#: templates/about.html:96
+msgid ""
+"The contact form requires JavaScript to work for security reasons. Contact "
+"me via LinkedIn if you don't want or can't turn it on."
+msgstr ""
+"Ce formulaire requiert JavaScript pour fonctionner pour des raisons de "
+"sécurité. Contactez-moi via LinkedIn si vous ne voulez ou ne pouvez pas "
+"l’activer. "
+
+#: templates/about.html:109
+msgid "Send"
+msgstr "Envoyer"
+
+#: templates/about.html:117
+msgid ""
+"<h6>Image credit</h6> <p > <ul> <li>External sites: Nasa Images (Tutorial "
+"header), Pixabay - Suju-foto (About header)</li> <li>Additionnal images: "
+"Jean-Nicolas Côté, Sarah Dubord-Fortin</li> </ul> </p>"
+msgstr ""
+"<h6>Crédit pour les images</h6> <p > <ul> <li>Sites externes : Nasa Images "
+"(Entête Tutoriels), Pixabay - Suju-foto (Entête À propos)</li> <li>Images "
+"additionnelles : Jean-Nicolas Côté, Sarah Dubord-Fortin</li> </ul> </p>"
+
+#: templates/base.html:9
+msgid "en"
+msgstr "fr"
+
+#: templates/base.html:43
+msgid ""
+"The navbar is optimized to work with JavaScript via Bootstrap. However, you "
+"can still navigate through the site with the hyperlinks provide in each "
+"section overview."
+msgstr ""
+"La barre de navigation est optimisée pour fonctionner avec JavaScript via "
+"Bootstrap. Par contre, il est possible de naviguer dans tout le site avec "
+"les hyperliens dans chaque aperçu des sections. "
+
+#: templates/base.html:52 templates/home.html:29
+msgid "Geo"
+msgstr "Géo"
+
+#: templates/base.html:71
+msgid "Magog's climate change adaptation plan (CCAP)"
+msgstr "Plan d'adaptation aux changements climatiques (PACC) de Magog"
+
+#: templates/base.html:81 templates/magog_uhi.html:43
+msgid "Urban heat islands monitoring at Espace Saint-Luc in Magog"
+msgstr "Suivi des ilots de chaleur à l'Espace Saint-Luc de Magog"
+
+#: templates/base.html:85 templates/vulnerability_essay.html:34
+msgid "Master's essay on heat waves vulnerability assesment"
+msgstr ""
+"Essai de maîtrise sur le calcul de la vulnérabilité aux vagues de chaleur"
+
+#: templates/base.html:96 templates/django_tutorial.html:19
+#: templates/django_tutorial.html:34
+msgid "Django for GIS projects tutorial"
+msgstr "Tutoriel Django pour des projets SIG"
+
+#: templates/base.html:100 templates/lora_tutorial.html:39
+#: templates/tutorials.html:71
+msgid "LoRa, LoRaWan and MQTT"
+msgstr "LoRa, LoRaWan et MQTT"
+
+#: templates/base.html:120
+msgid "Language"
+msgstr "Langue"
+
+#: templates/ccap.html:6
+msgid ""
+"Magog, Université de Sherbrooke, climate change, vulnerability, sensitivity, "
+"adaptive capacity, adaptation, geoadaptation, geomatics, GIS, public health, "
+"adaptation plan"
+msgstr ""
+"Magog, Université de Sherbrooke, changement climatique, vulnérabilité, "
+"sensibilité, capacité d'adaptation, adaptation, géoadaptation, géomatique, "
+"SIG, santé publique, plan d'adaptation"
+
+#: templates/ccap.html:13
+msgid "Overview of the climate change adaptation plan section."
+msgstr "Aperçu de la section plan d'adaptation aux changements climatiques"
+
+#: templates/ccap.html:19
+msgid "Climate change adapation plans (CCAP)"
+msgstr "Plans d'adaptationa aux changements climatiques"
+
+#: templates/ccap.html:26 templates/home.html:49 templates/magog_ccap.html:30
+msgid "Climate change adaptation plans (CCAP)"
+msgstr "Plans d'adaptation aux changements climatiques (PACC)"
+
+#: templates/ccap.html:34
+msgid "CCAP overview"
+msgstr "Aperçu de la section PACC"
+
+#: templates/ccap.html:38
+msgid ""
+"Climate change adaptation plans (CCAP) are essential to be ready for what is "
+"to come in the next decades. Unfortunately, these require a lot of monetary "
+"and human resources to be individualized on a regional scale."
+msgstr ""
+"Les plans d’adaptation aux changements climatiques (PACC) sont essentiels "
+"pour se préparer à ce qui s’en vient dans les prochaines décennies. "
+"Malheureusement, ces derniers nécessitent beaucoup de ressources monétaires "
+"et humaines pour être individualisés à une échelle régionale."
+
+#: templates/ccap.html:47
+msgctxt "Le"
+msgid ""
+msgstr "Le"
+
+#: templates/ccap.html:48
+msgid "Magog's climate change adaptation plan"
+msgstr "plan d'adaptation aux changements climatiques de Magog"
+
+#: templates/ccap.html:50
+msgid ""
+"is a good place to start to initiate the reflexion. However, this one is far "
+"from perfect and more research is needed to improve this approach, "
+"especially the vulnerability assessment and the quantification of the "
+"adaptive capacity. </p> <p> My"
+msgstr ""
+" est un bon début pour amorcer la réflexion. Cependant, ce dernier est loin "
+"d’être parfait et plus de recherches sont nécessaires pour améliorer la "
+"démarche, notamment pour le calcul de la vulnérabilité et la quantification "
+"de la capacité d’adaptation. </p> <p> Mon"
+
+#: templates/ccap.html:59
+msgid "master's essay"
+msgstr "essai de maîtrise"
+
+#: templates/ccap.html:61
+msgid ""
+"helps to familiarize with those notions and understand the challenge to "
+"assess vulnerability. I am currently working on a PhD that combines "
+"artificial intelligence and geographic information systems (GIS) (more "
+"details to come). </p> <p> However, a few universal findings came out of "
+"this approach. The <span class=\"h-text\">protection of natural "
+"environments</span> and <span class=\"h-text\">green infrastructure</span> "
+"are <span class=\"h-text\">no regrets strategies</span> that are essential "
+"to successfully adapt.  Indeed, the benefits of ecosystem services render by "
+"<span class=\"h-text\">a healthy biodiversity</span> confer the best cost-"
+"effective ratio in the long run. </p>"
+msgstr ""
+"aide à se familiariser avec ces notions et à comprendre les défis du calcul "
+"de la vulnérabilité. Je travaille actuellement sur un projet de doctorat qui "
+"combine l’intelligence artificielle et les systèmes d’information "
+"géographique (SIG) afin de mieux définir la vulnérabilité (plus de détail à "
+"venir).   </p> <p> Néanmoins, des constats universels se dégagent de cette "
+"démarche. La <span class=\"h-text\">protection des milieux naturels </span> "
+"et les <span class=\"h-text\">infrastructures vertes</span> sont des <span "
+"class=\"h-text\">stratégies sans regret</span> essentielles pour réussir à "
+"s’adapter. En effet, les bénéfices des services écosystémiques rendus par "
+"<span class=\"h-text\">une biodiversité en santé</span> confèrent le "
+"meilleur ratio coût-bénéfice à long terme. </p>"
+
+#: templates/ccap.html:80
+msgid ""
+"<p> A deep reflexion is essential in regards of territory planning that are "
+"generally led by immediate monetary consideration. If this strategy offers a "
+"short-term illusion of progress, it has been proven extremely harmful in the "
+"long term. We only need to look at all the current problems of urban heat "
+"islands, erosion and floods, as well as the bad quality of water and air in "
+"our cities that result of planning mistakes from the 20th century. </p> <p> "
+"It is imperative that we escape this logic if we want to have a chance to "
+"adapt to a climate that has nothing to do with the last century."
+msgstr ""
+"<p> Une profonde réflexion s’impose quant au développement du territoire qui "
+"est généralement mené par des considérations financières immédiates. Si "
+"cette stratégie offre une illusion de progrès à court terme, elle a été "
+"prouvée extrêmement néfaste à long terme. Il suffit de constater toutes les "
+"problématiques d’ilots de chaleur, d’érosion et d'inondations, ainsi que de "
+"la mauvaise qualité de l’eau et de l’air des villes qui découlent des "
+"erreurs de développement du 20e siècle. </p> <p> Il est impératif de sortir "
+"de cette logique si l’on souhaite avoir une chance de s’adapter à un climat "
+"qui n’aura rien à voir avec le siècle dernier."
+
+#: templates/django_tutorial.html:7
+msgid "Django, Python, Matplotlib, Scipy, Numpy, GIS, Folium"
+msgstr "Django, Python, Matplotlib, Scipy, Numpy, SIG, Folium"
+
+#: templates/django_tutorial.html:13
+msgid "Tutorial on how to create a GIS dashboard with Django and Folium."
+msgstr ""
+"Tutoriel sur comment créer des tableaux de bord SIG avec Django et Folium."
+
+#: templates/django_tutorial.html:23 templates/lora_tutorial.html:27
+msgid "Tutorial"
+msgstr "Tutoriel"
+
+#: templates/django_tutorial.html:38
+msgid ""
+"I am not going to go through the basics of Django and Python, since there "
+"are people way more qualify than me to do this. </p> <p> If you are "
+"completely new to programming in general, I strongly recommend you take a "
+"look at"
+msgstr ""
+"Je ne vais pas repasser les bases de Django et Python, puisqu'il y a des "
+"gens beaucoup plus qualifiés que moi pour le faire. </p> <p> Si vous êtes "
+"nouveaux dans le monde de la programmation en général, je recommande "
+"fortement de jeter un coup d'oeil au site web"
+
+#: templates/django_tutorial.html:46
+msgid "TechWithTim"
+msgstr "TechWithTim."
+
+#: templates/django_tutorial.html:47
+msgid ""
+"website. He has some of the best tutorials on basic programming in different "
+"languages and a very nice introduction series to Django. I am not affiliated "
+"with him in any way, I just enjoyed its tutorials in my journey to improve "
+"my skills as a self-taught coder. </p> <p> Another nice resource is the"
+msgstr ""
+"Il a d'excellents tutoriels sur les bases de la programmation dans "
+"différents langages et une série d'introduction à Django très bien faite. Je "
+"ne suis pas affilié à lui d'aucune façon, j'ai seulement apprécié ses "
+"tutoriels dans mon périple de programmeur autodidacte. </p> <p> Une autre "
+"bonne ressource est le site web"
+
+#: templates/django_tutorial.html:57
+msgid "simpleisbetterthancomplex"
+msgstr "simpleisbetterthancomplex"
+
+#: templates/django_tutorial.html:58
+msgid ""
+"website that targets Django specifically. It helped me to better understand "
+"how to deploy my website using Nginx and Gunicorn. </p> <p> Obviously, it "
+"goes without saying that you should absolutely read the"
+msgstr ""
+"qui cible spécifiquement Django. Ce dernier m'a aidé à mieux comprendre "
+"comment déployer mon site web en utilisant Nginx et Gunicorn. </p> <p> "
+"Évidemment, il va sans dire que vous devriez absolument lire la"
+
+#: templates/django_tutorial.html:67
+msgid "official documentation"
+msgstr "documentation officielle"
+
+#: templates/django_tutorial.html:69
+msgid "There is also the"
+msgstr "Il y au aussi le site web"
+
+#: templates/django_tutorial.html:74
+msgid "LearnDjango"
+msgstr "LearnDjango"
+
+#: templates/django_tutorial.html:76
+msgid ""
+"website from one of the Board Members of the Django Software Foundation."
+msgstr "de l'un des membres du conseil d'adminstation de la fondation Django."
+
+#: templates/django_tutorial.html:81
+msgid ""
+"I am a bit short on time right now, so I don't have time to write an "
+"extensive tutorial (but it will come!). In the meantime, you can have a look "
+"at my"
+msgstr ""
+"Je manque de temps en ce moment, alors je n'ai pas le temps d'écrire un "
+"tutoriel détaillé (mais cela va venir!). En attendant, vous pouvez regarder "
+"mon "
+
+#: templates/django_tutorial.html:89
+msgid ""
+"I have tried to put as many comments as I could in each file, but I "
+"acknowledged that a Django project is overwhelming when you don't know where "
+"to start. I'll try to write the tutorial as soon as possible."
+msgstr ""
+"J'ai essayé de mettre le plus de commentaires possible dans chaque fichier, "
+"mais je sais qu'un projet Django peut être intimidant lorsqu'on ne sait pas "
+"par où commencer. J'essaierai de rédiger ce tutoriel le plus tôt possible. "
+
+#: templates/email_sent.html:7 templates/home.html:22
+msgid "Geoadaptation"
+msgstr "Géoadaptation"
+
+#: templates/email_sent.html:13
+msgid "Email sent confirmation"
+msgstr "Confirmation de courriel envoyé"
+
+#: templates/email_sent.html:19
+msgid "Email sent"
+msgstr "Courriel envoyé"
+
+#: templates/email_sent.html:40
+msgid ""
+"Thank you for your message. Your email has been transmitted successfully. "
+"I'll try to get in touch with you as soon as possible."
+msgstr ""
+"Merci pour votre message. Votre courriel s'est bien rendu à destination. Je "
+"vais essayer de vous répondre dans les plus brefs délais."
+
+#: templates/home.html:6
+msgid ""
+"Magog, Université de Sherbrooke, Bishop's University, climate change, "
+"vulnerability, sensitivity, adaptive capacity, adaptation, geoadaptation, "
+"geomatics, GIS, public health, heat waves, hazards, artificial intelligence, "
+"python, Django, Folium, Matplotlib, LoRa, LoRaWan, MQTT, The Thing Stack, "
+"The Thing Network"
+msgstr ""
+"Magog, Université de Sherbrooke, changement climatique, vulnérabilité, "
+"sensibilité, capacité d'adaptation, adaptation, géoadaptation, géomatique, "
+"SIG, santé publique, plan d'adaptation"
+
+#: templates/home.html:15
+msgid ""
+"Geoadaptation.ca is a collection of projects and tutorials related to "
+"climate change and geographic information systems (GIS)."
+msgstr ""
+"Le geoadaptation.ca est un regroupement de projets et de tutoriels reliés "
+"aux changements climatiques et aux systèmes d'information géographique (SIG)"
+
+#: templates/home.html:30
+msgid "Where "
+msgstr "Où la "
+
+#: templates/home.html:30
+msgid "geomatics"
+msgstr "géomatique"
+
+#: templates/home.html:31
+msgid " meet climate change "
+msgstr " rencontre l'"
+
+#: templates/home.html:32
+msgid " "
+msgstr " aux changements climatiques"
+
+#: templates/home.html:40
+msgid "Available resources"
+msgstr "Ressources disponibles"
+
+#: templates/home.html:57
+msgid "Research on climate change adaptation and vulnerability"
+msgstr ""
+"Recherche sur l'adaptation et la vulnérabilité aux changements climatiques"
+
+#: templates/home.html:65
+msgid ""
+"Tutorials on geographic information system (GIS) and related technologies"
+msgstr ""
+"Tutoriels sur les systèmes d'information géographique (SIG) et les "
+"technologies connexes"
+
+#: templates/home.html:73
+msgid "About me and contact info"
+msgstr "À propos de moi et coordonnées"
+
+#: templates/home.html:79
+msgid ""
+"This project is guided by the <span class=\"h-text\">open source</span> and "
+"<span class=\"h-text\">open science</span> spirit. The fight against climate "
+"change must intensify if we want to mitigate its consequences on our "
+"communities. </p> <p> Therefore, <span class=\"h-text\">collaboration</span> "
+"and <span class=\"h-text\">knowledge sharing</span> is primordial to "
+"overcome all the challenges the future has in store for us and the following "
+"generations. </p> <p> This website is a step in this direction to help "
+"students, researchers, professionals, citizens and policy makers to make "
+"<span class=\"h-text\">well-informed decisions</span> regarding climate "
+"change and the stakes surrounding it."
+msgstr ""
+"Ce projet est dans l’esprit de la <span class=\"h-text\">science et des "
+"logiciels libres</span>. La lutte aux changements climatiques doit "
+"s’intensifier si nous voulons parvenir à atténuer ses conséquences sur nos "
+"communautés. Ainsi, la <span class=\"h-text\">collaboration</span> et le "
+"<span class=\"h-text\">partage des connaissances</span> se révèlent "
+"primordiaux pour surmonter tous les défis que le futur réserve aux "
+"générations actuelles et futures. </p> <p> Ce site web est un pas dans cette "
+"direction pour aider les étudiants, les chercheurs, les professionnels, les "
+"citoyens et les décideurs à prendre des <span class=\"h-text\">décisions "
+"éclairées</span> en lien avec les changements climatiques et les enjeux qui "
+"les entourent."
+
+#: templates/home.html:103
+msgid "This website is a personal project financed and maintained by"
+msgstr "Ce site web est un projet personnel financé et maintenu par"
+
+#: templates/home.html:107
+msgid "me"
+msgstr "moi"
+
+#: templates/home.html:110
+msgid ""
+"The financing and the support from different nonprofit organizations are "
+"clearly stated at the bottom of every project if applicable."
+msgstr ""
+"Le financement et le support des différentes organisations à but non "
+"lucratif sont clairement énoncés au bas de chaque projet si applicable."
+
+#: templates/lora_tutorial.html:7
+msgid ""
+"LoRa, LoRaWan, MQTT, The Thing Stack, TTS, The Thing Network, TTN, "
+"temperature, humidity, sensors, gateway, postgreSQL"
+msgstr ""
+"LoRa, LoRaWan, MQTT, The Thing Stack, TTS, The Thing Network, TTN, "
+"température, humidité, capteurs, passerelle, postgreSQL"
+
+#: templates/lora_tutorial.html:15
+msgid ""
+"Tutorial on how to set up a LoRa networks from the sensors to the database "
+"using MQTT protocol."
+msgstr ""
+"Tutoriel sur comment installer un réseau LoRa des capteurs jusqu'à la base "
+"de données en utilisant le protocole MQTT."
+
+#: templates/lora_tutorial.html:22
+msgid "LoRa tutorial"
+msgstr "Tutoriel LoRa"
+
+#: templates/lora_tutorial.html:43
+msgid ""
+"<p> I am a bit short on time right now, so I don't have time to write an "
+"extensive tutorial (but it will come!). In the meantime, here are a couple "
+"of key points that I learned by trials and errors: <ul> <li> Buildings make "
+"a huge difference on your range. Even if it says it can go a few kilometres "
+"in the open, don't expect more than 500 metres in an urban setting in the "
+"best case scenario. </li> <li> Concrete or brick buildings have a "
+"significant impact on the range as well. Some of my sensors can't reach more "
+"than 200 metres because of brick walls in the way. By opposition, my best "
+"range is 450 metres with a direct line of sight through a window. Knowing "
+"this, an outdoor gateway with a roof access might be your best bet to have a "
+"good 360 degrees range. </li> <li> If you are near a workplace that uses "
+"radio to communicate (like the public works building in Magog City), it can "
+"mess badly with the signal. This is the reason why on workdays between "
+"7&nbspAM to 5&nbspPM, my readings are inconsistent. I am currently working "
+"on a solution to fix this. </li> </ul> </p>"
+msgstr ""
+"<p> Je manque de temps en ce moment, alors je n'ai pas le temps d'écrire un "
+"tutoriel détaillé (mais cela va venir!). En attendant, voici quelques "
+"éléments clés que j'ai appris à travers mes essais et erreurs: <ul> <li> Les "
+"bâtiments font une énorme différence sur la portée. Même s'il est mentionné "
+"que la portée peut atteindre quelques kilomètres, ne vous attendez pas à "
+"plus de 500 mètres en milieu urbain dans le meilleur des cas. </li> <li> Des "
+"bâtiments en béton ou des murs en briques ont un impact significatif sur la "
+"portée également. Certains de mes capteurs ne peuvent pas atteindre plus de "
+"200 mètres. À l'inverse, ma meilleure portée est de 450 mètres avec une vue "
+"directe à travers une fenêtre. Sachant cela, une passerelle (gateway) "
+"extérieure avec un accès à un toit est probablement la meilleure option pour "
+"avoir une bonne portée sur 360 degrés. </li> <li> Si vous êtes proches d'un "
+"lieu de travail qui utilise une radio pour communiquer (comme le bâtiment "
+"des travaux publics à Magog), cela peut brouiller énormément le signal. "
+"C'est pour cette raison qu'entre 7&nbspAM et 5&nbspPM, mes lectures ne sont "
+"pas constantes. Je suis présentement en train d'essayer de trouver une "
+"solution à ce problème. </li> </ul> </p>"
+
+#: templates/magog_ccap.html:7 templates/research.html:6
+#: templates/vulnerability_essay.html:6
+msgid ""
+"Magog, Université de Sherbrooke, climate change, vulnerability, sensitivity, "
+"adaptive capacity, adaptation, geoadaptation, geomatic, GIS, public health, "
+"artificial intelligence"
+msgstr ""
+
+#: templates/magog_ccap.html:15
+msgid "Summary and full report of the Magog climate change adaptation plan"
+msgstr ""
+"Sommaire et rapport complet pour le plan d'adaptation aux changements "
+"climatiques de Magog."
+
+#: templates/magog_ccap.html:22
+msgid "Magog's CCAP"
+msgstr "PACC de Magog"
+
+#: templates/magog_ccap.html:38
+msgctxt "title "
+msgid "Magog's climate change adaptation plan"
+msgstr "Plan d'adaptation aux changements climatiques de Magog"
+
+#: templates/magog_ccap.html:43
+msgid "The full report is only available in French"
+msgstr " "
+
+#: templates/magog_ccap.html:51 templates/vulnerability_essay.html:54
+msgid "Summary"
+msgstr "Sommaire"
+
+#: templates/magog_ccap.html:53
+#, python-format
+msgid ""
+"The production of the climate change adaptation plan for Magog result from "
+"the 241-2020 resolution adopt unanimously by the municipal council on June "
+"1st 2020. The latter wish to follow up to reports from the Federation of "
+"Canadian Municipalities and the Union des Municipalités du Québec on the "
+"climate question. Both reports are unanimous, the inaction towards this "
+"challenge is <span class=\"h-text\">expensive</span> and put at <span class="
+"\"h-text\">risk public health and infrastructure</span>. The conclusions of "
+"this plan and the approval of its execution have been endorsed unanimously "
+"by the municipal council with the 472-2020 resolution. </p> <p> The "
+"consultation of various stakeholders confirmed the significance of climate "
+"change adaptation. An online survey who gathers more than 300 answers from "
+"citizens reveals that <span class=\"h-text\">97 %%</span> of them wish that "
+"adaptation strategies are put in place. The <span class=\"h-text"
+"\">protection of natural environment</span> was the most popular option with "
+"82 %% of support. The consulted environmental organizations also raise the "
+"importance of <span class=\"h-text\">protecting natural environment and "
+"biodiversity</span>. The consulted divisions within the city underlined the "
+"anticipate increased cost associated with climate change but was unable to "
+"quantify it due to a lack of data. </p> <p> Magog city is already affected "
+"by an <span class=\"h-text\">increase in temperature</span>. About the <span "
+"class=\"h-text\">third of its population</span> lives in an <span class=\"h-"
+"text\">urban heat island</span>, which amplifies the problem. Regarding "
+"precipitation, the annual quantity only increases slightly, but the number "
+"of <span class=\"h-text\">heavy precipitations is increasing</span>. <span "
+"class=\"h-text\">More than 8&nbsp%% of the real estate assessment is in a "
+"flood zone</span>, which makes it a current challenge. <span class=\"h-text"
+"\">Droughts</span> and <span class=\"h-text\">freeze-thaw cycle</span> are "
+"also a problem. <span class=\"h-text\">Lyme disease</span> and <span class="
+"\"h-text\">ragweed</span> is also significant in the region. </p> <p> All "
+"the current tendency will be exacerbated in the future. For instance, by "
+"2050, the <span class=\"h-text\">maximal temperature will increase by 3&nbsp"
+"°C</span> if the trend continues. The peak flow for the Magog river will "
+"increase by 7&nbsp%% and the minimum flow will <span class=\"h-text"
+"\">decrease by 42&nbsp%%</span>, which means a wide variety in the "
+"precipitation scheme that will require a good management of droughts and "
+"heavy precipitations. </p> <p> Among the evaluated adaptation strategies, "
+"there was the protection of wetlands and natural environments, the "
+"protection of biodiversity, the greening of urban spaces, the continuation "
+"of the protection of riparian buffer stripes, the promotion of green "
+"infrastructure, the use of white roofs, the optimization of rainwater "
+"management, the continuation of the program to monitor the conformity of the "
+"rain gutter and the sampling of water streams, as well as improving the "
+"culvert management and the initiatives to save drinkable water. </p> <p> A "
+"hierarchy of those strategies was necessary. Their assessment is usually "
+"done with a risk matrix. However, this traditional method was not deem "
+"discriminating enough and too broad to take well-informed decisions. The use "
+"of a vulnerability assessment was favoured. The formula V&nbsp=&nbspS&nbsp–"
+"&nbspAC was used, where V is the vulnerability, S the sensitivity and AC the "
+"adaptive capacity. With this approach, it was possible to include the "
+"budget, the strategy efficacy and the number of people affected by the "
+"strategy in the adaptive capacity variable. </p> <p> <span class=\"h-text"
+"\">The most effective strategy according to this assessment is the "
+"protection of wetlands, riparian buffer stripe, biodiversity and natural "
+"environment.</span> All the other strategies have their uses, but they are "
+"either costly to deploy on the whole territory (green infrastructure and "
+"grey infrastructure) or have a more limited effectiveness in regards of co-"
+"benefits (gutter conformity that manages only rainwater, etc.). The "
+"adaptation plan has objectives to reach by 2030 to become a more resilient "
+"city to climate change and to hazards in general. In order to reach those "
+"objectives, the city must, among other things: <ul> <li> <span class=\"h-text"
+"\">Include every stakeholder</span> in the adaptation strategies, with the "
+"citizen at the heart of its preoccupations. </li> <li> Understand the "
+"sanitary and economic impacts of climate change, and the urge to act. </li> "
+"<li> <span class=\"h-text\">Acknowledge that environmental externalities "
+"cause economic losses </span>in the long run, especially in a context of "
+"climate change. Therefore, all development projects must consider "
+"environmental externalities compared to anticipate economic gains to make "
+"sure of the profitability of those. </li> <li> <span class=\"h-text"
+"\">Prioritize natural environment protection, and especially wetlands, </"
+"span> because this measure is the most advantageous to adapt to climate "
+"change and decrease its sanitary impacts. </li> <li> Publish the technical "
+"document on climate change adaptation to contribute to the advancement of "
+"knowledge and to help other municipalities. In addition, vulgarize "
+"information must be communicated to the public. </li> <li> <span class=\"h-"
+"text\">Improve data collection in the field and encouraged scientific "
+"research </span> on climate change in order to take well-informed decision "
+"that rely on the best evidence-based fact as possible. </li> <li> Establish "
+"a strategy to integrate green infrastructure in the city development. </li> "
+"</ul>"
+msgstr ""
+"L’élaboration du plan d’adaptation aux changements climatiques de la Ville "
+"de Magog découle de la résolution 241-2020 adoptée à l’unanimité par le "
+"conseil municipal le 1er juin 2020. Ce dernier souhaite donner suite aux "
+"rapports produits par la Fédération canadienne des municipalités et l’Union "
+"des municipalités du Québec sur la question climatique pour les "
+"municipalités. Les deux rapports sont unanimes, l’inaction face à ce défi "
+"coûte <span class=\"h-text\">cher</span> et met en péril <span class=\"h-text"
+"\">la santé publique et les infrastructures</span>. Les conclusions de ce "
+"plan d’adaptation et l’approbation de sa mise en œuvre ont été entérinées à "
+"l’unanimité le 2 novembre 2020 par le conseil municipal en vertu de la "
+"résolution 472-2020. </p> <p> La consultation de diverses parties prenantes "
+"a confirmé l'importance de l’adaptation aux changements climatiques. Un "
+"sondage en ligne auquel plus de 300 citoyens ont participé a révélé que "
+"<span class=\"h-text\">97 %%</span> d’entre eux souhaitent que des mesures "
+"d’adaptation soient entreprises. La <span class=\"h-text\">protection des "
+"milieux naturels</span> vient en tête de liste avec 82 %% d’appuis. Les "
+"organismes environnementaux consultés ont également soulevé l’importance de "
+"la <span class=\"h-text\">protection des milieux naturels et de la "
+"biodiversité</span>. La consultation des différentes divisions de la Ville a "
+"fait ressortir l’augmentation anticipée des coûts, mais aussi l’incapacité à "
+"bien quantifier le phénomène pour l’ensemble des services municipaux à cause "
+"d’un manque de données. </p> <p>La Ville de Magog subit déjà une tendance à "
+"la <span class=\"h-text\">hausse des températures</span>. Environ le <span "
+"class=\"h-text\">tiers de sa population</span> réside dans un <span class="
+"\"h-text\">ilot de chaleur</span>, ce qui amplifie la problématique. En ce "
+"qui concerne les précipitations, la quantité totale annuelle connaît une "
+"légère augmentation, mais le nombre d’épisodes de <span class=\"h-text"
+"\">pluie intense est à la hausse</span>. <span class=\"h-text\">Plus de 8 %% "
+"de la valeur foncière de la Ville</span> se situe en zone inondable, ce qui "
+"en fait un enjeu actuel. Il en va de même pour les <span class=\"h-text"
+"\">épisodes de sécheresse</span> et <span class=\"h-text\">les cycles de gel "
+"et dégel</span> qui occasionnent des problèmes en période hivernale. La "
+"présence de la <span class=\"h-text\">maladie de Lyme</span> et de <span "
+"class=\"h-text\">l’herbe à poux</span> est significative sur le territoire. "
+"</p> <p> Toutes les tendances climatiques actuelles seront exacerbées dans "
+"le futur. Par exemple, d’ici 2050, la <span class=\"h-text\">température "
+"maximale estivale augmentera de 3 °C</span> si la tendance se maintient. Les "
+"débits de crues maximaux pour la rivière Magog augmenteront d’environ 7 %% "
+"et les <span class=\"h-text\">débits minimaux diminueront de 42 %%</span>, "
+"ce qui suggère une forte variabilité dans les précipitations qui "
+"nécessiteront une bonne gestion des périodes de sécheresse et de pluie "
+"intense. </p> <p>Parmi les stratégies d’adaptation évaluées, il y a "
+"notamment la protection des milieux humides et naturels, la protection de la "
+"biodiversité, la revégétalisation du périmètre urbain, la poursuite du "
+"programme de protection des bandes riveraines, la promotion des "
+"infrastructures vertes, l’utilisation de toits blancs, l’optimisation de la "
+"gestion des eaux pluviales, la poursuite du programme de débranchement des "
+"gouttières et d'échantillonnage des cours d'eau, ainsi que l’amélioration de "
+"la gestion des ponceaux et des initiatives d’économie d’eau potable. </p> "
+"<p>Une hiérarchisation de ces différentes stratégies est nécessaire. Leur "
+"évaluation se fait habituellement en utilisant une matrice de risque. Cette "
+"méthode traditionnelle a été jugée peu discriminante et trop générale pour "
+"bien orienter les décisions. L’utilisation d’un calcul de vulnérabilité a "
+"été privilégiée selon la formule V = S – CA où V est la vulnérabilité, S la "
+"sensibilité et CA la capacité d’adaptation. Ainsi, il fut possible "
+"d’intégrer les notions de budget, d’efficacité des mesures et de nombre de "
+"personnes incluses par les mesures dans la variable capacité d’adaptation. </"
+"p> <p> <span class=\"h-text\">Les mesures les plus efficaces selon ce calcul "
+"sont la protection des milieux humides, des bandes riveraines, de la "
+"biodiversité et des milieux naturels.</span> Toutes les autres mesures ont "
+"leur place, mais elles sont très onéreuses à déployer sur l’ensemble du "
+"territoire (infrastructures vertes et infrastructures grises) ou possèdent "
+"une efficacité plus limitée en termes de co-bénéfices (débranchement des "
+"gouttières qui ne s’attaque qu’à la gestion des eaux pluviales, etc.). Le "
+"plan d’adaptation contient des objectifs à atteindre d’ici 2030 afin de "
+"tenir compte de tous ces éléments pour obtenir à terme une ville plus "
+"résiliente aux changements climatiques et aux aléas en général. Afin "
+"d’atteindre ces objectifs, la Ville doit notamment : <ul> <li> <span class="
+"\"h-text\">Intégrer toutes les parties prenantes</span> dans l’élaboration "
+"des stratégies d’adaptation, avec le citoyen au cœur des préoccupations. </"
+"li> <li> Comprendre les impacts sanitaires et économiques des changements "
+"climatiques, ainsi que l’urgence d’agir.</li> <li> <span class=\"h-text"
+"\">Reconnaître que les externalités environnementales entrainent des pertes "
+"économiques</span> à long terme, surtout en contexte de changements "
+"climatiques. Par conséquent, tous les projets doivent tenir compte des "
+"externalités environnementales par rapport aux gains économiques anticipés "
+"afin de s’assurer de la rentabilité de ceux-ci. </li> <li> <span class=\"h-"
+"text\">Prioriser la protection des milieux naturels et plus particulièrement "
+"les milieux humides</span>, car cette mesure est la plus avantageuse pour "
+"s’adapter aux changements climatiques et atténuer les impacts sanitaires. </"
+"li> <li> Diffuser le document technique sur l’adaptation aux changements "
+"climatiques pour contribuer à l’avancement des connaissances et aider les "
+"autres municipalités. De plus, il faut communiquer à la population "
+"l’information scientifique vulgarisée. </li> <li> <span class=\"h-text"
+"\">Améliorer la collecte de données sur le terrain et encourager la "
+"recherche scientifique </span> sur les changements climatiques afin de "
+"prendre des décisions qui s’appuient sur les meilleures données probantes "
+"possible. </li> <li>Établir une stratégie afin d’intégrer les "
+"infrastructures vertes dans le développement de la Ville. </li> </ul>"
+
+#: templates/magog_ccap.html:153
+msgid ""
+"A big thanks to Magog City and everyone who works there. This project would "
+"not have been possible without their massive support."
+msgstr ""
+"Un gros merci à la Ville de Magog et tous ceux qui y oeuvrent. Ce projet "
+"n'aurait pas été possible sans votre énorme soutien."
+
+#: templates/magog_uhi.html:6
+msgid ""
+"Magog, Université de Sherbrooke, climate change, vulnerability, sensitivity, "
+"adaptive capacity, adaptation, geoadaptation, geomatic, GIS, public health, "
+"urban heat island, Espace Saint-Luc"
+msgstr ""
+"Magog, Université de Sherbrooke, changements climatiques, vulnérabilité, "
+"sensibilité, capacité d'adaptation, adaptation, géoadaptation, géomatique, "
+"SIG, santé publique, ilot de chaleur, Espace Saint-Luc"
+
+#: templates/magog_uhi.html:14
+msgid ""
+"Overview of the urban heat island monitoring project in Magog at Espace "
+"Saint-Luc"
+msgstr ""
+"Aperçu du projet de suivi des ilots de chaleur à l'Espace Saint-Luc de Magog"
+
+#: templates/magog_uhi.html:21
+msgid "UHI monitoring"
+msgstr "Suivi IDC"
+
+#: templates/magog_uhi.html:51
+msgid "Monitoring dashboard"
+msgstr "Tableau de bord de suivi"
+
+#: templates/magog_uhi.html:54
+msgid ""
+"The dashboard and the carousel for the site photos require JavaScript to "
+"work. Please, turn it on if you want to navigate on this page."
+msgstr ""
+"Le tableau de bord et le carroussel pour les photos du site requiert "
+"JavaScript pour fonctionner. SVP, veuillez l'activer si vous désirez "
+"naviguer sur cette page."
+
+#: templates/magog_uhi.html:64
+msgid "e"
+msgstr "f"
+
+#: templates/magog_uhi.html:75
+#, fuzzy, python-format
+#| msgid "Please select a date between %(first_day)s and %(last_day)s"
+msgid "Please select a date between %(data.first_day)s and %(data.last_day)s"
+msgstr "SVP veuillez entrer une date entre le %(first_day)s et le %(last_day)s"
+
+#: templates/magog_uhi.html:103
+msgid "Colour"
+msgstr "Couleur"
+
+#: templates/magog_uhi.html:115
+msgid "Opacity"
+msgstr "Opacité"
+
+#: templates/magog_uhi.html:126
+msgid "Loading layer"
+msgstr "Téléchargement de la couche"
+
+#: templates/magog_uhi.html:138
+msgid "Temperature of each area for the selected layer (number of sensors)"
+msgstr ""
+"Température de chaque zone de la couche sélectionnée (nombre de capteurs)"
+
+#: templates/magog_uhi.html:184
+msgid ""
+"<li >Select a date and a time in the bar above the map. The default value is "
+"the latest temperature sent by the sensors.</li> <li>If the time you want "
+"isn't available, it might be due to a sensor failure. Look at the"
+msgstr ""
+"<li >Sélectionnez une date et une heure sur la barre au-dessus de la carte. "
+"La valeur par défaut est la dernière température envoyée par les capteurs.</"
+"li> <li> Si la plage horaire que vous souhaitez consulter n'est pas "
+"disponible, cela peut être dû à un problème de capteurs. Regardez la section"
+
+#: templates/magog_uhi.html:190 templates/magog_uhi.html:239
+msgid "LoRa"
+msgstr "LoRa"
+
+#: templates/magog_uhi.html:192
+msgid ""
+"section for more info.</li> <li>The colour and the opacity is only for the "
+"visual effect, it doesn't change the values or the analysis.</li> <li>You "
+"can toggle the layers on and off with the icon in the top right corner of "
+"the map.</li> <li>You can zoom in and out of the map with the wheel of your "
+"mouse or the icon in the top left corner of the map.</li>"
+msgstr ""
+"pour plus d'information. </li> <li>La couleur et l'opacité ne sont que pour "
+"le rendu visuel, ils n'affectent pas les valeurs ou les analyses.</li> <li> "
+"Vous pouvez ajouter ou retirer des couches avec l'icône en haut à droite de "
+"la carte</li> <li>Vous pouvez ajuster le zoom avec la roulette de la souris "
+"ou avec l'icône en haut à gauche de la carte</li>"
+
+#: templates/magog_uhi.html:205
+msgid "Hourly max T"
+msgstr "T max horaire"
+
+#: templates/magog_uhi.html:206
+msgid "Hourly avg T"
+msgstr "T moy horaire"
+
+#: templates/magog_uhi.html:207
+msgid "Daily max T"
+msgstr "T max quotidien"
+
+#: templates/magog_uhi.html:208
+msgid "Daily avg T"
+msgstr "T moy quotidien"
+
+#: templates/magog_uhi.html:209
+msgid "Help"
+msgstr "Aide"
+
+#: templates/magog_uhi.html:220
+msgid ""
+"This monitoring project, financed by Climat Municipalité 2, is part of the "
+"greening of the"
+msgstr ""
+"Le projet de suivi, financé par Climat Municipalité 2, fait partie du projet "
+"de verdissement du "
+
+#: templates/magog_uhi.html:224
+msgid "520 rue Saint-Luc in Magog"
+msgstr "520 rue Saint-Luc à Magog"
+
+#: templates/magog_uhi.html:226
+msgid ""
+"The first phase that unfolds in 2021 consists to decontaminate the site, "
+"carry out public consultations and work with various stakeholders to create "
+"the plans. </p> <p> If everything goes well, works should start in 2022 and "
+"end by 2023. A significant tree plantation covering <span class=\"h-text"
+"\">20 000 m<sup>2</sup></span> will provide a cooling island directly on "
+"site and in the nearing neighborhood. </p> <p> In order to measure with "
+"precision this cooling effect, 10 sensors using the"
+msgstr ""
+"La première phase du projet qui se déroule en 2021 consiste à décontaminer "
+"le site, effectuer des consultations publiques et travailler avec diverses "
+"parties prenantes pour élaborer des plans. </p> <p> Si tout se déroule bien, "
+"les travaux devraient s’amorcer en 2022 et se terminer en 2023. Une "
+"importante plantation d’arbres sur plus de <span class=\"h-text"
+"\"><b>20 000 m<sup>2</sup></b></span> offrira un ilot de fraicheur aux "
+"citoyens directement sur le site, mais aussi dans les quartiers "
+"environnants. </p> <p> Afin de mesurer avec précision cet effet de "
+"refroidissement, 10 capteurs qui utilisent la technologie "
+
+#: templates/magog_uhi.html:241
+msgid ""
+"technology have been installed in various places to provide real-time data "
+"that you can look at in the dashboard above. This project will continue "
+"beyond the end of the works, because as trees will mature, the cooling "
+"effect should increase. Researchers from Université de Sherbrooke, will make "
+"an in-depth analysis of that data. Pictures of the site evolution are below."
+msgstr ""
+"ont été installés à divers endroits pour donner une lecture en temps réel "
+"qu’il est possible d’observer dans le tableau de bord ci-haut. Le projet de "
+"suivi se poursuivra au-delà de la fin des travaux, puisque plus les arbres "
+"gagneront en maturité, plus le pouvoir rafraichissant devrait s’accroître. "
+"Des chercheurs de l’Université de Sherbrooke feront des analyses en "
+"profondeur de ces données. Des photos de l’évolution du site sont "
+"disponibles ci-dessous. "
+
+#: templates/magog_uhi.html:250
+msgid "Spring 2021"
+msgstr "Printemps 2021"
+
+#: templates/magog_uhi.html:262
+msgid "South Area"
+msgstr "Zone sud"
+
+#: templates/magog_uhi.html:263 templates/magog_uhi.html:270
+#: templates/magog_uhi.html:277 templates/magog_uhi.html:284
+msgid "Before the start of the project"
+msgstr "Avant le début du projet"
+
+#: templates/magog_uhi.html:269
+msgid "North Area"
+msgstr "Zone nord"
+
+#: templates/magog_uhi.html:276
+msgid "West Area"
+msgstr "Zone ouest"
+
+#: templates/magog_uhi.html:283
+msgid "East Area"
+msgstr "Zone est"
+
+#: templates/magog_uhi.html:302
+msgid "Partner organizations for this project"
+msgstr "Organismes partenaires pour ce projet"
+
+#: templates/magog_uhi.html:303
+msgid ""
+"A big thanks to Magog City and everyone who works there. This project would "
+"not have been possible without their tremendous support."
+msgstr ""
+"Un énorme merci à la Ville de Magog et tous ceux qui y oeuvrent. Ce projet "
+"n'aurait pas été possible sans leur immense soutien."
+
+#: templates/magog_uhi.html:308
+msgid ""
+"This project has received a grant from Climat municipalités - Phase 2 from "
+"the Quebec government and meet the objectives for the 2030 Plan for a Green "
+"Economy."
+msgstr ""
+"Ce projet bénéficie d'une aide financière du gouvernement du Québec tirée du "
+"programme Climat municipalités - Phase 2 et rejoint les objectifs du Plan "
+"pour une économie verte 2030."
+
+#: templates/research.html:13
+msgid ""
+"Overview of research projects regarding climate change adaptation related to "
+"vulnerability, artificial intelligence and GIS."
+msgstr ""
+
+#: templates/research.html:36
+msgid "Research projects overview"
+msgstr "Aperçu des projets de recherche"
+
+#: templates/research.html:42
+msgid ""
+"My primary fields of research are public health and climate change. I am "
+"interested in leveraging the power of geographic information systems (GIS) "
+"and artificial intelligence to help improve the assessment of vulnerability. "
+"The question of vulnerability is very important, because this concept is at "
+"the core of creating adaptation plans. Indeed, to make sure we invest at the "
+"right place and that we get the best return on our investments, it is "
+"fundamental to use a good framework. </p> <p> During my master’s in "
+"environment, I wrote an"
+msgstr ""
+"Mes champs de recherche principaux sont la santé publique et les changements "
+"climatiques. Je souhaite exploiter la puissance des systèmes d’information "
+"géographique et de l’intelligence artificielle pour aider à améliorer le "
+"calcul de la vulnérabilité. Cette question est très importante, car ce "
+"concept est au cœur de la création des plans d’adaptation. En effet, pour "
+"s’assurer d’investir au bon endroit et d’obtenir le meilleur retour sur "
+"notre investissement, il est fondamental d’utiliser une bonne structure "
+"d’analyse. </p> <p> Pendant ma maîtrise en environnement, j’ai rédigé un "
+
+#: templates/research.html:53
+msgid "essay"
+msgstr "essai"
+
+#: templates/research.html:55
+msgid "to better grasp the concept of vulnerability. That led to the"
+msgstr ""
+"pour mieux comprendre le concept de vulnérabilité. Ce travail a mené à la "
+"création du"
+
+#: templates/research.html:59
+msgid "Magog climate change adaptation plan"
+msgstr "plan d'adaptation aux changements climatiques pour la Ville de Magog"
+
+#: templates/research.html:61
+msgid "and a project on"
+msgstr "et un projet de"
+
+#: templates/research.html:65
+msgid "monitoring an urban heat island in Magog."
+msgstr "suivi des ilots de chaleur à Magog."
+
+#: templates/research.html:67
+msgid ""
+"</p> <p> However, I am not fully satisfied with the tools we currently have "
+"to assess vulnerability and that’s why I’m working on a PhD project to "
+"improve the general approach (more details to come)."
+msgstr ""
+"</p> <p> Cependant, je ne suis pas pleinement satisfait avec les outils que "
+"nous possédons pour calculer la vulnérabilité et c’est la raison pour "
+"laquelle je travaille sur un projet de doctorat afin d’améliorer cette "
+"démarche (plus de détails à venir). "
+
+#: templates/tutorials.html:7
+msgid ""
+"Magog, Université de Sherbrooke, tutorial, GIS, artificial intelligence, "
+"python, Django, LoraWan, LoRa, MQTT"
+msgstr ""
+"Magog, Université de Sherbrooke, tutoriel, SIG, intelligence artificielle, "
+"python, Django, LoraWan, LoRa, MQTT"
+
+#: templates/tutorials.html:14
+msgid "Overview of research projects."
+msgstr "Aperçu des projets de recherche"
+
+#: templates/tutorials.html:36
+msgid "Tutorials overview"
+msgstr "Aperçu des tutoriels"
+
+#: templates/tutorials.html:40
+msgid ""
+"I made a few tutorials to help other students and those who are starting in "
+"the field of geographic information systems (GIS). I am by no means a "
+"software engineer and I do not claim that my code or solutions are the "
+"cleanest. However, I have spent countless hours figuring out how all this "
+"could work together. There are not a lot of resources online to help GIS "
+"professional. I also found the example for Django rather basics which make "
+"it difficult to figure out more advanced stuff if you are not a web "
+"developer. </p> <p> In my"
+msgstr ""
+"J’ai créé quelques tutoriels pour aider d’autres étudiants et ceux qui "
+"débutent dans le domaine des SIG. Je ne suis en aucun cas un ingénieur "
+"logiciel et je ne prétends pas que mon code et mes solutions sont les plus "
+"optimaux. Par contre, j’ai passé plusieurs heures à comprendre comment tout "
+"ça pouvait fonctionner ensemble. Il n’y a pas beaucoup de ressources en "
+"ligne pour aider les professionnels en SIG. De plus, j’ai trouvé les "
+"exemples pour Django plutôt de base, ce qui rendait difficile de comprendre "
+"les trucs plus avancés lorsqu’on n’est pas un développeur web. </p> <p> Dans "
+"mon  "
+
+#: templates/tutorials.html:50
+msgid "Django for GIS tutorials"
+msgstr "tutoriel Django pour les projets SIG"
+
+#: templates/tutorials.html:52
+msgid ""
+"I mainly cover how to create a dashboard with widgets and a map with "
+"interpolate temperature layers in it using Folium, Scipy and Matplotlib. You "
+"can see the result in the section on"
+msgstr ""
+"je couvre principalement comment créer un tableau de bord avec des widgets "
+"et une carte avec des couches de températures interpolées en utilisant "
+"Folium, Scipy et Matplolib. Le résultat est dans la section"
+
+#: templates/tutorials.html:58
+msgid "urban heat islands monitoring at the Espace Saint-Luc in Magog"
+msgstr "suivie des ilots de chaleur à l'Espace Saint-Luc à Magog"
+
+#: templates/tutorials.html:60
+msgid ""
+"I also add a few tips on part where I struggled, such as how to make a "
+"bilingual site and I few things that I took probably way too much time to "
+"figure out on my own, such as how Ajax and Django work together. However, "
+"I’m not going through the basic stuff, as other do it way better than I "
+"could. I will only reference sources I found interesting. </p> <p> I also "
+"cover a bit the"
+msgstr ""
+" J’ai aussi ajouté des conseils sur les parties où j’ai bûché, comme sur la "
+"façon de créer un site bilingue et d’autres aspects que j’ai probablement "
+"pris beaucoup trop de temps à trouver par moi-même, comme le fonctionnement "
+"d’Ajax avec Django. Par contre, je ne passe pas en revue les bases, puisque "
+"plusieurs autres personnes le font beaucoup mieux que moi. Je vais seulement "
+"mettre un lien vers les références que je trouve pertinentes. </p> <p>Je "
+"couvre aussi un peu la technologie"
+
+#: templates/tutorials.html:70
+msgid "Lora_tutorial"
+msgstr "tutoriel_LoRa"
+
+#: templates/tutorials.html:73
+msgid ""
+"technology to sample real-time data. Again, I am not an expert on those "
+"topics, but I have learned a few lessons by trial and errors. If you happen "
+"to be an expert or just better than me with those technologies and "
+"programming in general, feel free to"
+msgstr ""
+"pour échantillonner des données en temps réel. Je ne suis pas un expert sur "
+"le sujet, mais j’ai appris quelques leçons par essai et erreur. </p> <p> Si "
+"vous êtes un expert ou juste meilleur que moi avec ces technologies et la "
+"programmation en général, n’hésitez pas à"
+
+#: templates/tutorials.html:80
+msgid "contact me"
+msgstr "me contacter"
+
+#: templates/tutorials.html:82
+msgid ""
+"I will improve those sections based on your comments to help everyone who is "
+"facing those challenges. You can also contact me if you have questions "
+"regarding the content that would be unclear to you."
+msgstr ""
+"Je vais améliorer ces sections basées sur votre rétroaction pour en faire "
+"profiter tous ceux qui doivent affronter les mêmes défis. Vous pouvez aussi "
+"me contacter si vous avez des questions sur des sections qui ne sont pas "
+"claires pour vous. "
+
+#: templates/vulnerability_essay.html:13
+msgid "Summary and full master's essay on vulnerability"
+msgstr "Sommaire et rapport complet de mon essai sur la vulnérabilité"
+
+#: templates/vulnerability_essay.html:19
+msgid "Vulnerability assesment essay"
+msgstr "Essai sur le calcul de la vulnérabilité"
+
+#: templates/vulnerability_essay.html:38
+msgid "This essay has been completed under the supervision of"
+msgstr "Cet essai a été complété sous la supervision de"
+
+#: templates/vulnerability_essay.html:42
+msgid ""
+"from Bishop’s University for my master’s in environment at the Université de "
+"Sherbrooke."
+msgstr ""
+"de l'Université Bishop's pour ma maîtrise en environnement à l'Université de "
+"Sherbrooke."
+
+#: templates/vulnerability_essay.html:47
+msgid "The full essay is only available in French"
+msgstr " "
+
+#: templates/vulnerability_essay.html:56
+msgid ""
+"In order to decrease the deleterious impacts of climate change on vulnerable "
+"communities, it is essential to well quantify this phenomenon to adopt the "
+"appropriate strategies. A lot of adaptation plans to climate change rely on "
+"matrices to establish vulnerability, but those are succinct and lack "
+"precision. This assessment can be optimized with an approach that combines "
+"geographic information systems and a principal component analysis. The heat "
+"wave hazard and its consequences on public health has been chosen to study "
+"the equation V&nbsp=&nbspS&nbsp–&nbspAC, where V is the vulnerability, S the "
+"sensitivity and AC the adaptive capacity. </p> <p> This essay has developed "
+"a vulnerability assessment based on 14 sensitivity indicators split into 4 "
+"components that are weighted. The results are grouped by the Jenks Natural "
+"Breaks method. The adaptive capacity is based on a general equation that "
+"combine sensitivity indicators and their impact on the community. This "
+"approach has been compared to the Atlas de la vulnérabilité, a project by "
+"Université Laval researchers. Their method relies on 13 indicators of "
+"sensitivity split in 4 components that are not weighted. The results are "
+"grouped by the quintile method. The adaptive capacity is based on 7 "
+"indicators split in 2 components. </p> <p> Unfortunately, the lack of "
+"evidence-based data complicated the concept of a standard equation. "
+"Therefore, due to a lack of clear relationship between mortality, morbidity "
+"and various indicators of vulnerability, it is impossible to underline an "
+"optimal approach. It is recommended for most organizations that create "
+"adaptation plans to rely on the Atlas de la vulnérabilité, because it’s a "
+"turnkey solution with a solid scientific basis. For those who need a "
+"personalize assessment, an exhaustive approach is proposed. Finally, some "
+"food for thought is proposed to researchers to deepen the knowledge on "
+"vulnerability assessment that relies on expert opinion or studies with "
+"limited statistical power. </p> <p> Notwithstanding those obstacles, it "
+"remains a priority that politicians and managers act quickly in regard to "
+"public health and climate change by adopting no-regret strategies. The "
+"absence of a non-equivocal scientific literature is not a pretext for "
+"inaction."
+msgstr ""
+"Afin d’atténuer les impacts délétères des changements climatiques sur les "
+"communautés vulnérables, il est essentiel de bien quantifier le phénomène "
+"pour adopter les stratégies appropriées. De nombreux plans d’adaptation aux "
+"changements climatiques s’appuient sur des matrices pour établir la "
+"vulnérabilité, mais ces dernières sont sommaires et manquent de précision. "
+"Cette évaluation peut être optimisée avec une approche qui combine les "
+"systèmes d’information géographique et une analyse en composante principale. "
+"L’aléa des vagues de chaleur et ses conséquences sur la santé publique a été "
+"choisi pour étudier l’équation V = S - CA, où V est la vulnérabilité, S la "
+"sensibilité et CA la capacité d’adaptation (ou la capacité à faire face).</"
+"p> <p> Le présent essai a développé un calcul de vulnérabilité avec 14 "
+"indicateurs de sensibilité divisés en 4 composantes qui sont pondérées. Les "
+"résultats sont regroupés par la méthode du Jenks Natural Breaks. La capacité "
+"d’adaptation se base sur une équation générale qui lie les indicateurs de "
+"sensibilité et leurs impacts sur la communauté. Cette approche a été "
+"comparée avec celle de l’Atlas de la vulnérabilité, un projet conçu par des "
+"chercheurs de l’Université Laval. Leur méthode repose sur 13 indicateurs de "
+"sensibilité divisés en 4 composantes qui ne sont pas pondérées. Les "
+"résultats sont regroupés par la méthode des quintiles. La capacité à faire "
+"face se base sur 7 indicateurs qui sont divisés en 2 composantes. </p> "
+"<p>Malheureusement, le manque de données probantes complexifie la conception "
+"d’un calcul standardisé. Ainsi, en l’absence d’une relation claire entre la "
+"mortalité, la morbidité et les divers indicateurs de la vulnérabilité, il "
+"est impossible de déterminer une approche optimale. Il est recommandé pour "
+"la majorité des organisations qui élaborent des plans d’adaptation de se "
+"fier à l’Atlas de la vulnérabilité, puisque c’est un outil clé en main avec "
+"une solide base scientifique. Pour celles qui nécessitent un calcul "
+"personnalisé, une démarche exhaustive est proposée. Enfin, des pistes de "
+"réflexion sont lancées aux chercheurs afin d’approfondir les connaissances "
+"sur les équations de vulnérabilité qui reposent principalement sur des avis "
+"d’experts et des études avec une puissance statistique limitée. </p> <p> "
+"Nonobstant ces obstacles, il demeure primordial que les politiciens et les "
+"gestionnaires agissent rapidement à l’égard de la santé publique et des "
+"changements climatiques, notamment en adoptant des mesures de type « sans "
+"regret ». L’absence d’une littérature scientifique sans équivoque ne saurait "
+"être un prétexte à l’inaction."
+
+#: templates/vulnerability_essay.html:93
+msgid ""
+"A big thanks to every teachers at the CUFE and at Bishop's microprogram on "
+"climate change, as well as everyone who works there. This essay would not "
+"have been possible without their tremendous support."
+msgstr ""
+"Un gros merci à tous les enseignants du CUFE et du microprogramme sur les "
+"changements climatiques de l'Université Bishop's, ainsi qu'à tous ceux qui y "
+"travaillent. Cet essai n'aurait pas été possible sans leur immense soutien."

@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        Magog, Université de Sherbrooke, climate change, vulnerability, sensitivity, adaptive capacity,
+        adaptation, geoadaptation, geomatics, GIS, public health, adaptation plan
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        Overview of the climate change adaptation plan section.
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block title %}
+    {% translate "Climate change adapation plans (CCAP)" %}
+{% endblock %}
+
+{% block head %}
+<a href="{% translate "CCAP" %}" class="no-decoration">
+    <div class="header" id="ccap-header">
+            <div class="section-text-title">
+                <h1><span>{% translate "Climate change adaptation plans (CCAP)" %}</span></h1>
+            </div>
+    </div>
+</a>
+{% endblock %}
+
+{%  block content %}
+<div class="main-content-title">
+    <h1>{% translate "CCAP overview" %}</h1>
+</div>
+<div class="main-content-no-border">
+    <p>
+        {% blocktranslate trimmed %}
+            Climate change adaptation plans (CCAP) are essential to be ready for what is to come in the next decades.
+            Unfortunately, these require a lot of monetary and human resources to be individualized on a regional scale.
+        {% endblocktranslate %}
+    </p>
+            <div class="center container image-frame">
+                <img src="{% static "img/village.jpg" %}">
+            </div>
+    <p>
+            {% translate "" context "Le" %}
+            <a href="{% translate "Magog_ccap" %}">{% translate "Magog's climate change adaptation plan" %}</a>
+
+        {% blocktranslate trimmed %}
+            is a good place to start to initiate the reflexion. However, this one is far
+            from perfect and more research is needed to improve this approach, especially the vulnerability
+            assessment and the quantification of the adaptive capacity.
+    </p>
+    <p>
+            My
+        {% endblocktranslate %}
+
+            <a href="{% translate "Vulnerability_essay" %}">{% translate "master's essay" %}</a>
+
+        {% blocktranslate trimmed %}
+            helps to familiarize with those notions and understand the challenge to assess vulnerability. I am
+            currently working on a PhD that combines artificial intelligence and geographic information systems (GIS)
+            (more details to come).
+    </p>
+    <p>
+            However, a few universal findings came out of this approach. The
+            <span class="h-text">protection of natural environments</span> and
+            <span class="h-text">green infrastructure</span> are
+            <span class="h-text">no regrets strategies</span> that are essential to successfully
+            adapt.  Indeed, the benefits of ecosystem services render by <span class="h-text">a healthy biodiversity</span>
+            confer the best cost-effective ratio in the long run.
+    </p>
+            {% endblocktranslate %}
+
+            <div class="center container image-frame">
+                <img src="{% static "img/go-turtles.jpg" %}">
+            </div>
+
+            {% blocktranslate trimmed %}
+    <p>
+            A deep reflexion is essential in regards of territory planning that are generally led by immediate
+            monetary consideration. If this strategy offers a short-term illusion of progress, it has been proven
+            extremely harmful in the long term. We only need to look at all the current problems of urban heat
+            islands, erosion and floods, as well as the bad quality of water and air in our cities that result of planning
+            mistakes from the 20th century.
+    </p>
+    <p>
+            It is imperative that we escape this logic if we want to have a chance
+            to adapt to a climate that has nothing to do with the last century.
+        {% endblocktranslate %}
+
+    </p>
+</div>
+{%  endblock %}
+
+{% block footer %}
+    <div class="footer">
+    </div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        LoRa, LoRaWan, MQTT, The Thing Stack, TTS, The Thing Network, TTN, temperature, humidity, sensors, gateway,
+        postgreSQL
+    {% endblocktranslate %}
+{% endblock %}
+
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        Tutorial on how to set up a LoRa networks from the sensors to the database using MQTT protocol.
+    {% endblocktranslate %}
+{% endblock %}
+
+
+{% block title %}
+    {% translate "LoRa tutorial" %}
+{% endblock %}
+
+
+{% block head %}
+<a href="{% translate "Tutorials" %}" class="no-decoration">
+    <div class="header" id="tutorial-header" >
+            <div class="section-text-title">
+                <h1><span>{% translate "Tutorials" %}</span></h1>
+            </div>
+    </div>
+</a>
+{% endblock %}
+
+
+{%  block content %}
+    <div class="main-content-title">
+        <h1>{% translate "LoRa, LoRaWan and MQTT" %}</h1>
+    </div>
+<div class = "main-content-no-border">
+    <p>
+        {% blocktranslate trimmed %}
+            <p>
+            I am a bit short on time right now, so I don't have time to write an extensive tutorial (but it will come!).
+            In the meantime, here are a couple of key points that I learned by trials and errors:
+            <ul>
+            <li>
+                Buildings make a huge difference on your range. Even if it says it can go a few kilometres in
+                the open, don't expect more than 500 metres in an urban setting in the best case scenario.
+            </li>
+            <li>
+                Concrete or brick buildings have a significant impact on the range as well. Some of my sensors can't
+                reach more than 200 metres because of brick walls in the way. By opposition, my best range is 450 metres with
+                a direct line of sight through a window. Knowing this, an outdoor gateway with a roof access might be
+                your best bet to have a good 360 degrees range.
+            </li>
+            <li>
+                If you are near a workplace that uses radio to communicate (like the public works building in Magog City),
+                it can mess badly with the signal. This is the reason why on workdays between 7&nbspAM to 5&nbspPM, my readings are
+                inconsistent. I am currently working on a solution to fix this.
+            </li>
+            </ul>
+
+            </p>
+        {% endblocktranslate %}
+    </p>
+</div>
+{%  endblock %}
+
+
+{% block footer %}
+    <div class="footer">
+    </div>
+{% endblock %}

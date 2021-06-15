@@ -1,0 +1,329 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        Magog, Université de Sherbrooke, climate change, vulnerability, sensitivity, adaptive capacity,
+        adaptation, geoadaptation, geomatic, GIS, public health, urban heat island, Espace Saint-Luc
+    {% endblocktranslate %}
+{% endblock %}
+
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        Overview of the urban heat island monitoring project in Magog at Espace Saint-Luc
+    {% endblocktranslate %}
+{% endblock %}
+
+
+{% block title %}
+    {% translate "UHI monitoring" %}
+{% endblock %}
+
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/magog_uhi.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+{% endblock %}
+
+
+{% block head %}
+<a href="{% translate "Research" %}" class="no-decoration">
+    <div class="header" id="research-header">
+            <div class="section-text-title">
+                <h1><span>{% translate "Research" %}</span></h1>
+            </div>
+    </div>
+</a>
+{% endblock %}
+
+{% block content %}
+<div class="main-content-title">
+    <h1>{% translate "Urban heat islands monitoring at Espace Saint-Luc in Magog" %}</h1>
+</div>
+
+<div class="magog-uhi-content">
+<div class="d-flex align-items-baseline">
+    <div class="col-xl-4">
+    </div>
+    <div class="col-xl-4 text-center">
+        <h2 class="h-text">{% translate "Monitoring dashboard" %}</h2>
+        <noscript>
+            <p>
+                {% blocktranslate trimmed %}
+                    The dashboard and the carousel for the site photos require JavaScript to work. Please, turn it on if
+                    you want to navigate on this page.
+                {% endblocktranslate %}
+            </p>
+        </noscript>
+    </div>
+    <div class="col-xl-4 text-end" id="EC_widget">
+        <iframe
+                title="Environment Canada Weather" width="300px" height="200px"
+                src="https://weather.gc.ca/wxlink/wxlink.html?cityCode=qc-83&amp;lang={% translate "e" %}"
+                allowtransparency="true" frameborder="0" sandbox="allow-scripts allow-popups">
+        </iframe>
+    </div>
+</div>
+    <form action= "magog_uhi.html" method="post">
+    {% csrf_token %}
+        <div class="row" id="dashboard">
+            <div class="col-xl-6 px-4">
+                <div class="row justify-content-center text-center" id="map_block">
+                        <span id="invalidDate" class="justify-content-start">
+                            {% blocktranslate trimmed %}
+                            Please select a date between {{ data.first_day }} and {{ data.last_day }}
+                            {% endblocktranslate %}
+                        </span>
+                    <div class="row justify-content-start my-1 uhi_menu">
+                        <div class="col-md-auto my-1 uhi_selector">
+                             <div class='input-group'>
+                                 <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputDate">Date</label>
+                                </div>
+                                <input type="date" id="inputDate" min={{ data.first_day }} max={{ data.last_day }} value={{ data.last_day }} autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-md-auto my-1 uhi_selector">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputTime">{% translate "Time" %}</label>
+                                </div>
+                                <select class="custom-select" id="inputTime" name="time_selector" autocomplete="off">
+                                    {%  for time in data.times_list %}
+                                    <option value={{ time }}>{{ time }}:00</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-auto my-1 uhi_selector">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputColor">{% translate "Colour" %}</label>
+                                </div>
+                                <select class="custom-select" id="inputColor" name="color_selector" autocomplete="off">
+                                    {%  for value_color, label_color in data.color.items %}
+                                    <option value={{ value_color }}>{{ label_color }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-auto my-1 uhi_selector">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="bg-slider">{% translate "Opacity" %}</label>
+                                </div>
+                                <div id="bg-slider">
+                                    <input type="range" min="0" max="100" step="1" id="opacitySlider" value="75" autocomplete="off">
+                                    <output for="opacitySlider" id="opacityValue">75 %</output>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="loadingLayer">
+                        <div class="justify-content-center" id="loadingLabel">
+                            {% translate "Loading layer" %}
+                        </div>
+                    </div>
+                    <div class="row justify-content-start my-1 d-flex" id="map">
+                       {{ data.magog_map|json_script:"magog_map" }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 px-4">
+                <div class="row justify-content-center text-center" id="stats_widget">
+                    <div class="row" >
+                        <div class="col">
+                            <h6><b>{% translate "Temperature of each area for the selected layer (number of sensors)" %}</b></h6>
+                        </div>
+                    </div>
+                    <div class="row pt-2" id="stats_table">
+                        <table>
+                            <tr>
+                                <th id="param"></th>
+                                <th id="r100m">0 - 100 m (5)</th>
+                                <th id="r200m">100 - 200 m (2)</th>
+                                <th id="r300m">200 - 300 m (2)</th>
+                                <th id="r400m">300 - 400 m (1)</th>
+                            </tr>
+                            <tr>
+                                <td class="max_stats" id="param_max"><b>Max</b></td>
+                                <td class="max_stats" id="t_max_100m">{{data.t_max_100m }}</td>
+                                <td class="max_stats" id="t_max_200m">{{data.t_max_200m }}</td>
+                                <td class="max_stats" id="t_max_300m">{{data.t_max_300m }}</td>
+                                <td class="max_stats" id="t_max_400m">{{data.t_max_400m }}</td>
+                            </tr>
+                            <tr>
+                                <td class="avg_stats" id="param_avg"><b>Avg</b></td>
+                                <td class="avg_stats" id="t_avg_100m">{{data.t_avg_100m }}</td>
+                                <td class="avg_stats" id="t_avg_200m">{{data.t_avg_200m }}</td>
+                                <td class="avg_stats" id="t_avg_300m">{{data.t_avg_300m }}</td>
+                                <td class="avg_stats" id="t_avg_400m">{{data.t_avg_400m }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" id="tabs-widget">
+                    <div id="tabs">
+                        <div id="daily_max_graph">
+                            <img class="max-expand" src="{{ data.daily_max_graph }}">
+                        </div>
+                        <div id="daily_avg_graph">
+                            <img class="max-expand" src="{{ data.daily_avg_graph}}">
+                        </div>
+                        <div id="monthly_max_graph">
+                            <img class="max-expand" src="{{ data.monthly_max_graph }}">
+                        </div>
+                        <div id="monthly_avg_graph">
+                            <img class="max-expand" src="{{ data.monthly_avg_graph }}">
+                        </div>
+                        <div id="help">
+                            <div id="dashboard-help-list">
+                            <p>
+                                {% blocktranslate trimmed %}
+                                <li >Select a date and a time in the bar above the map. The default value is the latest
+                                    temperature sent by the sensors.</li>
+                                <li>If the time you want isn't available, it might be due to a sensor failure. Look at the
+                                {% endblocktranslate %}
+
+                                    <a href="{% translate "LoRa_tutorial" %}">{% translate "LoRa" %}</a>
+
+                                {% blocktranslate trimmed %}
+                                section for more info.</li>
+                                <li>The colour and the opacity is only for the visual effect, it doesn't change the values
+                                    or the analysis.</li>
+                                <li>You can toggle the layers on and off with the icon in the top right corner of the map.</li>
+                                <li>You can zoom in and out of the map with the wheel of your mouse or the icon in the
+                                    top left corner of the map.</li>
+                                {% endblocktranslate %}
+                            </p>
+                            </div>
+                        </div>
+                        <div id="dashboard-tab-list">
+                            <ul>
+                                <li><a href="#daily_max_graph">{% translate "Hourly max T" %}</a></li>
+                                <li><a href="#daily_avg_graph">{% translate "Hourly avg T" %}</a></li>
+                                <li><a href="#monthly_max_graph">{% translate "Daily max T" %}</a></li>
+                                <li><a href="#monthly_avg_graph">{% translate "Daily avg T" %}</a></li>
+                                <li><a href="#help">{% translate "Help" %}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class = "main-content-center">
+    <p>
+        {% blocktranslate trimmed %}
+            This monitoring project, financed by Climat Municipalité 2, is part of the greening of the
+        {% endblocktranslate %}
+
+            <a href="https://www.ville.magog.qc.ca/ville-de-magog/espace-saint-luc/">{% translate "520 rue Saint-Luc in Magog" %}</a>.
+
+        {% blocktranslate trimmed %}
+            The first phase that unfolds in 2021 consists to decontaminate the site, carry out public
+            consultations and work with various stakeholders to create the plans.
+    </p>
+    <p>
+            If everything goes well, works should start in 2022 and end by 2023. A significant tree plantation covering
+            <span class="h-text">20 000 m<sup>2</sup></span> will provide a cooling island directly
+            on site and in the nearing neighborhood.
+    </p>
+    <p>
+            In order to measure with precision this cooling effect, 10 sensors using the
+            {% endblocktranslate %}
+
+            <a href="{% translate "LoRa_tutorial" %}">{% translate "LoRa" %}</a>
+
+            {% blocktranslate trimmed %}
+            technology have been installed in various places to provide real-time data that you can look at in the
+            dashboard above. This project will continue beyond the end of the works, because as trees will mature,
+            the cooling effect should increase. Researchers from Université de Sherbrooke, will make an in-depth
+            analysis of that data. Pictures of the site evolution are below.
+        {% endblocktranslate %}
+    </p>
+</div>
+<div class="magog-uhi-content">
+        <h2 class="center h-text">{% translate "Spring 2021" %}</h2>
+    <div id="carouselSpring2021" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselSpring2021" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselSpring2021" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselSpring2021" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselSpring2021" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="{% static  "/img/year1South.jpg"%}" class="d-block w-100" alt="South Area">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><b>{% translate "South Area" %}</b></h5>
+                    <p>{% translate "Before the start of the project" %}</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{% static  "/img/year1North.jpg"%}" class="d-block w-100" alt="North Area">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><b>{% translate "North Area" %}</b></h5>
+                    <p>{% translate "Before the start of the project" %}</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{% static  "/img/year1West.jpg"%}" class="d-block w-100" alt="West Area">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><b>{% translate "West Area" %}</b></h5>
+                    <p>{% translate "Before the start of the project" %}</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{% static  "/img/year1East.jpg"%}" class="d-block w-100" alt="East Area">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><b>{% translate "East Area" %}</b></h5>
+                    <p>{% translate "Before the start of the project" %}</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSpring2021" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselSpring2021" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="footer text-center">
+    <h4 id="h-text">{% translate "Partner organizations for this project" %}</h4>
+    <p>{% translate "A big thanks to Magog City and everyone who works there. This project would not have been possible without their tremendous support." %}</p>
+    <p>
+        <a href="https://www.usherbrooke.ca/"><img src="{% static 'img/UdeS_logo_216_68.png' %}" alt="Logo Université de Sherbrooke" width="216" height="68"></a>
+        <a href="https://www.ville.magog.qc.ca/"><img src="{% static 'img/Magog_logo_267_110.png' %}" alt="Logo Ville de Magog" width="267" height="110"></a>
+        <p>
+            {% blocktranslate trimmed %}
+                This project has received a grant from Climat municipalités - Phase 2 from the Quebec government
+                and meet the objectives for the 2030 Plan for a Green Economy.
+            {% endblocktranslate %}
+        </p>
+        <a href="https://www.environnement.gouv.qc.ca/programmes/climat-municipalites2/index.htm"><img src="{% static 'img/MELCC_logo_210_100.png' %}" alt="Logo MELCC" width="210" height="100"></a>
+    </p>
+</div>
+
+<!-- This hidden div is a trick to get the dynamic URL of the page (/fr/ or /en/) to be able to retrieve it in
+the javascript file. Django template doesn't work in external JS files and for security reasons, leaving JS script
+in HTML file is considered a bad practice. -->
+<div id="dynamic_url_uhi" data-url="{% url "Magog_uhi" %}"></div>
+{% endblock %}
+
+{% block custom_script %}
+
+<script nonce="{{ NONCE }}" src="{%  static 'js/jquery-ui.min.js' %}"></script>
+<script nonce="{{ NONCE }}" src="{%  static 'js/magog_uhi.js' %}"></script>
+
+{% endblock %}
+
