@@ -3,7 +3,7 @@ branca==0.4.2
 certifi==2020.12.5
 chardet==4.0.0
 cycler==0.10.0
-Django==3.2.2
+Django==3.2.4
 django-csp==3.7
 django-ranged-response==0.2.0
 django-ratelimit==3.0.1
