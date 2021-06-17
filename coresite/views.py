@@ -31,7 +31,7 @@ from csp.decorators import csp_exempt
 
 # Use of a rate limit to avoid a flooding of requests to the server. A human user should not exceed 30 requests per
 # minutes with a normal use.
-@ratelimit(key='ip', method='POST', rate='30/m', block=True)
+@ratelimit(key='header:x-real-ip', method='POST', rate='30/m', block=True)
 @csp_exempt
 def magog_uhi(request):
     if request.method == "POST":
@@ -126,7 +126,7 @@ def magog_uhi(request):
 # Use of a a rate limit to avoid spamming in combinaison with the recaptcha. The rate has been set to 3 requests
 # per hour. The method is specify to POST, because we don't want to limit the access to the page, only the POST
 # request following the push of the submit button by the user.
-@ratelimit(key='ip', method='POST', rate='3/h')
+@ratelimit(key='header:x-real-ip', method='POST', rate='3/h')
 def contact_view(request):
 
     # We test the condition of the rate limit. If true, we return a page without the form to inform the user that we

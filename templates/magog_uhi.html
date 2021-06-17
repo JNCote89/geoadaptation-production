@@ -72,8 +72,8 @@
             <div class="col-xl-6 px-4">
                 <div class="row justify-content-center text-center" id="map_block">
                         <span id="invalidDate" class="justify-content-start">
-                            {% blocktranslate trimmed %}
-                            Please select a date between {{ data.first_day }} and {{ data.last_day }}
+                            {% blocktranslate trimmed with first_day=data.first_day last_day=data.last_day %}
+                            Please select a date between {{ first_day }} and {{ last_day }}
                             {% endblocktranslate %}
                         </span>
                     <div class="row justify-content-start my-1 uhi_menu">

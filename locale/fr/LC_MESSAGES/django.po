@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 17:52-0400\n"
+"POT-Creation-Date: 2021-06-17 12:26-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: coresite/CreateMap.py:59
+#: coresite/CreateMap.py:60
 msgid "Interpolation scale for temperature"
 msgstr "Échelle d'interpolation des températures"
+
+#: coresite/CreateMap.py:194 coresite/CreateMap.py:210
+msgid "No data for this day, please select another one"
+msgstr "Aucune donnée pour cette journée, SVP en choisir une autre"
 
 #: coresite/CreateWidget.py:138
 #, python-brace-format
@@ -106,15 +110,16 @@ msgid "Vulnerability_essay"
 msgstr "Essai_vulnerabilite"
 
 #: geoadaptation/urls.py:62 templates/base.html:90 templates/base.html:92
-#: templates/django_tutorial.html:26 templates/home.html:62
-#: templates/home.html:65 templates/lora_tutorial.html:30
+#: templates/django_tutorial.html:23 templates/django_tutorial.html:26
+#: templates/home.html:62 templates/home.html:65
+#: templates/lora_tutorial.html:27 templates/lora_tutorial.html:30
 #: templates/tutorials.html:21 templates/tutorials.html:25
 #: templates/tutorials.html:28
 msgid "Tutorials"
 msgstr "Tutoriels"
 
 #: geoadaptation/urls.py:63 templates/base.html:99 templates/magog_uhi.html:190
-#: templates/magog_uhi.html:239
+#: templates/magog_uhi.html:239 templates/tutorials.html:70
 msgid "LoRa_tutorial"
 msgstr "Tutoriel_LoRa"
 
@@ -413,10 +418,6 @@ msgstr "Django, Python, Matplotlib, Scipy, Numpy, SIG, Folium"
 msgid "Tutorial on how to create a GIS dashboard with Django and Folium."
 msgstr ""
 "Tutoriel sur comment créer des tableaux de bord SIG avec Django et Folium."
-
-#: templates/django_tutorial.html:23 templates/lora_tutorial.html:27
-msgid "Tutorial"
-msgstr "Tutoriel"
 
 #: templates/django_tutorial.html:38
 msgid ""
@@ -922,10 +923,10 @@ msgid "e"
 msgstr "f"
 
 #: templates/magog_uhi.html:75
-#, fuzzy, python-format
-#| msgid "Please select a date between %(first_day)s and %(last_day)s"
-msgid "Please select a date between %(data.first_day)s and %(data.last_day)s"
-msgstr "SVP veuillez entrer une date entre le %(first_day)s et le %(last_day)s"
+msgid "Please select a date between %(first_day)s and %(last_day)s"
+msgstr ""
+"SVP veuillez entrer une date entre le %(first_day)s et le "
+"%(last_day)s"
 
 #: templates/magog_uhi.html:103
 msgid "Colour"
@@ -1222,10 +1223,6 @@ msgstr ""
 "plusieurs autres personnes le font beaucoup mieux que moi. Je vais seulement "
 "mettre un lien vers les références que je trouve pertinentes. </p> <p>Je "
 "couvre aussi un peu la technologie"
-
-#: templates/tutorials.html:70
-msgid "Lora_tutorial"
-msgstr "tutoriel_LoRa"
 
 #: templates/tutorials.html:73
 msgid ""
