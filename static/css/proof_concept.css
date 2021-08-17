@@ -1,0 +1,118 @@
+table, th, td {
+    border : 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 6px;
+}
+
+#COVID_table_stats {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    background-color: white;
+    border-style:solid;
+	border-color:rgb(2,91,72);
+}
+
+#TCDashboardCOVID {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+	font-family: 'Lexend', sans-serif;
+	font-size: 18px;
+	line-height: 2;
+	position: relative;
+	margin-top: 24px;
+	padding-top: 24px;
+	padding-right: 12px;
+	padding-left: 12px;
+	padding-bottom: 24px;
+	margin-bottom: 24px;
+	border-bottom: 2px solid rgb(2,91,72);
+}
+
+#map_covid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    background-color: white;
+	border-style:solid;
+	border-color:rgb(2,91,72);
+    margin-top: 24px;
+    padding: 12px;
+}
+
+#button-dashboard {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    margin-top: 24px;
+    padding: 12px;
+    background-color: white;
+    border-style:solid;
+	border-color:rgb(2,91,72);
+}
+
+#randomizeData:hover {
+    background-color: forestgreen;
+}
+
+#randomizeData:focus {
+    background-color: forestgreen;
+    color: white;
+}
+
+.set-value:hover{
+    background-color: forestgreen;
+}
+
+.set-value:focus {
+    background-color: forestgreen;
+    color: white;
+}
+
+#predict {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    width: 600px;
+}
+
+#predict:hover {
+    background-color: forestgreen;
+}
+
+#predict:focus {
+    background-color: forestgreen;
+    color: white;
+}
+
+.label-button-covid {
+    font-weight: 600;
+}
+#table-content-COVID {
+	margin-left: auto;
+	margin-right: auto;
+	width: 360px;
+    text-align: left;
+}
+
+#shap-value  {
+    max-height: 400px;
+	max-width: 600px;
+	display: block;
+	object-fit: contain;
+	margin: auto;
+	padding-top: 6px;
+	padding-bottom: 18px;
+}
+
+.dashboard-explanation {
+    text-align: justify;
+}
+
+#COVID_confusion_matrix {
+    table-layout: fixed;
+    margin: auto;
+    width: 600px;
+}

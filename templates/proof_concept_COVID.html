@@ -1,0 +1,519 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang={% translate "en" %}>
+
+<head>
+
+{% block stylesheet %}
+        <link rel="stylesheet" href="{% static 'css/proof_concept.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magog_uhi.css' %}">
+{% endblock %}
+
+</head>
+
+
+<header>
+</header>
+
+<body>
+
+
+{% block head %}
+    <div class="header" id="research-header">
+            <div class="section-text-title">
+                <h1><span>{% translate "Research" %}</span></h1>
+            </div>
+    </div>
+{% endblock %}
+
+<!-- This is the block for the main contain of each template.-->
+{%  block content %}
+<form action= "proof_concept_COVID.html" method="post">
+{% csrf_token %}
+<div class="main-content-title">
+    <div>
+        <h1><span>{% translate "Preuve de concept de l'utilisation de l'IA et des SIG avec des données ouvertes sur la COVID" %}</span></h1>
+    </div>
+</div>
+<div class="main-content-top">
+    <h3 class="center subtitle">
+        Introduction
+    </h3>
+    <p>
+        {% blocktranslate trimmed %}
+        Cette preuve de concept utilise le Random Forest pour illustrer le potentiel d’une approche combinant
+        l’intelligence artificielle (IA) et les systèmes d’information géographique (SIG) pour des problématiques
+        de santé publique. Le résultat est loin d’être parfait, car les données ouvertes sur la COVID qui ont alimenté
+        le modèle manquaient de volume et de précision. Des explications seront fournies pour souligner les
+        problématiques et les correctifs à apporter pour un projet de recherche complet.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Cette technique est très peu utilisée dans la littérature, alors cela demeure un vaste champ à explorer.
+        Cependant, ces résultats préliminaires et l’étude de
+        {% endblocktranslate %}
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7862885/">Tiwari et al.,</a>
+        {% blocktranslate trimmed %}
+        laisse présager que cette approche pourrait être bénéfique pour la santé publique.
+        {% endblocktranslate %}
+    </p>
+    <p>
+       {% blocktranslate trimmed %}
+        Les prochaines sections expliquent en détail la technique utilisée pour mieux comprendre les subtilités et
+        les résultats de l’algorithme. Dans un premier temps, les données à prédire, c’est-à-dire les
+        hospitalisations reliées à la COVID par région sociosanitaire, seront analysées. Ensuite, les variables
+        pertinentes à première vue, mais non retenues pour être intégrées à l’algorithme, seront expliquées. Les
+        variables retenues seront justifiées dans la section suivante, puis la performance du Random Forest sera
+        analysée. Un exemple d’un tableau de bord dynamique permettant d’interagir avec le modèle construit suit.
+        Enfin, un parallèle avec mon projet de recherche sur les changements climatiques est présenté.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        La table des matières ci-dessous permet de sauter d’une section à l’autre et la flèche dans le bas à droite de
+        l’écran permet de remonter en haut de la page.
+        {% endblocktranslate %}
+    </p>
+
+    <ol id="table-content-COVID">
+        <li><a href="#TCDataPredict">Données à prédire</a></li>
+        <li><a href="#TCVarNotSelected">Variables intéressantes non retenues</a></li>
+        <li><a href="#TCVarSelected">Variables pertinentes retenues</a></li>
+        <li><a href="#TCRFAnalysis">Analyse de la performance du Random Forest</a></li>
+        <li><a href="#TCDashboardCOVID">Exemple de tableau de bord</a></li>
+        <li><a href="#TCResearchProjectCC">Parallèle avec mon projet de recherche sur les changements climatiques</a></li>
+    </ol>
+</div>
+<div class="main-content-top" id="TCDataPredict">
+    <h3 class="center subtitle">
+       Données à prédire
+    </h3>
+    <p>
+        {% blocktranslate trimmed %}
+        Le
+        {% endblocktranslate %}
+        <a href="https://www.donneesquebec.ca/recherche/dataset/covid-19-portrait-quotidien-des-hospitalisations">
+            {% translate "taux d’hospitalisation quotidien relié à la COVID" %}</a>
+        {% blocktranslate trimmed %}
+        du 10 avril 2020 au 14 août 2021 a été utilisé pour les 16 régions sociosanitaires les plus populeuses
+        (le Nunavik et les Terres-Cris-de-la-Baie-James ont été écartés, puisque leur réalité est totalement
+        différente du reste du Québec). Cela représente 7872 observations pour l’algorithme
+        (492 jours x 16 régions).
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Les taux d’hospitalisations variaient entre 0% et 0,064% par région. Afin d’éviter de choisir de façon
+            arbitraire un nombre de classes (par exemple, par quintile), la distribution des données a été étudiée.
+            La méthode du coude (elbow method) a permis de déterminer que 5 classes représentaient bien les données.
+            L’algorithme du Jenks Natural Breaks a permis de séparer les niveaux d’hospitalisation ainsi :
+        {% endblocktranslate %}
+        <ul>
+            {% blocktranslate trimmed %}
+            <li>Niveau 1 : 0 à 0,0034 % (4 738 région-jours)</li>
+            <li>Niveau 2 : 0,0035 à 0,010 % (2175 région-jours)</li>
+            <li>Niveau 3 : 0,011 à 0,021 % (758 région-jours)</li>
+            <li>Niveau 4 : 0,022 à 0,042% (166 régions-jours)</li>
+            <li>Niveau 5 : 0,043 à 0,064% (35 régions-jour) </li>
+            {% endblocktranslate %}
+        </ul>
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Seule la région de Montréal a atteint un niveau 5 d’hospitalisation (35 jours). Les régions du
+            Saguenay-Lac-Saint-Jean (37 jours), de Montréal (87 jours) et de Laval (42 jours) ont atteint le
+            niveau 4 au cours de la pandémie. Le Bas-Saint-Laurent, l’Abitibi-Témiscamingue, la Côte-Nord, le
+            Nord-du-Québec et la Gaspésie-Iles-de-la-Madeleine n’ont jamais dépassé le niveau 2.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Il aurait été beaucoup plus intéressant d’avoir des données plus précises (par RLS ou par aires de diffusion)
+        pour avoir une plus grande diversité d’observations, mais elles n’étaient pas disponibles à ma connaissance
+        sous format de données ouvertes.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Il est important de comprendre les données analysées pour comprendre la performance de l’algorithme développé.
+        Puisqu’une région comme l’Abitibi-Témiscamingue n’a jamais dépassé le niveau 2, il ne faut pas se surprendre
+        si l’algorithme ne prédit jamais un niveau plus élevé pour cette région. Les algorithmes d’apprentissage
+        machine et de réseaux de neurones reconnaissent des schémas qu’ils ont déjà observés.Cette subtilité doit
+        être bien comprise pour pleinement comprendre ce que l’on entend par prédiction dans le tableau de bord.
+        {% endblocktranslate %}
+    </p>
+</div>
+<div class="main-content-top" id="TCVarNotSelected">
+    <h3 class="center subtitle">
+       Variables intéressantes non retenues
+    </h3>
+        <p>
+        {% blocktranslate trimmed %}
+        Plusieurs variables en lien avec la pandémie de COVID-19 ont été explorées, mais n’ont pas été retenues
+        pour diverses raisons.
+        {% endblocktranslate %}
+        </p>
+        <p>
+        {% blocktranslate trimmed %}
+        Dans un premier temps, les
+        {% endblocktranslate %}
+        <a href="https://www.inspq.qc.ca/covid-19/donnees/ligne-du-temps">
+            {% translate "mesures sanitaires répertoriées sur la ligne du temps par l'INSPQ" %}</a>
+        {% blocktranslate trimmed %}
+        ont été intégrées aux premiers essais de modélisation. Cependant, il y avait plusieurs problèmes avec cette
+        approche. Premièrement, certaines mesures comme le port du masque ont été en vigueur pendant presque toute
+        la durée de la pandémie, ce qui occasionnait un manque d’observations sans la mesure pour que l’algorithme
+        puisse tirer des conclusions.
+        {% endblocktranslate %}
+        </p>
+        <p>
+        {% blocktranslate trimmed %}
+        D’autres mesures comme le couvre-feu n’avaient aucun lien avec les hospitalisations et l’algorithme
+        n’arrivait pas à intégrer ces paramètres. Enfin, des mesures comme la fermeture des commerces étaient
+        trop bien corrélées avec les hospitalisations et écrasaient toutes les autres variables dans le modèle.
+        En effet, cette mesure était mise en place lorsque le gouvernement craignait un débordement des hôpitaux.
+        Ainsi, cette variable a été mise de côté, car un algorithme qui reconnaît une variable étroitement corrélée
+        au phénomène étudié ne sert à rien. Il suffit à un être humain de regarder ladite variable et de tirer
+        ses propres conclusions.
+        {% endblocktranslate %}
+        </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Le
+        {% endblocktranslate %}
+        <a href="https://www.donneesquebec.ca/recherche/dataset/covid-19-portrait-quotidien-des-cas-confirmes">
+            {% translate "nombre de cas confirmés" %}</a>
+        {% blocktranslate trimmed %}
+        aurait pu être intéressant, mais puisque les données ouvertes ne permettent pas d’avoir un historique
+        par région, cette avenue n’a pas été explorée.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Le
+        {% endblocktranslate %}
+        <a href="https://www.inspq.qc.ca/covid-19/donnees/variants">
+            {% translate "taux de variants" %}</a>
+        {% blocktranslate trimmed %}
+        en circulation a aussi été analysé, mais il y avait trop peu d’observations dans le modèle pour que l’algorithme
+        puisse l'utiliser.
+        {% endblocktranslate %}
+    </p>
+        <p>
+        {% blocktranslate trimmed %}
+        Certaines données auraient aussi pu être intéressantes comme le taux de positivité ou le taux de
+        reproduction (Rt), mais les données historiques par région n’étaient pas disponibles.
+        {% endblocktranslate %}
+        </p>
+</div>
+<div class="main-content-top" id="TCVarSelected">
+    <h3 class="center subtitle">
+       Variables pertinentes retenues
+    </h3>
+    <p>
+        {% blocktranslate trimmed %}
+        Afin d’évaluer la pertinence des variables, la
+        {% endblocktranslate %}
+        <a href="https://github.com/slundberg/shap">
+            {% translate "valeur SHAP" %}</a>
+        {% blocktranslate trimmed %}
+        a été retenue. Plus la valeur est élevée, plus la variable contribue au modèle. Cela ne veut pas dire forcément
+        un lien de cause à effet, seulement que cette variable est plus ou moins significative dans le résultat final
+        pour ce modèle avec ces variables. Une valeur SHAP n’a pas de signification absolue, elle est relative aux
+        autres valeurs dans le modèle. Ainsi, les variables retenues ont été celles qui étaient les plus significatives
+        et qui impactaient le F1-Score et la précision du modèle. Si une variable pouvait être retirée du modèle sans
+        affecter la performance, elle n’était pas conservée. Un sommaire du résultat est disponible dans la figure
+        ci-bas.
+        {% endblocktranslate %}
+    </p>
+    <div class="row">
+        <img src="{% static  "/img/Shap_value_covid.png"%}" id="shape-value" alt="Shap Value COVID">
+    </div>
+    <p>
+        {% blocktranslate trimmed %}
+        La variable la plus pertinente dans tous les modèles qui ont été essayés était le taux de contacts sociaux dans
+        le dernier mois basé sur les données de
+        {% endblocktranslate %}
+        <a href="https://www.inspq.qc.ca/covid-19/donnees/connect/">
+            {% translate "l'étude CONNECT" %}</a>.
+        {% blocktranslate trimmed %}
+        Il est tout à fait logique de croire qu’une augmentation des contacts sociaux amène à une augmentation des cas
+        infectieux et le modèle suit cette logique.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Plus d'une centaines de
+        {% endblocktranslate %}
+        <a href="https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/page_Download-Telecharger.cfm?Lang=F&Tab=1&Geo1=HR&Code1=2407&Geo2=PR&Code2=24&SearchText=Region%20de%20l%27Outaouais&SearchType=Begins&SearchPR=01&B1=All&TABID=1&type=0">
+            {% translate "variables socioéconomiques du recensement de Statistique Canada de 2016" %}</a>
+        {% blocktranslate trimmed %}
+        ont été testées. Les différentes tranches d’âges ou de revenus n’ont pas été un facteur important dans le
+        présent modèle. Cela peut s’expliquer aisément. Le nombre d’observations était trop petit
+        (seulement 16 régions) pour intégrer une grande quantité de variables. Ce phénomène s’appelle le curse
+        of dimensionality. Essentiellement, utiliser plus de variables n’est pas forcément mieux pour un modèle
+        si le nombre d’observations n’est pas conséquent. Par exemple, si un modèle souhaite prédire la couleur
+        d’un objet et que nous avons des dizaines de déclinaisons (bleu pâle, bleu foncé, bleu azur, etc.), le
+        modèle va nécessiter une énorme quantité d’observation pour chaque sous-couleur. Tout rassembler sous la
+        couleur bleue serait alors une meilleure stratégie.
+        {% endblocktranslate %}
+    </p>
+    <p>
+       {% blocktranslate trimmed %}
+       C’est exactement ce qui a été fait dans ce modèle en prenant la mesure de faibles revenues pour les 65 ans et
+       plus. Cette variable s’est avérée très significative. Il est en effet logique de croire que les personnes âgées
+       sont les plus vulnérables à la maladie et que ceux avec un faible revenu ont plus de chance d’être dans un
+       environnement à risque.
+       {% endblocktranslate %}
+    </p>
+    <p>
+    La même logique a prévalu pour l’immigration récente, puisque plusieurs travailleurs de premières lignes
+    ou de salariés précaires à risque sont des immigrants.
+    </p>
+    <p>
+    Enfin, le taux de vaccination a également un impact sur la prédiction, mais moins que ce que l’on pourrait croire.
+    L’une des raisons est que peu d’observations ont été faites avec un haut taux de 2e dose (phénomène récent dans
+    l’historique pandémique). Pour ce qui est de la 1ere dose, elle a bien sûr un impact, mais les premières vagues ont
+    été maîtrisé sans avoir un haut taux de vaccination. Néanmoins, cette variable demeure pertinente pour créer un
+    tableau de bord qui englobe divers scénarios (haut taux de vaccination vs absence de vaccination). Il faut
+    cependant s’attendre à quelques imprécisions dues au faible volume de données. Cette imprécision est quantifiée à
+    la section suivante.
+    </p>
+</div>
+<div class="main-content-top" id="TCRFAnalysis">
+    <h3 class="center subtitle">
+       Analyse de la performance du Random Forest
+    </h3>
+    <p>
+        {% blocktranslate trimmed %}
+        Un réseau de neurones aurait pu être utilisé, mais puisque mon serveur n’est pas puissant, je préférais
+        alimenter le tableau de bord avec un Random Forest qui est beaucoup moins demandant en ressource une fois
+        entraînée. Cependant, pour mon projet de doctorat, un réseau de neurones sera utilisé et sera vraisemblablement
+        plus performant.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Le Random Forest (hyperparamètres : 1024 trees, 3 minimum sample splits, 1 minimum sample leaf) a été
+        entraîné avec 75 % des 7872 observations. Ce dernier a atteint une précision de 91,6 % et un F1-Score de
+        91,5 % sur les 25 % de données tests.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Puisque les classes sont fortement déséquilibrées, il ne faut pas se fier sur la précision. En effet, un
+        algorithme qui prédit toujours la classe dominante peut apparaître performant, mais n’être d’aucune utilité
+        pour détecter autre chose que la classe prépondérante. Dans le cas présent, le F1-Score de 91,5 % qui est une
+        moyenne harmonique de la précision et du rappel de chaque classe est intéressant. En effet, si seule la classe
+        dominante avait été prédite adéquatement par l’algorithme, le F1-Score aurait été médiocre. La matrice de
+        confusion ci-bas dénote une performance correcte pour l’ensemble des classes, sans être exceptionnelle. Un
+        manque d’observation explique une performance ordinaire pour les niveaux élevés d’hospitalisation.
+        {% endblocktranslate %}
+    </p>
+    <table id="COVID_confusion_matrix">
+        <tr>
+            <th>Classes</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <td>1136</td>
+            <td>41</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>56</td>
+            <td>493</td>
+            <td>9</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>8</td>
+            <td>29</td>
+            <td>138</td>
+            <td>8</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <td>4</td>
+            <td>7</td>
+            <td>0</td>
+            <td>27</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <th>5</th>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>8</td>
+        </tr>
+    </table>
+</div>
+<div id="TCDashboardCOVID">
+    <h3 class="center subtitle" >
+       Exemple de tableau de bord
+    </h3>
+    <p class="dashboard-explanation">
+        {% blocktranslate trimmed %}
+        Ce tableau de bord a été conçu avec les limites énoncées dans les sections précédentes. Il ne faut pas trop se
+        focaliser sur la précision de la prédiction, mais plutôt sur le potentiel de générer des cartes en fonction de
+        différents paramètres. Pour cet exemple, il est possible de modifier pour chaque région les taux de vaccination
+        et de contacts sociaux dans le dernier mois en déplaçant le curseur de défilement (slider). Afin d’éviter
+        d’avoir à générer différents scénarios manuellement, des boutons qui génèrent des données aléatoirement sont
+        disponibles sous le tableau. Une fois les valeurs désirées sélectionnées, il suffit de lancer la prédiction en
+        appuyant sur le bouton sous le tableau.
+        {% endblocktranslate %}
+    </p>
+    <p class="dashboard-explanation">
+        {% blocktranslate trimmed %}
+        Le résultat de la prédiction s’affiche sur la carte. Il est possible de cliquer sur le polygone de chaque
+        région pour obtenir les informations qui ont mené à la prédiction.
+        {% endblocktranslate %}
+    </p>
+    <div  id="covid_data">
+            {{ data.table|json_script:"table"}}
+    </div>
+    <div class="row" id="dashboard">
+        <table id="COVID_table_stats">
+            <tr>
+                <th>Région</th>
+                <th>Première dose de vaccin (%)</th>
+                <th>Deuxième dose de vaccin (%)</th>
+                <th>Contacts sociaux à domicile dans le dernier mois (%)</th>
+            </tr>
+        </table>
+        <div id="button-dashboard">
+            <table>
+                <tr>
+                    <th>Valeurs pour la vaccination</th>
+                    <td><button type="button" class="set-value btn btn-light" id="noVaccination">Aucune vaccination</button></td>
+                    <td><button type="button" class="set-value btn btn-light" id="lowVaccination">Faible vaccination</button></td>
+                    <td><button type="button" class="set-value btn btn-light" id="highVaccination">Vaccination élevée</button></td>
+                </tr>
+                <tr>
+                    <th>Valeurs pour les contacts sociaux</th>
+                    <td><button type="button" class="set-value btn btn-light" id="lowSocialContact">Contacts sociaux faibles</button></td>
+                    <td><button type="button" class="set-value btn btn-light" id="highSocialContact">Contacts sociaux élevés</button></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Valeurs pour l'ensemble du tableau</th>
+                    <td><button type="button" class="btn btn-light" id="randomizeData">Données aléatoires</button></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="row">
+                <button type="button" class="btn btn-light" id="predict">Lancer la prédiction</button>
+            </div>
+        </div>
+        <div class="row justify-content-start my-1 d-flex" id="map_covid">
+            {{ data.map_COVID|json_script:"map_COVID"}}
+        </div>
+    </div>
+</div>
+<div class="main-content-top" id="TCResearchProjectCC">
+    <h3 class="center subtitle">
+       Parallèle avec mon projet de recherche sur les changements climatiques
+    </h3>
+    <p>
+        {% blocktranslate trimmed %}
+        Le problème avec les données ouvertes de COVID est le faible niveau d’observation pour entraîner l’algorithme
+        (seulement 16 régions et 492 jours). L’accès aux données par RLS ou par aires de diffusion aurait produit des
+        résultats plus intéressants.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        L’avantage d’étudier les hospitalisations en fonction des données de températures estivales réside dans son
+        grand nombre d’observations dans les dernières décennies. De plus, cette problématique est relativement
+        constante dans sa physiopathologie. La pandémie actuelle offre des conditions fort variables d’une vague à
+        l’autre (variants, vaccinations, etc.), ce qui complexifie d’autant plus le travail de l’algorithme.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Un tableau de bord sur les vagues de chaleur pourrait intégrer des données météorologiques avec des plages
+        de températures variées, un simulateur en fonction de la démographie changeante (comme la proportion de
+        personnes âgées par secteurs) ou bien en fonction du couvert végétal présent. Cette approche comporte
+        plusieurs avantages :
+        {% endblocktranslate %}
+        <ul>
+            {% blocktranslate trimmed %}
+            <li>Productions d’un grand nombre de cartes en fonction de différents paramètres
+                (vs une carte unique générale de vulnérabilité)</li>
+            <li>Puisque la carte produite par l’IA utilise directement des données d’hospitalisation et de mortalité,
+                le niveau de précision est plus grand. Il n’y a pas de pertes d’information via une analyse en
+                composante principale ou de débats pour choisir des variables et leur pondération.</li>
+            <li>L’intégration d’un grand nombre de variables dont les relations ne sont pas forcément linéaires
+                est possible si les observations sont suffisantes.</li>
+            <li>Possibilité de fournir en temps réel des prédictions pour alimenter un système d’alerte. </li>
+            <li>Une fois une infrastructure mise en place (j’ai codé tout le site web seul avec des logiciels libres,
+                ce n’est ni très coûteux, ni très complexe), l’IA peut constamment s’améliorer en apprenant tous les
+                ans avec de nouvelles données. </li>
+            <li>Une meilleure compréhension des phénomènes peut en découler. Bien qu’on ne puisse pas effectuer de
+                relations de cause à effet, les patrons identifiés par l’IA permettent d’approfondir certains
+                angles qui pourraient être moins évidents de prime à bord.  </li>
+            <li>Le même principe peut s’appliquer pour un grand nombre d’aléas (inondations, allergies, feux de forêt)
+                à condition d’adapter les variables pertinentes. </li>
+            {% endblocktranslate %}
+        </ul>
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        Il y a bien évidemment des désavantages et l’IA ne peut pas remplacer les techniques traditionnelles
+        d’épidémiologie. Ce n’est d’ailleurs pas le but, l’objectif est d’être complémentaire et d’offrir un
+        outil supplémentaire à la santé publique. Notons, entres autres :
+        {% endblocktranslate %}
+    </p>
+        <ul>
+            {% blocktranslate trimmed %}
+            <li>L’algorithme ne peut pas extrapoler des données. Par exemple, un algorithme bien entraîné n’aurait pas
+                pu prédire adéquatement le nombre de morts en valeur absolue dans l’importante vague de chaleur que
+                la Colombie-Britannique a vécu cet été. Puisque les changements climatiques apporteront des évènements
+                extrêmes qui n’ont jamais été observés, seul un ordre de grandeur peut être fourni. Ceci étant dit,
+                cela demeure vrai pour n’importe quel outil qui tente d’effectuer des prédictions. L’IA possède
+                l’avantage d’être flexible et d’intégrer rapidement ces nouvelles données.  </li>
+            <li>La notion de vie privée est très importante à considérer dans une éventuelle implantation d’une
+                solution basée sur l’IA. Ma méthodologie évalue les données au niveau populationnel et n’utilise pas de
+                données qui permettent d’identifier des individus, ce qui augmente l’adhésion de la population à ce
+                type de solution.  </li>
+            <li>À ma connaissance, très peu de recherches sont effectuées pour créer des cartes de vulnérabilités
+                basées sur l’IA et les SIG. La majorité de la littérature scientifique semble s’appuyer sur les
+                analyses en composante principale pour le moment ou ne considérer qu’un seul aspect à la fois. Plus de
+                recherches sont nécessaires pour pleinement évaluer le potentiel de cette approche en contexte de
+                changements climatiques. </li>
+            {% endblocktranslate %}
+        </ul>
+</div>
+<div id="dynamic_url_covid" data-url="{% url "Proof_concept_COVID" %}"></div>
+</form>
+{%  endblock %}
+
+<!-- This is the block for the footer that is use to thank partner organizations or add details about each page -->
+{% block footer %}
+{% endblock %}
+
+<!-- Tag to allow the loading of other Javascript on other templates. -->
+{% block custom_script %}
+    <script nonce="{{ NONCE }}" src="{%  static 'js/proof_concept.js' %}"></script>
+{% endblock %}
+
+</body>
+</html>
