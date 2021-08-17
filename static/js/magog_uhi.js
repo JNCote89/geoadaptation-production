@@ -1,15 +1,15 @@
-/* This script is used only with the magog_uhi.html template */
-
-/* Function to manage the JQuery UI tabs for the graphs widget */
-$(function () {
-    $("#tabs").tabs({"active":"daily_graph", heightStyle:"auto"});
-});
+/* This script is used only with the proof_concept_COVID template */
 
 /* Script to generate the Folium IFrame from the JSon returned in the magog_uhi template. The goal is to avoid
 * using the Django tag {{ map|safe}} for security reasons */
 map_iframe = JSON.parse(document.getElementById('magog_map').textContent);
 document.getElementById('map').innerHTML = map_iframe
 document.getElementById('map').firstElementChild.setAttribute("sandbox", "")
+
+/* Function to manage the JQuery UI tabs for the graphs widget */
+$(function () {
+    $("#tabs").tabs({"active":"daily_graph", heightStyle:"auto"});
+});
 
 /*Function to manage the opacity slider and change it's value in real time */
 $('#opacitySlider').on('input',function (){

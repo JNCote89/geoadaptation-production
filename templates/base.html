@@ -84,6 +84,10 @@ django-admin compilemessages to apply those translatations. The doc give all the
                 <a href="{% translate "Vulnerability_essay" %}"
                    class="dropdown-item">{% translate "Master's essay on heat waves vulnerability assesment" %}</a>
             </li>
+            <li>
+                <a href="{% translate "Proof_concept_COVID" %}"
+                   class="dropdown-item">{% translate "PhD project with AI and GIS for public health" %}</a>
+            </li>
         </ul>
             </li>
             <li class="nav-item dropdown">
@@ -145,6 +149,8 @@ depending on the section of the site the user is on, the tag is left empty to be
 <!-- This is the block for the main contain of each template.-->
 {%  block content %}
 {%  endblock %}
+
+<bouton onclick="topFunction()" id="ScrollTopBtn">&#8593;</bouton>
 
 <!-- This is the block for the footer that is use to thank partner organizations or add details about each page -->
 {% block footer %}

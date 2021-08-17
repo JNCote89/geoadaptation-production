@@ -64,4 +64,5 @@ urlpatterns += i18n_patterns (
     path(_('Django_tutorial'), TemplateView.as_view(template_name="django_tutorial.html"), name='Django_tutorial'),
     path(pgettext_lazy(u'url', u'About'), views.contact_view, name='About'),
     path(pgettext_lazy(u'url', u'Email_sent'), views.email_sent, name='Email_sent'),
+    path(_('Proof_concept_COVID'), views.proof_concept_COVID, name='Proof_concept_COVID'),
 )

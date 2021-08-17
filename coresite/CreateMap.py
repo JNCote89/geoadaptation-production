@@ -1,4 +1,6 @@
 # Import to connect with the databases
+import pandas as pd
+
 from .models import magog_sensor, magog_uhi
 
 # Import a custom script to interpolate data
@@ -7,10 +9,14 @@ from .Interpolate import interpolate
 # Import a custom script to create b64 images
 from .CreateB64Img import create_b64_plt
 
+from .MachineLearningAlg import rf_COVID
+
 # Import to create a legend
 from matplotlib.image import BboxImage
 from matplotlib.transforms import Bbox, TransformedBbox
 from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
 from matplotlib import cm
 
 # Import to ease array manipulation
@@ -23,6 +29,11 @@ from folium.features import DivIcon
 
 # Import to translate text
 from django.utils.translation import ugettext_lazy as _
+
+import os
+from django.conf import settings
+
+import geopandas as gpd
 
 
 # Custom function to create a legend in Folium, since there are no function in Folium to do so (as of version 0.12.1).
@@ -114,13 +125,13 @@ def create_map_frame(num_date, num_time, opacity, color):
             # temperature table to get the actual temperature in the previous hour choose by the user.
             for device in magog_sensor.objects.values_list('device_id'):
                 lat = \
-                magog_sensor.objects.filter(device_id__iexact='{device_id}'.format(device_id=device[0])).values(
-                    "web_lat")[
-                    0]["web_lat"]
+                    magog_sensor.objects.filter(device_id__iexact='{device_id}'.format(device_id=device[0])).values(
+                        "web_lat")[
+                        0]["web_lat"]
                 lon = \
-                magog_sensor.objects.filter(device_id__iexact='{device_id}'.format(device_id=device[0])).values(
-                    "web_lon")[
-                    0]["web_lon"]
+                    magog_sensor.objects.filter(device_id__iexact='{device_id}'.format(device_id=device[0])).values(
+                        "web_lon")[
+                        0]["web_lon"]
                 temp = magog_uhi.objects.filter(device_id__iexact='{device_id}'.format(device_id=device[0]),
                                                 date__exact=num_date,
                                                 time__hour__gt=int(num_time) - 1,
@@ -130,9 +141,6 @@ def create_map_frame(num_date, num_time, opacity, color):
                 lat_list.append(float(lat))
                 lon_list.append(float(lon))
                 temp_list.append(float(temp))
-
-
-
 
             # Call the function to interpolate from a custom script from Interpolate.py. It returns a grid with the
             # temperature that can be displayed as an image.
@@ -195,3 +203,92 @@ def create_map_frame(num_date, num_time, opacity, color):
             f = m._repr_html_()
 
             return f
+
+
+def create_legend_COVID():
+    fig, ax = plt.subplots()
+    fig.set_figheight(4)
+    fig.set_figwidth(2)
+
+    plt.title("Légende", fontdict={'fontsize': 24, 'fontweight': "bold"})
+
+    ax.add_patch(patches.Rectangle((0, 0), 1, 1.5, facecolor=(26 / 255, 150 / 255, 65 / 255, 0.8), fill=True))
+    plt.text(1.25, 0.75, "Niveau d'hospitalisation 1", fontsize=18)
+
+    ax.add_patch(patches.Rectangle((0, 2), 1, 1.5, facecolor=(166 / 255, 217 / 255, 106 / 255, 0.8), fill=True))
+    plt.text(1.25, 2.75, "Niveau d'hospitalisation 2", fontsize=18)
+
+    ax.add_patch(patches.Rectangle((0, 4), 1, 1.5, facecolor=(244 / 255, 252 / 255, 3 / 255, 0.8), fill=True))
+    plt.text(1.25, 4.75, "Niveau d'hospitalisation 3", fontsize=18)
+
+    ax.add_patch(patches.Rectangle((0, 6), 1, 1.5, facecolor=(253 / 255, 174 / 255, 97 / 255, 0.8), fill=True))
+    plt.text(1.25, 6.75, "Niveau d'hospitalisation 4", fontsize=18)
+
+    ax.add_patch(patches.Rectangle((0, 8), 1, 1.5, facecolor=(215 / 255, 25 / 250, 28 / 255, 0.8), fill=True))
+    plt.text(1.25, 8.75, "Niveau d'hospitalisation 5", fontsize=18)
+
+    plt.xlim([0, 2])
+    plt.ylim([0, 10])
+    plt.axis('off')
+
+    # Create a B64 image of the plot with a custom script from CreateB64Img.py
+    legend_b64 = create_b64_plt(fig, 50)
+
+    return legend_b64
+
+
+def create_map_COVID(matrix):
+    # It's easier to control the rendering of the map in the HTML file if you put it in a figure.
+    f = folium.Figure(width=850, height=600)
+    m = folium.Map(location=[47.5, -71], zoom_start=6, tiles='carto db positron').add_to(f)
+
+    RSS = gpd.read_file(os.path.join(settings.MEDIA_ROOT, 'RSS.geojson'))
+
+    rf_result = rf_COVID(matrix)
+
+    df_matrix = pd.DataFrame.from_dict(matrix)
+    df_matrix["first_dose"] = (round(100 * df_matrix["first_dose"].astype(float), 0)).astype(int).astype(str) + " %"
+    df_matrix["second_dose"] = (round(100 * df_matrix["second_dose"].astype(float), 0)).astype(int).astype(str) + " %"
+    df_matrix["CONNECT_lag"] = (round(100 * df_matrix["CONNECT_lag"].astype(float), 0)).astype(int).astype(str) + " %"
+    df_matrix["low_income"] = (round(100 * df_matrix["low_income"].astype(float), 0)).astype(int).astype(str) + " %"
+    df_matrix["immigration"] = (round(100 * df_matrix["immigration"].astype(float), 0)).astype(int).astype(str) + " %"
+
+    RSS_rf_result = RSS.merge(rf_result, on='region_id')
+    RSS_rf_result_stats = RSS_rf_result.merge(df_matrix, on='region_id')
+
+    # Working with custompane allow to control the order in which the layers are rendered via the z_index parameter.
+    # Look at the doc to get the default parameters. Here the pane is inititialized and will be used later in the
+    # ImageOverlay function.
+    folium.map.CustomPane(name='custompane', z_index=500).add_to(m)
+
+    def custom_color(x):
+        if x['properties']['Alerte'] == 1:
+            return '#1a9641'
+
+        elif x['properties']['Alerte'] == 2:
+            return '#a6d96a'
+
+        elif x['properties']['Alerte'] == 3:
+            return '#f4fc03'
+
+        elif x['properties']['Alerte'] == 4:
+            return '#fdae61'
+        else:
+            return '#d7191c'
+
+    folium.GeoJson(data=RSS_rf_result_stats,
+                   style_function=lambda x: {'fillColor': custom_color(x), 'fillOpacity': 0.8, 'color': 'black',
+                                             'weight': 1, 'opacity': 0.4}, name="Niveaux d'hospitalisation",
+                   ).add_child(folium.features.GeoJsonPopup(
+        fields=['Etiquette', 'Alerte', 'first_dose', 'second_dose', 'CONNECT_lag', 'low_income', 'immigration'],
+        aliases=["Région", "Niveau d'hospitalisation", "Première dose", "Deuxième dose", "Contacts sociaux",
+                 "Faibles revenus (65 ans et +)", "Immigration récente"])).add_to(m)
+
+    folium.LayerControl().add_to(m)
+
+    legend = create_legend_COVID()
+    folium.plugins.FloatImage(legend, bottom=5, left=65).add_to(m)
+
+    f = m._repr_html_()
+
+    return f

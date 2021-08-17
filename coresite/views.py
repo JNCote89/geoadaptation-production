@@ -4,13 +4,16 @@ from django.http import JsonResponse
 
 # Librairies of custom scripts
 from .Navigation import initial_navigation, updateTimeList
-from .CreateMap import create_map_frame
+from .CreateMap import create_map_frame, create_map_COVID
 from .CreateWidget import stats_selected_time, graph_day, graph_month
 from .forms import contactMe
+
+import geopandas as gpd
 
 # Librairies to hide my e-mail inbox
 from dotenv import load_dotenv
 import os
+from django.conf import settings
 
 # Librairies to manage the Contact me form
 from django.core.mail import send_mail, BadHeaderError
@@ -164,3 +167,67 @@ def contact_view(request):
 # Redirect to a different page to confirm that the email went through.
 def email_sent(request):
     return render(request, 'email_sent.html')
+
+
+@ratelimit(key='header:x-real-ip', method='POST', rate='30/m', block=True)
+@csp_exempt
+def proof_concept_COVID(request):
+    if request.method == "POST":
+
+        map_json = gpd.read_file(os.path.join(settings.MEDIA_ROOT, 'RSS.geojson'))
+        stats_matrix = gpd.read_file(os.path.join(settings.MEDIA_ROOT, 'AI_Matrix_predictions.csv'))
+
+        region = map_json["Etiquette"].values.tolist()
+        region_id = map_json["region_id"].values.tolist()
+        first_dose = request.POST.getlist("dose_1[]")
+        second_dose = request.POST.getlist("dose_2[]")
+        CONNECT_lag = request.POST.getlist("connect_covid[]")
+        low_income = stats_matrix['low_income'].tail(16).values.tolist()
+        immigration = stats_matrix['immigration'].tail(16).values.tolist()
+
+
+        table = {"region": region,
+                 "region_id": region_id,
+                 "first_dose": first_dose,
+                 "second_dose": second_dose,
+                 "CONNECT_lag": CONNECT_lag,
+                 "low_income": low_income,
+                 "immigration": immigration
+                 }
+
+        map_COVID_updated = create_map_COVID(table)
+
+        return JsonResponse({"map_COVID_updated": map_COVID_updated})
+
+    else:
+
+        map_json = gpd.read_file(os.path.join(settings.MEDIA_ROOT, 'RSS.geojson'))
+        AI_matrix = gpd.read_file(os.path.join(settings.MEDIA_ROOT, 'AI_Matrix_Final.csv'))
+        stats_matrix = gpd.read_file(os.path.join(settings.MEDIA_ROOT, 'AI_Matrix_predictions.csv'))
+
+        region = map_json["Etiquette"].values.tolist()
+        region_id = map_json["region_id"].values.tolist()
+        first_dose = AI_matrix["first_dose"].tail(16).values.tolist()
+        second_dose = AI_matrix["second_dose"].tail(16).values.tolist()
+        CONNECT_lag = AI_matrix["CONNECT_lag"].tail(16).values.tolist()
+        low_income = stats_matrix['low_income'].tail(16).values.tolist()
+        immigration = stats_matrix['immigration'].tail(16).values.tolist()
+
+
+        table = {"region": region,
+                 "region_id": region_id,
+                 "first_dose": first_dose,
+                 "second_dose": second_dose,
+                 "CONNECT_lag": CONNECT_lag,
+                 "low_income": low_income,
+                 "immigration": immigration
+                 }
+
+        map_COVID = create_map_COVID(table)
+
+        data = {"table": table,
+                "map_COVID": map_COVID
+        }
+
+        # Return the rendering for magog_uhi.html file.
+        return render(request, 'proof_concept_COVID.html', context={"data": data})
