@@ -26,7 +26,8 @@ dict_of_devices_group = {
     "device_id_100m": ["a840415f3182bbd8", "a840416c2182d5bc", "a84041714182bbd6", "a84041bbb182d5bf",
                        "a84041919182d287"],
     "device_id_200m": ["a840412ad182bbd4", "a840415e2182bbd7"],
-    "device_id_300m": ["a8404148e182d5be", "a840412eb182d2a6"], "device_id_400m": ["a84041543182d286"]}
+    "device_id_300m": ["a8404148e182d5be", "a840412eb182d2a6"],
+    "device_id_400m": ["a84041543182d286"]}
 
 
 # This function produce a table with the average and the max temperature of each class of sensors that is updated with

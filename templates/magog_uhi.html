@@ -148,18 +148,18 @@
                                 <th id="r400m">300 - 400 m (1)</th>
                             </tr>
                             <tr>
-                                <td class="max_stats" id="param_max"><b>Max</b></td>
-                                <td class="max_stats" id="t_max_100m">{{data.t_max_100m }}</td>
-                                <td class="max_stats" id="t_max_200m">{{data.t_max_200m }}</td>
-                                <td class="max_stats" id="t_max_300m">{{data.t_max_300m }}</td>
-                                <td class="max_stats" id="t_max_400m">{{data.t_max_400m }}</td>
+                                <td class="color_stats" id="param_max"><b>Max</b></td>
+                                <td class="color_stats" id="t_max_100m">{{data.t_max_100m }}</td>
+                                <td class="color_stats" id="t_max_200m">{{data.t_max_200m }}</td>
+                                <td class="color_stats" id="t_max_300m">{{data.t_max_300m }}</td>
+                                <td class=color_stats id="t_max_400m">{{data.t_max_400m }}</td>
                             </tr>
                             <tr>
-                                <td class="avg_stats" id="param_avg"><b>Avg</b></td>
-                                <td class="avg_stats" id="t_avg_100m">{{data.t_avg_100m }}</td>
-                                <td class="avg_stats" id="t_avg_200m">{{data.t_avg_200m }}</td>
-                                <td class="avg_stats" id="t_avg_300m">{{data.t_avg_300m }}</td>
-                                <td class="avg_stats" id="t_avg_400m">{{data.t_avg_400m }}</td>
+                                <td id="param_avg"><b>Avg</b></td>
+                                <td id="t_avg_100m">{{data.t_avg_100m }}</td>
+                                <td id="t_avg_200m">{{data.t_avg_200m }}</td>
+                                <td id="t_avg_300m">{{data.t_avg_300m }}</td>
+                                <td id="t_avg_400m">{{data.t_avg_400m }}</td>
                             </tr>
                         </table>
                     </div>
@@ -294,6 +294,128 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <div class="main-content-no-border">
+        <h2 class="center h-text">{% translate "Summer 2021 summary results" %}</h2>
+        <p>
+        {% blocktranslate trimmed %}
+            In order to evaluate the urban heat island phenomenon in the neighborhood, the temperature from the sensors
+            have been compared to the
+        {% endblocktranslate %}
+
+        <a href="https://meteo.gc.ca/past_conditions/index_f.html?station=wtt">{% translate "Environment Canada (EC) meteorological station" %}</a>
+
+        {% blocktranslate trimmed %}
+            located near Lac Memphrémagog.
+        {% endblocktranslate %}
+        </p>
+        <p>
+        {% blocktranslate trimmed %}
+        The highest temperature registered by a sensor was 39.7 °C and the biggest difference between a sensor and
+        the EC station was 11.7 °C. In average, the mean temperature difference between the highest value of a sensor
+        and the EC station during the day (7 to 19h) was 4.9 °C and the lowest one was 1.3 °C. For the afternoon
+        (12 to 17h), those numbers were respectively of 5.5 °C and 2.1 °C. The table below summarize the result for
+        each study zone.
+        {% endblocktranslate %}
+        </p>
+        <div class="row">
+        <img src="{% static  "/img/Magog_UHI_zones_100m.jpg"%}" alt="Study zones for urban heat island">
+        </div>
+        <div class="row py-4">
+            <table id="stats_table">
+                <tr>
+                    <th colspan="3">{% translate "Mean temperature difference between the EC station and the sensors" %}</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>{% translate "Day (7 to 19h)" %}</th>
+                    <th>{% translate "Afternoon (12 to 17h)" %}</th>
+                </tr>
+                <tr>
+                    <th id="r100m">{% translate "Zone between 0 and 100 metres" %}</th>
+                    <td class="color_stats">{% translate "2.7 °C" %}</td>
+                    <td class="color_stats">{% translate "3.5 °C" %}</td>
+                </tr>
+                <tr>
+                    <th id="r200m">{% translate "Zone between 100 and 200 metres" %}</th>
+                    <td>{% translate "2.6 °C" %}</td>
+                    <td>{% translate "3.2 °C" %}</td>
+                </tr>
+                <tr>
+                    <th id="r300m">{% translate "Zone between 200 and 300 metres" %}</th>
+                    <td class="color_stats">{% translate "3.2 °C" %}</td>
+                    <td class="color_stats">{% translate "3.7 °C" %}</td>
+                </tr>
+                <tr>
+                    <th id="r400m">{% translate "Zone between 300 and 400 metres" %}</th>
+                    <td>{% translate "3.5 °C" %}</td>
+                    <td>{% translate "3.8 °C" %}</td>
+                </tr>
+                <tr>
+                    <th class="color_stats" >{% translate "All sensors" %}</th>
+                    <td class="color_stats">{% translate "2.9 °C" %}</td>
+                    <td class="color_stats">{% translate "3.5 °C" %}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="row py-4">
+        {% blocktranslate trimmed %}
+        Maps below have been produced by interpolating the difference between the sensor’s temperature and the EC
+        station’s temperature by using the cubic spline method. The exercise has been done for different base
+        temperatures registered at the EC station (20 °C, 25 °C, 30 °C and the worst case of the summer with a
+        temperature difference of 11.7 °C). It’s possible to notice a trend that shows the higher the temperature,
+        the more significant the difference. Hence in a climate change future where temperatures will be higher, it is
+        crucial to mitigate the urban heat island effect, which is the goal of this greening project.
+        {% endblocktranslate %}
+        </div>
+        </div>
+<div class="magog-uhi-study-zone">
+        <div id="carouselInterpolation2021" class="carousel slide carousel-fade row-pt-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselInterpolation2021" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselInterpolation2021" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselInterpolation2021" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselInterpolation2021" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="{% static  "/img/delta_20.png"%}" class="d-block w-100" alt="EC station at 20 °C">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="black-text"><b>{% translate "EC station at 20 °C" %}</b></h5>
+                    <p class="black-text">{% translate "Summer of 2021" %}</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{% static  "/img/delta_25.png"%}" class="d-block w-100" alt="EC station at 25 °C">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="black-text"><b>{% translate "EC station at 25 °C" %}</b></h5>
+                    <p class="black-text">{% translate "Summer of 2021" %}</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{% static  "/img/delta_30.png"%}" class="d-block w-100" alt="EC station at 30 °C">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="black-text"><b>{% translate "EC station at 30 °C" %}</b></h5>
+                    <p class="black-text">{% translate "Summer of 2021" %}</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{% static  "/img/delta_max.png"%}" class="d-block w-100" alt="Max difference with EC station">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="black-text"><b>{% translate "Difference of 11.7 °C with the EC station" %}</b></h5>
+                    <p class="black-text">{% translate "Summer of 2021" %}</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselInterpolation2021" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselInterpolation2021" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+</div>
 </div>
 {% endblock %}
 
@@ -302,7 +424,6 @@
     <h4 id="h-text">{% translate "Partner organizations for this project" %}</h4>
     <p>{% translate "A big thanks to Magog City and everyone who works there. This project would not have been possible without their tremendous support." %}</p>
     <p>
-        <a href="https://www.usherbrooke.ca/"><img src="{% static 'img/UdeS_logo_216_68.png' %}" alt="Logo Université de Sherbrooke" width="216" height="68"></a>
         <a href="https://www.ville.magog.qc.ca/"><img src="{% static 'img/Magog_logo_267_110.png' %}" alt="Logo Ville de Magog" width="267" height="110"></a>
         <p>
             {% blocktranslate trimmed %}

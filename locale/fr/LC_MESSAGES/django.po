@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 12:26-0400\n"
+"POT-Creation-Date: 2021-08-29 16:48-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,39 +18,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: coresite/CreateMap.py:60
+#: coresite/CreateMap.py:71
 msgid "Interpolation scale for temperature"
 msgstr "Échelle d'interpolation des températures"
 
-#: coresite/CreateMap.py:194 coresite/CreateMap.py:210
+#: coresite/CreateMap.py:200
 msgid "No data for this day, please select another one"
 msgstr "Aucune donnée pour cette journée, SVP en choisir une autre"
 
-#: coresite/CreateWidget.py:138
+#: coresite/CreateMap.py:213
+msgid "Legend"
+msgstr "Légende"
+
+#: coresite/CreateMap.py:216
+msgid "Hospitalization level 1"
+msgstr "Niveau d'hospitalisation 1"
+
+#: coresite/CreateMap.py:219
+msgid "Hospitalization level 2"
+msgstr "Niveau d'hospitalisation 2"
+
+#: coresite/CreateMap.py:222
+msgid "Hospitalization level 3"
+msgstr "Niveau d'hospitalisation 3"
+
+#: coresite/CreateMap.py:225
+msgid "Hospitalization level 4"
+msgstr "Niveau d'hospitalisation 4"
+
+#: coresite/CreateMap.py:228
+msgid "Hospitalization level 5"
+msgstr "Niveau d'hospitalisation 5"
+
+#: coresite/CreateMap.py:287 templates/proof_concept_COVID.html:388
+msgid "Region"
+msgstr "Région"
+
+#: coresite/CreateMap.py:288
+msgid "Hospitalization level"
+msgstr "Niveau d'hospitalisation"
+
+#: coresite/CreateMap.py:289
+msgid "First dose"
+msgstr "Première dose"
+
+#: coresite/CreateMap.py:290
+msgid "Second dose"
+msgstr "Deuxième dose"
+
+#: coresite/CreateMap.py:291
+msgid "Social contacts"
+msgstr "Contacts sociaux"
+
+#: coresite/CreateMap.py:292
+msgid "Low incomes (65 years old +)"
+msgstr "Faibles revenus (65 ans et +)"
+
+#: coresite/CreateMap.py:293
+msgid "Recent immigration"
+msgstr "Immigration récente"
+
+#: coresite/CreateWidget.py:139
 #, python-brace-format
 msgid "Hourly maximum temperature on {date}"
 msgstr "Température horaire maximum pour le {date}"
 
-#: coresite/CreateWidget.py:141
+#: coresite/CreateWidget.py:142
 #, python-brace-format
 msgid "Hourly average temperature on {date}"
 msgstr "Température horaire moyenne pour le {date}"
 
-#: coresite/CreateWidget.py:150 templates/magog_uhi.html:91
+#: coresite/CreateWidget.py:151 templates/magog_uhi.html:91
 msgid "Time"
 msgstr "Heure"
 
-#: coresite/CreateWidget.py:227
+#: coresite/CreateWidget.py:228
 #, python-brace-format
 msgid "Daily maximum temperature on {year}-{month}"
 msgstr "Température quotidienne maximum pour le {month}-{year}"
 
-#: coresite/CreateWidget.py:230
+#: coresite/CreateWidget.py:231
 #, python-brace-format
 msgid "Daily average temperature on {year}-{month}"
 msgstr "Température quotidienne moyenne pour le {month}-{year}"
 
-#: coresite/CreateWidget.py:239
+#: coresite/CreateWidget.py:240
 msgid "Day"
 msgstr "Jour"
 
@@ -66,7 +118,7 @@ msgstr "Sujet"
 msgid "Message"
 msgstr "Message"
 
-#: coresite/views.py:136
+#: coresite/views.py:139
 msgid ""
 "To avoid any spamming of my inbox, only 3 messages can be sent per hour per "
 "user based on your IP address. Thank you for your comprehension."
@@ -93,9 +145,10 @@ msgstr "Magog_pacc"
 
 #: geoadaptation/urls.py:58 templates/base.html:75 templates/base.html:77
 #: templates/home.html:54 templates/home.html:57 templates/magog_uhi.html:32
-#: templates/magog_uhi.html:35 templates/research.html:20
-#: templates/research.html:25 templates/research.html:28
-#: templates/vulnerability_essay.html:23 templates/vulnerability_essay.html:26
+#: templates/magog_uhi.html:35 templates/proof_concept_COVID.html:27
+#: templates/research.html:20 templates/research.html:25
+#: templates/research.html:28 templates/vulnerability_essay.html:23
+#: templates/vulnerability_essay.html:26
 msgid "Research"
 msgstr "Recherche"
 
@@ -109,7 +162,7 @@ msgstr "Magog_idc"
 msgid "Vulnerability_essay"
 msgstr "Essai_vulnerabilite"
 
-#: geoadaptation/urls.py:62 templates/base.html:90 templates/base.html:92
+#: geoadaptation/urls.py:62 templates/base.html:94 templates/base.html:96
 #: templates/django_tutorial.html:23 templates/django_tutorial.html:26
 #: templates/home.html:62 templates/home.html:65
 #: templates/lora_tutorial.html:27 templates/lora_tutorial.html:30
@@ -118,16 +171,17 @@ msgstr "Essai_vulnerabilite"
 msgid "Tutorials"
 msgstr "Tutoriels"
 
-#: geoadaptation/urls.py:63 templates/base.html:99 templates/magog_uhi.html:190
-#: templates/magog_uhi.html:239 templates/tutorials.html:70
+#: geoadaptation/urls.py:63 templates/base.html:103
+#: templates/magog_uhi.html:190 templates/magog_uhi.html:239
+#: templates/tutorials.html:70
 msgid "LoRa_tutorial"
 msgstr "Tutoriel_LoRa"
 
-#: geoadaptation/urls.py:64 templates/base.html:95 templates/tutorials.html:50
+#: geoadaptation/urls.py:64 templates/base.html:99 templates/tutorials.html:50
 msgid "Django_tutorial"
 msgstr "Tutoriel_Django"
 
-#: geoadaptation/urls.py:65 templates/about.html:23 templates/base.html:108
+#: geoadaptation/urls.py:65 templates/about.html:23 templates/base.html:112
 #: templates/email_sent.html:28 templates/home.html:70 templates/home.html:73
 #: templates/home.html:107 templates/tutorials.html:79
 msgctxt "url"
@@ -138,6 +192,10 @@ msgstr "A_propos"
 msgctxt "url"
 msgid "Email_sent"
 msgstr "Courriel_envoye"
+
+#: geoadaptation/urls.py:67 templates/base.html:88
+msgid "Proof_concept_COVID"
+msgstr "Preuve_concept_COVID"
 
 #: templates/about.html:6
 msgid ""
@@ -153,7 +211,7 @@ msgstr ""
 msgid "About section on the author of geoadaptation.ca"
 msgstr "Section à propos de l'auteur du geoadaptation.ca"
 
-#: templates/about.html:19 templates/about.html:26 templates/base.html:109
+#: templates/about.html:19 templates/about.html:26 templates/base.html:113
 #: templates/email_sent.html:31
 msgid "About"
 msgstr "À propos"
@@ -173,8 +231,8 @@ msgid ""
 "for environment and public health led me to complete the"
 msgstr ""
 "et qui a travaillé comme pharmacien communautaire pendant 5 ans. Ma "
-"curiosité et ma passion pour l'environnement et la santé publique m'ont "
-"amené à compléter le"
+"curiosité et ma passion pour l'environnement et la santé publique m'ont mené "
+"à compléter le"
 
 #: templates/about.html:50
 msgid "graduate microprogram in climate change at Université Laval"
@@ -257,7 +315,7 @@ msgstr ""
 "(Entête Tutoriels), Pixabay - Suju-foto (Entête À propos)</li> <li>Images "
 "additionnelles : Jean-Nicolas Côté, Sarah Dubord-Fortin</li> </ul> </p>"
 
-#: templates/base.html:9
+#: templates/base.html:9 templates/proof_concept_COVID.html:6
 msgid "en"
 msgstr "fr"
 
@@ -288,17 +346,21 @@ msgid "Master's essay on heat waves vulnerability assesment"
 msgstr ""
 "Essai de maîtrise sur le calcul de la vulnérabilité aux vagues de chaleur"
 
-#: templates/base.html:96 templates/django_tutorial.html:19
+#: templates/base.html:89
+msgid "PhD project with AI and GIS for public health"
+msgstr "Projet de doctorat avec l'IA et les SIG pour la santé publique"
+
+#: templates/base.html:100 templates/django_tutorial.html:19
 #: templates/django_tutorial.html:34
 msgid "Django for GIS projects tutorial"
 msgstr "Tutoriel Django pour des projets SIG"
 
-#: templates/base.html:100 templates/lora_tutorial.html:39
+#: templates/base.html:104 templates/lora_tutorial.html:39
 #: templates/tutorials.html:71
 msgid "LoRa, LoRaWan and MQTT"
 msgstr "LoRa, LoRaWan et MQTT"
 
-#: templates/base.html:120
+#: templates/base.html:124
 msgid "Language"
 msgstr "Langue"
 
@@ -336,8 +398,8 @@ msgid ""
 msgstr ""
 "Les plans d’adaptation aux changements climatiques (PACC) sont essentiels "
 "pour se préparer à ce qui s’en vient dans les prochaines décennies. "
-"Malheureusement, ceux-ci nécessitent beaucoup de ressources financières "
-"et humaines pour être individualisés à une échelle régionale."
+"Malheureusement, ceux-ci nécessitent beaucoup de ressources financières et "
+"humaines pour être individualisés à une échelle régionale."
 
 #: templates/ccap.html:47
 msgctxt "Le"
@@ -400,15 +462,15 @@ msgid ""
 "It is imperative that we escape this logic if we want to have a chance to "
 "adapt to a climate that has nothing to do with the last century."
 msgstr ""
-"<p> Une profonde réflexion s’impose quant au développement du territoire, ce dernier "
-"étant généralement mené par des considérations financières immédiates. Si "
-"cette stratégie offre une illusion de progrès à court terme, elle a été "
-"prouvée extrêmement néfaste à long terme. Il suffit de constater toutes les "
-"problématiques d’ilots de chaleur, d’érosion et d'inondations, ainsi que de "
-"la mauvaise qualité de l’eau et de l’air des villes qui découlent des "
-"erreurs de développement du 20e siècle. </p> <p> Il est impératif de sortir "
-"de cette logique si l’on souhaite avoir une chance de s’adapter à un climat "
-"qui n’aura rien à voir avec le siècle dernier."
+"<p> Une profonde réflexion s’impose quant au développement du territoire, ce "
+"dernier étant généralement mené par des considérations financières "
+"immédiates. Si cette stratégie offre une illusion de progrès à court terme, "
+"elle a été prouvée extrêmement néfaste à long terme. Il suffit de constater "
+"toutes les problématiques d’ilots de chaleur, d’érosion et d'inondations, "
+"ainsi que de la mauvaise qualité de l’eau et de l’air des villes qui "
+"découlent des erreurs de développement du 20e siècle. </p> <p> Il est "
+"impératif de sortir de cette logique si l’on souhaite avoir une chance de "
+"s’adapter à un climat qui n’aura rien à voir avec le siècle dernier."
 
 #: templates/django_tutorial.html:7
 msgid "Django, Python, Matplotlib, Scipy, Numpy, GIS, Folium"
@@ -477,7 +539,8 @@ msgstr "LearnDjango"
 #: templates/django_tutorial.html:76
 msgid ""
 "website from one of the Board Members of the Django Software Foundation."
-msgstr "de l'un des membres du conseil d'administration de la fondation Django."
+msgstr ""
+"de l'un des membres du conseil d'administration de la fondation Django."
 
 #: templates/django_tutorial.html:81
 msgid ""
@@ -485,8 +548,8 @@ msgid ""
 "extensive tutorial (but it will come!). In the meantime, you can have a look "
 "at my"
 msgstr ""
-"Un tutoriel plus détaillé sera disponible prochainement lorsque j'aurai plus de temps. "
-"En attendant, vous pouvez regarder mon "
+"Un tutoriel plus détaillé sera disponible prochainement lorsque j'aurai plus "
+"de temps. En attendant, vous pouvez regarder mon "
 
 #: templates/django_tutorial.html:89
 msgid ""
@@ -535,8 +598,8 @@ msgid ""
 "Geoadaptation.ca is a collection of projects and tutorials related to "
 "climate change and geographic information systems (GIS)."
 msgstr ""
-"Le geoadaptation.ca est un regroupement de projets et de tutoriels reliés "
-"aux changements climatiques et aux systèmes d'information géographique (SIG)"
+"Le geoadaptation.ca est un regroupement de projets et de tutoriels liés aux "
+"changements climatiques et aux systèmes d'information géographique (SIG)"
 
 #: templates/home.html:30
 msgid "Where "
@@ -594,10 +657,10 @@ msgstr ""
 "<span class=\"h-text\">partage des connaissances</span> se révèlent "
 "primordiaux pour surmonter tous les défis que l'avenir réserve aux "
 "générations actuelles et futures. </p> <p> Ce site Web est un pas dans cette "
-"direction et a pour objectif d'aider les étudiants, les chercheurs, les professionnels, les "
-"citoyens et les décideurs à prendre des <span class=\"h-text\">décisions "
-"éclairées</span> en lien avec les changements climatiques et les enjeux qui "
-"les entourent."
+"direction et a pour objectif d'aider les étudiants, les chercheurs, les "
+"professionnels, les citoyens et les décideurs à prendre des <span class=\"h-"
+"text\">décisions éclairées</span> en lien avec les changements climatiques "
+"et les enjeux qui les entourent."
 
 #: templates/home.html:103
 msgid "This website is a personal project financed and maintained by"
@@ -922,10 +985,9 @@ msgid "e"
 msgstr "f"
 
 #: templates/magog_uhi.html:75
+#, python-format
 msgid "Please select a date between %(first_day)s and %(last_day)s"
-msgstr ""
-"SVP veuillez entrer une date entre le %(first_day)s et le "
-"%(last_day)s"
+msgstr "SVP veuillez entrer une date entre le %(first_day)s et le %(last_day)s"
 
 #: templates/magog_uhi.html:103
 msgid "Colour"
@@ -935,7 +997,7 @@ msgstr "Couleur"
 msgid "Opacity"
 msgstr "Opacité"
 
-#: templates/magog_uhi.html:126
+#: templates/magog_uhi.html:126 templates/proof_concept_COVID.html:421
 msgid "Loading layer"
 msgstr "Téléchargement de la couche"
 
@@ -1009,17 +1071,17 @@ msgstr "520 rue Saint-Luc à Magog"
 msgid ""
 "The first phase that unfolds in 2021 consists to decontaminate the site, "
 "carry out public consultations and work with various stakeholders to create "
-"the development plans. </p> <p> If everything goes well, works should start in 2022 and "
-"end by 2023. A significant tree plantation covering <span class=\"h-text"
-"\">20 000 m<sup>2</sup></span> will provide a cooling island directly on "
-"site and in the nearing neighborhood. </p> <p> In order to measure with "
-"precision this cooling effect, 10 sensors using the"
+"the development plans. </p> <p> If everything goes well, works should start "
+"in 2022 and end by 2023. A significant tree plantation covering <span class="
+"\"h-text\">20 000 m<sup>2</sup></span> will provide a cooling island "
+"directly on site and in the nearing neighborhood. </p> <p> In order to "
+"measure with precision this cooling effect, 10 sensors using the"
 msgstr ""
 "La première phase du projet qui se déroule en 2021 consiste à décontaminer "
 "le site, effectuer des consultations publiques et travailler avec diverses "
-"parties prenantes pour élaborer les plans d'aménagement. </p> <p> Si tout se déroule bien, "
-"les travaux devraient s’amorcer en 2022 et se terminer en 2023. Une "
-"importante plantation d’arbres sur plus de <span class=\"h-text"
+"parties prenantes pour élaborer les plans d'aménagement. </p> <p> Si tout se "
+"déroule bien, les travaux devraient s’amorcer en 2022 et se terminer en "
+"2023. Une importante plantation d’arbres sur plus de <span class=\"h-text"
 "\"><b>20 000 m<sup>2</sup></b></span> offrira un ilot de fraicheur aux "
 "citoyens directement sur le site, mais aussi dans les quartiers "
 "environnants. </p> <p> Afin de mesurer avec précision cet effet de "
@@ -1033,13 +1095,13 @@ msgid ""
 "effect should increase. Researchers from Université de Sherbrooke, will make "
 "an in-depth analysis of that data. Pictures of the site evolution are below."
 msgstr ""
-"ont été installés à divers endroits stratégiques. Ces capteurs donnent une lecture en temps réel de la température "
-"observable dans le tableau de bord ci-haut. Le projet de "
-"suivi se poursuivra au-delà de la fin des travaux, puisque plus les arbres "
-"gagneront en maturité, plus le pouvoir rafraichissant devrait s’accroître. "
-"Des chercheurs de l’Université de Sherbrooke analyseront ensuite "
-"ces données en profondeur. Des photos de l’évolution du site sont "
-"disponibles ci-dessous. "
+"ont été installés à divers endroits stratégiques. Ces capteurs donnent une "
+"lecture en temps réel de la température observable dans le tableau de bord "
+"ci-haut. Le projet de suivi se poursuivra au-delà de la fin des travaux, "
+"puisque plus les arbres gagneront en maturité, plus le pouvoir "
+"rafraichissant devrait s’accroître. Des chercheurs de l’Université de "
+"Sherbrooke analyseront ensuite ces données en profondeur. Des photos de "
+"l’évolution du site sont disponibles ci-dessous. "
 
 #: templates/magog_uhi.html:250
 msgid "Spring 2021"
@@ -1066,11 +1128,148 @@ msgstr "Zone ouest"
 msgid "East Area"
 msgstr "Zone est"
 
-#: templates/magog_uhi.html:302
+#: templates/magog_uhi.html:298
+msgid "Summer 2021 summary results"
+msgstr "Résultats sommaires pour l’été 2021"
+
+#: templates/magog_uhi.html:300
+msgid ""
+"In order to evaluate the urban heat island phenomenon in the neighborhood, "
+"the temperature from the sensors have been compared to the"
+msgstr ""
+"Afin d’évaluer le phénomène d’ilots de chaleur dans le quartier, les températures des capteurs ont été comparées "
+"avec la "
+
+#: templates/magog_uhi.html:306
+msgid "Environment Canada (EC) meteorological station"
+msgstr "station météorologique d’Environnement Canada (EC)"
+
+#: templates/magog_uhi.html:308
+msgid "located near Lac Memphrémagog."
+msgstr "située aux abords du lac Memphrémagog. "
+
+#: templates/magog_uhi.html:313
+msgid ""
+"The highest temperature registered by a sensor was 39.7 °C and the biggest "
+"difference between a sensor and the EC station was 11.7 °C. In average, the "
+"mean temperature difference between the highest value of a sensor and the EC "
+"station during the day (7 to 19h) was 4.9 °C and the lowest one was 1.3 °C. "
+"For the afternoon (12 to 17h), those numbers were respectively of 5.5 °C and "
+"2.1 °C. The table below summarize the result for each study zone."
+msgstr ""
+"La température la plus élevée enregistrée par un capteur a été de 39,7 °C et la plus grande différence entre un "
+"capteur et la station d’EC a été de 11,7 °C. En moyenne, la différence de température moyenne la plus élevée entre un "
+"capteur et la station d’EC durant le jour (7 à 19h) était de 4,9 °C et la différence la moins élevée affichait 1,3 °C. "
+"Pour l’après-midi (12 à 17h), ces chiffres étaient respectivement de 5,5 °C et de 2,1 °C. Le tableau ci-dessous résume "
+"les statistiques pour chaque zone à l’étude. "
+
+
+#: templates/magog_uhi.html:327
+msgid "Mean temperature difference between the EC station and the sensors"
+msgstr "Différence de température moyenne entre la station d'EC et les capteurs "
+
+#: templates/magog_uhi.html:331
+msgid "Day (7 to 19h)"
+msgstr "Jour (7 à 19h)"
+
+#: templates/magog_uhi.html:332
+msgid "Afternoon (12 to 17h)"
+msgstr "Après-midi (12 à 17h)"
+
+#: templates/magog_uhi.html:335
+msgid "Zone between 0 and 100 metres"
+msgstr "Zone entre 0 et 100 mètres"
+
+#: templates/magog_uhi.html:336
+msgid "2.7 °C"
+msgstr "2,7 °C"
+
+#: templates/magog_uhi.html:337 templates/magog_uhi.html:351
+#: templates/magog_uhi.html:357
+msgid "3.5 °C"
+msgstr "3,5 °C"
+
+#: templates/magog_uhi.html:340
+msgid "Zone between 100 and 200 metres"
+msgstr "Zone entre 100 et 200 mètres"
+
+#: templates/magog_uhi.html:341
+msgid "2.6 °C"
+msgstr "2,6 °C"
+
+#: templates/magog_uhi.html:342 templates/magog_uhi.html:346
+msgid "3.2 °C"
+msgstr "3,2 °C"
+
+#: templates/magog_uhi.html:345
+msgid "Zone between 200 and 300 metres"
+msgstr "Zone entre 200 et 300 mètres"
+
+#: templates/magog_uhi.html:347
+msgid "3.7 °C"
+msgstr "3,7 °C"
+
+#: templates/magog_uhi.html:350
+msgid "Zone between 300 and 400 metres"
+msgstr "Zone entre 300 et 400 mètres"
+
+#: templates/magog_uhi.html:352
+msgid "3.8 °C"
+msgstr "3,8 °C"
+
+#: templates/magog_uhi.html:355
+msgid "All sensors"
+msgstr "Tous les capteurs"
+
+#: templates/magog_uhi.html:356
+msgid "2.9 °C"
+msgstr "2,9 °C"
+
+#: templates/magog_uhi.html:362
+msgid ""
+"Maps below have been produced by interpolating the difference between the "
+"sensor’s temperature and the EC station’s temperature by using the cubic "
+"spline method. The exercise has been done for different base temperatures "
+"registered at the EC station (20 °C, 25 °C, 30 °C and the worst case of the "
+"summer with a temperature difference of 11.7 °C). It’s possible to notice a "
+"trend that shows the higher the temperature, the more significant the "
+"difference. Hence in a climate change future where temperatures will be "
+"higher, it is crucial to mitigate the urban heat island effect, which is the "
+"goal of this greening project."
+msgstr ""
+"Des cartes ont été produites en interpolant la différence entre la température des capteurs et la température des "
+"stations d’EC avec la méthode cubic spline. Cet exercice a été fait à partir de différentes températures de base à la "
+"station d’EC (20 °C, 25 °C, 30 °C et le pire cas de l’été avec une différence de température de 11,7 °C). Il est "
+"possible d’observer une tendance qui montre que plus la température est élevée, plus la différence est significative. "
+"Par conséquent, dans un futur avec des changements climatiques importants, il sera crucial d’atténuer le phénomène "
+"d’ilots de chaleur, ce que vise ce projet de revégétalisation."
+
+#: templates/magog_uhi.html:384
+msgid "EC station at 20 °C"
+msgstr "Station d'EC à 20 °C"
+
+#: templates/magog_uhi.html:385 templates/magog_uhi.html:392
+#: templates/magog_uhi.html:406
+msgid "Summer of 2021"
+msgstr "Été de 2021"
+
+#: templates/magog_uhi.html:391
+msgid "EC station at 25 °C"
+msgstr "Station d'EC à 25 °C"
+
+#: templates/magog_uhi.html:398 templates/magog_uhi.html:399
+msgid "EC station at 30 °C"
+msgstr "Station d'EC à 30 °C"
+
+#: templates/magog_uhi.html:405
+msgid "Difference of 11.7 °C with the EC station"
+msgstr "Différence de 11,7 °C avec la station d'EC"
+
+#: templates/magog_uhi.html:425
 msgid "Partner organizations for this project"
 msgstr "Organismes partenaires pour ce projet"
 
-#: templates/magog_uhi.html:303
+#: templates/magog_uhi.html:426
 msgid ""
 "A big thanks to Magog City and everyone who works there. This project would "
 "not have been possible without their tremendous support."
@@ -1078,7 +1277,7 @@ msgstr ""
 "Un énorme merci à la Ville de Magog et tous ceux qui y oeuvrent. Ce projet "
 "n'aurait pas été possible sans leur immense soutien."
 
-#: templates/magog_uhi.html:308
+#: templates/magog_uhi.html:430
 msgid ""
 "This project has received a grant from Climat municipalités - Phase 2 from "
 "the Quebec government and meet the objectives for the 2030 Plan for a Green "
@@ -1087,6 +1286,685 @@ msgstr ""
 "Ce projet bénéficie d'une aide financière du gouvernement du Québec tirée du "
 "programme Climat municipalités - Phase 2 et rejoint les objectifs du Plan "
 "pour une économie verte 2030."
+
+#: templates/proof_concept_COVID.html:38
+msgid "Proof of Concept Using AI and GIS with Open Data on COVID"
+msgstr ""
+"Preuve de concept de l'utilisation de l'IA et des SIG avec des données "
+"ouvertes sur la COVID "
+
+#: templates/proof_concept_COVID.html:46
+msgid ""
+"This proof of concept uses the random forest classification algorithm to "
+"illustrate the potential of an approach combining artificial intelligence "
+"and geographic information systems (GIS) for public health issues. The "
+"result is far from perfect, because the open data on COVID that fed the AI "
+"model lack volume and precision. Explanations will be provided to underline "
+"the problems and the corrective measures to include in a complete research "
+"project."
+msgstr ""
+"Cette preuve de concept utilise l'algorithme de classification Random Forest "
+"pour illustrer le potentiel d’une approche combinant l’intelligence "
+"artificielle (IA) et les systèmes d’information géographique (SIG) pour des "
+"problématiques de santé publique. Le résultat est loin d’être parfait, car "
+"les données ouvertes sur la COVID qui ont alimenté le modèle manquaient de "
+"volume et de précision. Des explications seront fournies pour souligner les "
+"problématiques et les correctifs à apporter pour un projet de recherche "
+"complet."
+
+#: templates/proof_concept_COVID.html:54
+msgid "Those preliminary results and the"
+msgstr "Ces résultats préliminaires et l’étude de "
+
+#: templates/proof_concept_COVID.html:58
+msgid ""
+"study can lead us to believe that developing this approach could be "
+"beneficial for public health. However, this technique is not used a lot in "
+"the scientific literature, so it remains a vast field to explore."
+msgstr ""
+"laisse présager que cette approche pourrait être bénéfique pour la santé "
+"publique. Cependant, cette technique est très peu utilisée dans la "
+"littérature scientifique, alors cela demeure un vaste champ à explorer."
+
+#: templates/proof_concept_COVID.html:64
+msgid ""
+"The next sections explain in detail the technique used to better understand "
+"the subtleties and the results of the algorithm. Firstly, the data to "
+"predict, which are the daily hospitalizations link to COVID by Québec Health "
+"Regions, will be analyzed. Then, relevant variables at first sight, but not "
+"integrated to the algorithm, will be explained. The relevant variables "
+"selected will be justified, and the random forest performance will be "
+"analyzed. An example of a dynamic dashboard to interact with the built model "
+"will follow. Finally, a parallel with my research project on climate change "
+"is presented."
+msgstr ""
+"Les prochaines sections expliquent en détail la technique utilisée pour "
+"mieux comprendre les subtilités et les résultats de l’algorithme. Dans un "
+"premier temps, les données à prédire, c’est-à-dire les hospitalisations "
+"quotidiennes liées à la COVID par région sociosanitaire, seront analysées. "
+"Ensuite, les variables pertinentes à première vue, mais non retenues pour "
+"être intégrées à l’algorithme, seront expliquées. Les variables retenues "
+"seront justifiées dans la section suivante, puis la performance du Random "
+"Forest sera analysée. Un exemple d’un tableau de bord dynamique permettant "
+"d’interagir avec le modèle construit suit. Enfin, un parallèle avec mon "
+"projet de recherche sur les changements climatiques est présenté."
+
+#: templates/proof_concept_COVID.html:74
+msgid ""
+"The table of content below allow to jump from one section to another, and "
+"the arrow at the bottom right of the screen allow to scroll at the top of "
+"the page."
+msgstr ""
+"La table des matières ci-dessous permet de sauter d’une section à l’autre et "
+"la flèche dans le bas à droite de l’écran permet de remonter en haut de la "
+"page."
+
+#: templates/proof_concept_COVID.html:80 templates/proof_concept_COVID.html:90
+msgid "Data to predict"
+msgstr "Données à prédire"
+
+#: templates/proof_concept_COVID.html:81 templates/proof_concept_COVID.html:148
+msgid "Relevant variables not selected"
+msgstr "Variables intéressantes non retenues"
+
+#: templates/proof_concept_COVID.html:82 templates/proof_concept_COVID.html:209
+msgid "Relevant variables selected"
+msgstr "Variables pertinentes retenues"
+
+#: templates/proof_concept_COVID.html:83 templates/proof_concept_COVID.html:284
+msgid "Random forest performance analysis"
+msgstr "Analyse de la performance du Random Forest"
+
+#: templates/proof_concept_COVID.html:84 templates/proof_concept_COVID.html:364
+msgid "Dashboard example"
+msgstr "Exemple de tableau de bord"
+
+#: templates/proof_concept_COVID.html:85 templates/proof_concept_COVID.html:431
+msgid "Parallel with my research project on climate change"
+msgstr "Parallèle avec mon projet de recherche sur les changements climatiques"
+
+#: templates/proof_concept_COVID.html:93
+msgid "The daily hospitalization rates link to COVID available on"
+msgstr "Le taux d’hospitalisations quotidien lié à la COVID disponible sur "
+
+#: templates/proof_concept_COVID.html:98
+msgid ""
+"from April 10, 2020, to August 14, 2021, has been used for the 16 most "
+"populous Quebec Health Regions (Nunavik and Terres-Cris-de-la-Baie-James "
+"regions have been discarded, because their reality is totally different from "
+"the rest of the province). This represents 7872 observations for the "
+"algorithm (492 days x 16 regions)."
+msgstr ""
+"du 10 avril 2020 au 14 août 2021 a été utilisé pour les 16 régions "
+"sociosanitaires les plus populeuses (le Nunavik et les Terres-Cris-de-la-"
+"Baie-James ont été écartés, puisque leur réalité est totalement différente "
+"du reste du Québec). Cela représente 7872 observations pour l’algorithme "
+"(492 jours x 16 régions)."
+
+#: templates/proof_concept_COVID.html:106
+#, python-format
+msgid ""
+"The daily hospitalization rates vary from 0 %% to 0,064 %% by region (number "
+"of hospitalization / region population * 100). To avoid choosing arbitrarily "
+"a number of class (such as quintile), the data distribution has been "
+"studied. The elbow method showed that 5 classes were appropriate for the "
+"data set. The Jenks Natural Breaks classification algorithm split the "
+"hospitalization levels like that:"
+msgstr ""
+"Les taux d’hospitalisations quotidiens variaient entre 0 %% et 0,064 %% par "
+"région (nombre d'hospitalisations / population de la région * 100). Afin "
+"d’éviter de choisir de façon arbitraire un nombre de classes (par exemple, "
+"par quintile), la distribution des données a été étudiée. La méthode du "
+"coude (elbow method) a permis de déterminer que 5 classes représentaient "
+"bien les données. L’algorithme de classification Jenks Natural Breaks a "
+"permis de séparer les niveaux d’hospitalisations ainsi :"
+
+#: templates/proof_concept_COVID.html:113
+#, python-format
+msgid ""
+"<li>Level 1 : 0 to 0,0034 %% (4 738 region-days)</li> <li>Level 2 : 0,0035 "
+"to 0,010 %% (2175 region-days)</li> <li>Level 3 : 0,011 to 0,021 %% (758 "
+"region-days)</li> <li>Level 4 : 0,022 to 0,042 %% (166 region-days)</li> "
+"<li>Level 5 : 0,043 to 0,064 %% (35 region-days) </li>"
+msgstr ""
+"<li>Niveau 1 : 0 à 0,0034 %% (4 738 région-jours)</li> <li>Niveau 2 : 0,0035 "
+"à 0,010 %% (2175 région-jours)</li> <li>Niveau 3 : 0,011 à 0,021 %% (758 "
+"région-jours)</li> <li>Niveau 4 : 0,022 à 0,042 %% (166 région-jours)</li> "
+"<li>Niveau 5 : 0,043 à 0,064 %% (35 région-jours) </li>"
+
+#: templates/proof_concept_COVID.html:123
+msgid ""
+"Only the Montreal region has reached a level 5 hospitalization (35 days). "
+"The Saguenay-Lac-Saint-Jean (37 days), Montreal (87 days) and Laval (42 "
+"days) regions have reached a level 4 hospitalization during the pandemic. "
+"The Bas-Saint-Laurent, Abitibi-Témiscamingue, Côte-Nord, Nord-du-Québec and "
+"Gaspésie-Iles-de-la-Madeline regions have never exceeded the level 2."
+msgstr ""
+"Seule la région de Montréal a atteint un niveau 5 d’hospitalisation (35 "
+"jours). Les régions du Saguenay-Lac-Saint-Jean (37 jours), de Montréal (87 "
+"jours) et de Laval (42 jours) ont atteint le niveau 4 au cours de la "
+"pandémie. Le Bas-Saint-Laurent, l’Abitibi-Témiscamingue, la Côte-Nord, le "
+"Nord-du-Québec et la Gaspésie-Iles-de-la-Madeleine n’ont jamais dépassé le "
+"niveau 2."
+
+#: templates/proof_concept_COVID.html:131
+msgid ""
+"It would have been a lot more interesting to use more precise data (like by "
+"RLS or by dissemination areas) to get a wider diversity of observations, but "
+"they were not available to my knowledge in an open data access."
+msgstr ""
+"Il aurait été beaucoup plus intéressant d’avoir des données plus précises "
+"(par RLS ou par aires de diffusion) pour avoir une plus grande diversité "
+"d’observations, mais elles n’étaient pas disponibles à ma connaissance sous "
+"format de données ouvertes."
+
+#: templates/proof_concept_COVID.html:137
+msgid ""
+"It is crucial to understand the analyzed data set to understand the "
+"performance of the built algorithm. Since a region like Abitibi-"
+"Témiscamingue has never exceeded a level 2, we must not expect the algorithm "
+"to predict anything else above this level for this region. Machine learning "
+"and neural networks can recognize patterns that they have already observed. "
+"This subtlety must be understood to fully understand what we mean by "
+"prediction in the dashboard."
+msgstr ""
+"Il est important de comprendre les données analysées pour comprendre la "
+"performance de l’algorithme développé. Puisqu’une région comme l’Abitibi-"
+"Témiscamingue n’a jamais dépassé le niveau 2, il ne faut pas se surprendre "
+"si l’algorithme ne prédit jamais un niveau plus élevé pour cette région. Les "
+"algorithmes d’apprentissage machine et de réseaux de neurones reconnaissent "
+"des schémas qu’ils ont déjà observés. Cette subtilité doit être bien "
+"comprise pour pleinement comprendre ce que l’on entend par prédiction dans "
+"le tableau de bord. "
+
+#: templates/proof_concept_COVID.html:151
+msgid ""
+"Many variables linked with the COVID-19 pandemic has been explored, but "
+"haven’t been selected for various reasons."
+msgstr ""
+"Plusieurs variables en lien avec la pandémie de COVID-19 ont été explorées, "
+"mais n’ont pas été retenues pour diverses raisons. "
+
+#: templates/proof_concept_COVID.html:157
+msgid "First of all,"
+msgstr "Dans un premier temps, les"
+
+#: templates/proof_concept_COVID.html:161
+msgid "the public health measures listed on the INSPQ timeline"
+msgstr "mesures sanitaires répertoriées sur la ligne du temps par l'INSPQ"
+
+#: templates/proof_concept_COVID.html:162
+msgid ""
+"have been integrated to the first modelling attempts. However, many problems "
+"arose with this strategy. For instance, the mandatory mask wearing has been "
+"in effect for almost the whole pandemic, which led to a lack of observation "
+"without the measure for the algorithm to pick up on it."
+msgstr ""
+"ont été intégrées aux premiers essais de modélisation. Cependant, il y avait "
+"plusieurs problèmes avec cette approche. Premièrement, certaines mesures "
+"comme le port du masque ont été en vigueur pendant presque toute la durée de "
+"la pandémie, ce qui occasionnait un manque d’observations sans la mesure "
+"pour que l’algorithme puisse tirer des conclusions."
+
+#: templates/proof_concept_COVID.html:169
+msgid ""
+"Other measures, like the curfew, had no link with the hospitalization rate "
+"and the algorithm couldn’t integrate those parameters. At last, measures "
+"like shutting down retail stores were too well correlated with the "
+"hospitalization rate and was crushing every other variable in the model. "
+"Indeed, this measure was put in place when the government was fearing an "
+"overload in the hospital system. Therefore, this variable has been put "
+"aside, because an algorithm that can recognize a variable closely correlate "
+"to the studied phenomenon is useless. A human could just look at this "
+"variable and draw the same conclusion."
+msgstr ""
+"D’autres mesures comme le couvre-feu n’avaient aucun lien avec les "
+"hospitalisations et l’algorithme n’arrivait pas à intégrer ces paramètres. "
+"Enfin, des mesures comme la fermeture des commerces étaient trop bien "
+"corrélées avec les hospitalisations et écrasaient toutes les autres "
+"variables dans le modèle. En effet, cette mesure était mise en place lorsque "
+"le gouvernement craignait un débordement des hôpitaux. Ainsi, cette variable "
+"a été mise de côté, car un algorithme qui reconnaît une variable étroitement "
+"corrélée au phénomène étudié ne sert à rien. Il suffit à un être humain de "
+"regarder ladite variable et de tirer ses propres conclusions."
+
+#: templates/proof_concept_COVID.html:179
+#: templates/proof_concept_COVID.html:190
+msgid "The"
+msgstr "Le"
+
+#: templates/proof_concept_COVID.html:183
+msgid "daily number of confirmed cases"
+msgstr "nombre de cas confirmés quotidiens"
+
+#: templates/proof_concept_COVID.html:184
+msgid ""
+"would have been interesting, but since the open data couldn’t be retrieved "
+"on a historical basis by region, this avenue couldn’t be explored more."
+msgstr ""
+"aurait pu être intéressant, mais puisque les données ouvertes ne permettent "
+"pas d’avoir un historique par région, cette avenue n’a pas été explorée."
+
+#: templates/proof_concept_COVID.html:194
+msgid "rate of variants"
+msgstr "taux de variants"
+
+#: templates/proof_concept_COVID.html:195
+msgid ""
+"in circulation has also been analyzed, but there were too few observations "
+"in the model to be used by the algorithm for now."
+msgstr ""
+"en circulation a aussi été analysé, mais il y avait trop peu d’observations "
+"dans le modèle pour que l’algorithme puisse l'utiliser pour l'instant."
+
+#: templates/proof_concept_COVID.html:201
+msgid ""
+"Other data like the positivity rate or the effective reproduction number "
+"(Rt) would have been interesting as well, but historical data by regions "
+"were not available."
+msgstr ""
+"Certaines données auraient aussi pu être intéressantes comme le taux de "
+"positivité ou le taux de reproduction (Rt), mais les données historiques par "
+"région n’étaient pas disponibles."
+
+#: templates/proof_concept_COVID.html:212
+msgid "In order to evaluate the relevance of each variable, the"
+msgstr "Afin d’évaluer la pertinence des variables, la"
+
+#: templates/proof_concept_COVID.html:216
+msgid "SHAP value"
+msgstr "valeur SHAP"
+
+#: templates/proof_concept_COVID.html:217
+msgid ""
+"has been used. The higher the value, the bigger the contribution to the "
+"model. However, we can’t establish a causal link based on this, it only "
+"means that the variable is more or less significant in the final result for "
+"this model with those variables. A SHAP value doesn’t have an absolute "
+"meaning, it is relative to the other value in the model. Therefore, the "
+"selected variables have been the ones that were the most significant and had "
+"an impact on the F1-Score and the accuracy of the model. If a variable could "
+"be removed from the model without affecting the performance, it was not "
+"kept. A summary of the result is available in the picture below."
+msgstr ""
+"a été retenue. Plus la valeur est élevée, plus la variable contribue au "
+"modèle. Cela ne veut pas dire forcément un lien de cause à effet, seulement "
+"que cette variable est plus ou moins significative dans le résultat final "
+"pour ce modèle avec ces variables. Une valeur SHAP n’a pas de signification "
+"absolue, elle est relative aux autres valeurs dans le modèle. Ainsi, les "
+"variables retenues ont été celles qui étaient les plus significatives et qui "
+"impactaient le F1-Score et la précision du modèle. Si une variable pouvait "
+"être retirée du modèle sans affecter la performance, elle n’était pas "
+"conservée. Un sommaire du résultat est disponible dans la figure ci-bas."
+
+#: templates/proof_concept_COVID.html:230
+msgid ""
+"One of the most relevant variable in every model that was tried was the rate "
+"of social contact in the previous month based on the"
+msgstr ""
+"L'une des variables les plus pertinentes dans tous les modèles qui ont été "
+"essayés était le taux de contacts sociaux dans le dernier mois basé sur les "
+"données de"
+
+#: templates/proof_concept_COVID.html:235
+msgid "CONNECT study"
+msgstr "l'étude CONNECT."
+
+#: templates/proof_concept_COVID.html:236
+msgid ""
+"data. It’s fairly logical to believe that an increase in social contacts "
+"lead to an increase of cases and the model follow that logic."
+msgstr ""
+"Il est tout à fait logique de croire qu’une augmentation des contacts "
+"sociaux mène à une augmentation des cas infectieux et le modèle suit cette "
+"logique."
+
+#: templates/proof_concept_COVID.html:242
+msgid "More than a hundred socioeconomic variables from the"
+msgstr "Plus d'une centaine de variables socioéconomiques du"
+
+#: templates/proof_concept_COVID.html:246
+msgid "Statistic Canada 2016 census"
+msgstr "recensement de Statistique Canada de 2016"
+
+#: templates/proof_concept_COVID.html:247
+msgid ""
+"has been tested. The various ages and income slices have not been a factor "
+"in this model. This can be easily explained. The number of observations was "
+"too small (16 regions) to integrate a large quantity of variables. This "
+"phenomenon is called the curse of dimensionality. Essentially, using more "
+"variables doesn’t lead to a better model if the number of observations is "
+"not substantial. For instance, if a model wishes to predict the colour of an "
+"object and that we have various sub classes (light blue, dark bleu, sky "
+"blue, etc.), the model will require a massive amount of observation for each "
+"subcategory of colour. To gather everything under the colour blue would be a "
+"better strategy in a context of limited data."
+msgstr ""
+"ont été testées. Les différentes tranches d’âges ou de revenues n’ont pas "
+"été un facteur important dans le présent modèle. Cela peut s’expliquer "
+"aisément. Le nombre d’observations était trop petit (seulement 16 régions) "
+"pour intégrer une grande quantité de variables. Ce phénomène s’appelle le "
+"curse of dimensionality. Essentiellement, utiliser plus de variables n’est "
+"pas forcément mieux pour un modèle si le nombre d’observations n’est pas "
+"conséquent. Par exemple, si un modèle souhaite prédire la couleur d’un objet "
+"et que nous avons des dizaines de déclinaisons (bleu pâle, bleu foncé, bleu "
+"azur, etc.), le modèle va nécessiter une énorme quantité d’observations pour "
+"chaque sous-couleur. Tout rassembler sous la couleur bleue serait alors une "
+"meilleure stratégie dans un contexte de données limitées."
+
+#: templates/proof_concept_COVID.html:258
+msgid ""
+"This is exactly what has been made in this model by taking the low income "
+"for the elderly of 65 years old and more. This variable reveals itself to be "
+"very significant. It’s logical to believe that the elderly are more "
+"vulnerable to the disease and that those with a low income are at a greater "
+"risk to be in an unfavourable environment."
+msgstr ""
+"C’est exactement ce qui a été fait dans ce modèle en prenant la mesure de "
+"faibles revenues pour les 65 ans et plus. Cette variable s’est avérée très "
+"significative. Il est en effet logique de croire que les personnes âgées "
+"sont les plus vulnérables à la maladie et que ceux avec un faible revenue "
+"ont plus de chance d’être dans un environnement à risque."
+
+#: templates/proof_concept_COVID.html:266
+msgid ""
+"The same logic applies for the recent immigration, since many first line or "
+"precarious workers are immigrants."
+msgstr ""
+"La même logique a prévalu pour l’immigration récente, puisque plusieurs "
+"travailleurs de premières lignes ou de salariés précaires à risque sont des "
+"immigrants."
+
+#: templates/proof_concept_COVID.html:271
+msgid ""
+"Finally, the vaccination rate also has an impact on the prediction, but less "
+"than what we could be led to believe. One of the reasons is the low number "
+"of observations for the high rate of a second dose (recent phenomenon in the "
+"pandemic history). For the first dose, it has obviously an impact, but the "
+"first waves have been mitigated without a high level of vaccination. Despite "
+"that, this variable remains relevant to create a dashboard that simulates "
+"various scenarios (high vaccination vs no vaccination). However, a small "
+"lack of accuracy is to be expected, since the volume of data was low "
+"overall. This phenomenon is quantified in the next section."
+msgstr ""
+"Enfin, le taux de vaccination a également un impact sur la prédiction, mais "
+"moins que ce que l’on pourrait croire. L’une des raisons est que peu "
+"d’observations ont été faites avec un haut taux de 2e dose (phénomène récent "
+"dans l’historique pandémique). Pour ce qui est de la 1ere dose, elle a bien "
+"sûr un impact, mais les premières vagues ont été maîtrisées sans avoir un "
+"haut taux de vaccination. Néanmoins, cette variable demeure pertinente pour "
+"créer un tableau de bord qui englobe divers scénarios (haut taux de "
+"vaccination vs absence de vaccination). Il faut cependant s’attendre à "
+"quelques imprécisions dues au faible volume de données. Cette imprécision "
+"est quantifiée à la section suivante."
+
+#: templates/proof_concept_COVID.html:287
+msgid ""
+"A neural network could have been used, but since my server is not very "
+"powerful, I rather feed my dashboard with a random forest that requires "
+"fewer computational resources once trained. However, for my PhD, a neural "
+"network will be used and will probably be more performing."
+msgstr ""
+"Un réseau de neurones aurait pu être utilisé, mais puisque mon serveur n’est "
+"pas puissant, je préférais alimenter le tableau de bord avec un Random "
+"Forest qui est beaucoup moins demandant en ressource une fois entraînée. "
+"Cependant, pour mon projet de doctorat, un réseau de neurones sera utilisé "
+"et sera vraisemblablement plus performant."
+
+#: templates/proof_concept_COVID.html:294
+#, python-format
+msgid ""
+"The random forest (hyperparameters : 1024 trees, 3 minimum sample split, 1 "
+"minimum sample leaf) has been trained with 75 %% of the 7872 observations. "
+"The latter reached the accuracy of 91,6 %% and a F1-Score of 91,5 %% on the "
+"25 %% test data."
+msgstr ""
+"Le Random Forest (hyperparamètres : 1024 trees, 3 minimum sample splits, 1 "
+"minimum sample leaf) a été entraîné avec 75 %% des 7872 observations. Ce "
+"dernier a atteint une précision de 91,6 %% et un F1-Score de 91,5 %% sur les "
+"25 %% de données tests."
+
+#: templates/proof_concept_COVID.html:301
+#, python-format
+msgid ""
+"Since the classes were heavily unbalanced, accuracy is not a reliable "
+"metric. Indeed, an algorithm that would always predict the dominant class "
+"could appear to perform well, but to be useless detecting anything other "
+"than the principal class. In this case, the F1-Score of 91,5 %%, which is "
+"the harmonic mean of the precision and the recall of each class, is "
+"interesting. Indeed, if only the dominant class would have been predicted, "
+"the F1-score would have been mediocre. The confusion matrix below shows an "
+"adequate performance for every class, without being exceptional.  A lack of "
+"observations explains the ordinary performance for the high level of "
+"hospitalization."
+msgstr ""
+"Puisque les classes sont fortement déséquilibrées, il ne faut pas se fier "
+"sur la précision. En effet, un algorithme qui prédit toujours la classe "
+"dominante peut apparaître performant, mais n’être d’aucune utilité pour "
+"détecter autre chose que la classe prépondérante. Dans le cas présent, le F1-"
+"Score de 91,5 %% qui est une moyenne harmonique de la précision et du rappel "
+"de chaque classe est intéressant. En effet, si seule la classe dominante "
+"avait été prédite adéquatement par l’algorithme, le F1-Score aurait été "
+"médiocre. La matrice de confusion ci-bas dénote une performance correcte "
+"pour l’ensemble des classes, sans être exceptionnelle. Un manque "
+"d’observation explique une performance ordinaire pour les niveaux élevés "
+"d’hospitalisations."
+
+#: templates/proof_concept_COVID.html:367
+msgid ""
+"This dashboard has been designed with the limits stated in the previous "
+"sections. We must not focus too much on the accuracy of the prediction, but "
+"rather in its potential to generate maps depending on the different "
+"parameters. In this example, it is possible to modify for every region the "
+"vaccination rate and the social contacts in the last month by moving the "
+"sliders. To avoid inputting manually every possible scenario, buttons to "
+"randomize a range of data are available below the table. Once the desired "
+"values have been selected, you can launch the prediction by pushing on the "
+"predict button below the table."
+msgstr ""
+"Ce tableau de bord a été conçu avec les limites énoncées dans les sections "
+"précédentes. Il ne faut pas trop se focaliser sur la précision de la "
+"prédiction, mais plutôt sur le potentiel de générer des cartes en fonction "
+"de différents paramètres. Pour cet exemple, il est possible de modifier pour "
+"chaque région les taux de vaccination et de contacts sociaux dans le dernier "
+"mois en déplaçant le curseur de défilement (slider). Afin d’éviter d’avoir à "
+"générer différents scénarios manuellement, des boutons qui génèrent un "
+"intervalle de données aléatoirement sont disponibles sous le tableau. Une "
+"fois les valeurs désirées sélectionnées, il suffit de lancer la prédiction "
+"en appuyant sur le bouton sous le tableau."
+
+#: templates/proof_concept_COVID.html:377
+msgid ""
+"The result of the prediction is displayed on the map. You can click on a "
+"polygon to get the information that led to the prediction."
+msgstr ""
+"Le résultat de la prédiction s’affiche sur la carte. Il est possible de "
+"cliquer sur le polygone de chaque région pour obtenir les informations qui "
+"ont mené à la prédiction."
+
+#: templates/proof_concept_COVID.html:389
+#, python-format
+msgid "First dose of vaccine (%%)"
+msgstr "Première dose de vaccin (%%)"
+
+#: templates/proof_concept_COVID.html:390
+#, python-format
+msgid "Second dose of vaccine (%%)"
+msgstr "Deuxième dose de vaccin (%%)"
+
+#: templates/proof_concept_COVID.html:391
+#, python-format
+msgid "Social contacts at home in the last month (%%)"
+msgstr "Contacts sociaux à domicile dans le dernier mois (%%)"
+
+#: templates/proof_concept_COVID.html:397
+msgid "Vaccination values"
+msgstr "Valeurs pour la vaccination"
+
+#: templates/proof_concept_COVID.html:398
+msgid "No vaccination"
+msgstr "Aucune vaccination"
+
+#: templates/proof_concept_COVID.html:399
+msgid "Low vaccination"
+msgstr "Faible vaccination"
+
+#: templates/proof_concept_COVID.html:400
+msgid "High vaccination"
+msgstr "Vaccination élevée"
+
+#: templates/proof_concept_COVID.html:403
+msgid "Social contact values"
+msgstr "Valeurs pour les contacts sociaux"
+
+#: templates/proof_concept_COVID.html:404
+msgid "Low social contacts"
+msgstr "Contacts sociaux faibles"
+
+#: templates/proof_concept_COVID.html:405
+msgid "High social contacts"
+msgstr "Contacts sociaux élevés"
+
+#: templates/proof_concept_COVID.html:409
+msgid "Values for the whole table"
+msgstr "Valeurs pour l'ensemble du tableau"
+
+#: templates/proof_concept_COVID.html:410
+msgid "Randomize data"
+msgstr "Données aléatoires"
+
+#: templates/proof_concept_COVID.html:416
+msgid "Launch prediction"
+msgstr "Lancer la prédiction"
+
+#: templates/proof_concept_COVID.html:434
+msgid ""
+"The problem with the COVID open data was the low number of observations to "
+"train the algorithm (only 16 regions and 492 days). Data by RLS or by "
+"dissemination areas would have produced more interesting results."
+msgstr ""
+"Le problème avec les données ouvertes de COVID est le faible niveau "
+"d’observations pour entraîner l’algorithme (seulement 16 régions et 492 "
+"jours). L’accès aux données par RLS ou par aires de diffusion aurait produit "
+"des résultats plus intéressants."
+
+#: templates/proof_concept_COVID.html:440
+msgid ""
+"The advantage of studying hospitalizations related to summer temperature "
+"data is its large number of observations in the last decades. Furthermore, "
+"this problematic is relatively consistent in its physiopathology. The "
+"current pandemic shows conditions that vary greatly from one wave to another "
+"(variants, vaccinations, etc.), which make it more complex for the algorithm "
+"to work."
+msgstr ""
+"L’avantage d’étudier les hospitalisations en fonction des données de "
+"températures estivales réside dans son grand nombre d’observations dans les "
+"dernières décennies. De plus, cette problématique est relativement constante "
+"dans sa physiopathologie. La pandémie actuelle offre des conditions fort "
+"variables d’une vague à l’autre (variants, vaccinations, etc.), ce qui "
+"complexifie d’autant plus le travail de l’algorithme."
+
+#: templates/proof_concept_COVID.html:448
+msgid ""
+"A dashboard on heat waves could integrate meteorological data with various "
+"temperature range, a simulator related to changing demographics (such as the "
+"proportion of elderly by sectors) or to vegetation cover changes by area. "
+"This approach has many advantages:"
+msgstr ""
+"Un tableau de bord sur les vagues de chaleur pourrait intégrer des données "
+"météorologiques avec des plages de températures variées, un simulateur en "
+"fonction de la démographie changeante (comme la proportion de personnes "
+"âgées par secteurs) ou bien en fonction du couvert végétal présent. Cette "
+"approche comporte plusieurs avantages :"
+
+#: templates/proof_concept_COVID.html:454
+msgid ""
+"<li>Production of many maps related to different parameters (vs a unique map "
+"of vulnerability).</li> <li>Since the AI produce a map that is based "
+"directly on the hospitalization and the mortality rates, the level of "
+"precision is higher. There is no lost information in a principal component "
+"analysis or debate to choose the variables and their weighting.</li> "
+"<li>Integrating a large number of variables with a non-linear relationship "
+"is possible if the number of observations is large enough.</li> <li>Possible "
+"to provide real time predictions to feed an alert system.</li> <li>Once the "
+"infrastructure is in place (I coded the whole website by myself with open-"
+"source software, it’s not costly, nor complex), the AI can constantly "
+"improve by learning every year with new data.</li> <li>A better "
+"understanding of the phenomenon can result of this strategy. Even if you "
+"can’t establish a causal link, patterns identify by the AI can show blind "
+"spots in the data that are not obvious at first sight.</li> <li>The same "
+"strategy can be applied to a good number of hazards (flooding, allergies, "
+"wild fires) if you adapt the relevant variables to select.</li>"
+msgstr ""
+"<li>Productions d’un grand nombre de cartes en fonction de différents "
+"paramètres (vs une carte unique générale de vulnérabilité)</li> <li>Puisque "
+"la carte produite par l’IA utilise directement des données "
+"d’hospitalisations et de mortalité, le niveau de précision est plus grand. "
+"Il n’y a pas de pertes d’information via une analyse en composante "
+"principale ou de débats pour choisir des variables et leur pondération.</li> "
+"<li>L’intégration d’un grand nombre de variables dont les relations ne sont "
+"pas forcément linéaires est possible si les observations sont suffisantes.</"
+"li> <li>Possibilité de fournir en temps réel des prédictions pour alimenter "
+"un système d’alerte. </li> <li>Une fois une infrastructure mise en place "
+"(j’ai codé tout le site web seul avec des logiciels libres, ce n’est ni très "
+"coûteux, ni très complexe), l’IA peut constamment s’améliorer en apprenant "
+"tous les ans avec de nouvelles données. </li> <li>Une meilleure "
+"compréhension des phénomènes peut en découler. Bien qu’on ne puisse pas "
+"effectuer de relations de cause à effet, les patrons identifiés par l’IA "
+"permettent d’approfondir certains angles qui pourraient être moins évidents "
+"de prime à bord.  </li> <li>Le même principe peut s’appliquer pour un grand "
+"nombre d’aléas (inondations, allergies, feux de forêt) à condition d’adapter "
+"les variables pertinentes. </li>"
+
+#: templates/proof_concept_COVID.html:473
+msgid ""
+"Obviously, there are disadvantages and AI can’t replace traditional technic "
+"in epidemiology. This is not the goal, the objective of this project is to "
+"be complementary and offer an additional tool to public health. Among the "
+"disadvantages, we can underline:"
+msgstr ""
+"Il y a bien évidemment des désavantages et l’IA ne peut pas remplacer les "
+"techniques traditionnelles d’épidémiologie. Ce n’est d’ailleurs pas le but, "
+"l’objectif est d’être complémentaire et d’offrir un outil supplémentaire à "
+"la santé publique. Notons, entres autres : "
+
+#: templates/proof_concept_COVID.html:480
+msgid ""
+"<li>The algorithm can’t extrapolate data. For instance, a well-trained "
+"algorithm couldn’t have predicted exactly the number of deaths in absolute "
+"value in this summer’s British-Columbia heat wave. Since climate change will "
+"bring a lot of extreme events that have never been observed, only an order "
+"of magnitude can be provided. That being said, it’s true for any tool that "
+"tries to make predictions. AI has the advantage of being flexible and to "
+"integrate those new data quickly.</li> <li>Private life matters are very "
+"important to consider while implementing AI-based solutions. My methodology "
+"only uses population-based data and don’t use data that can identify "
+"individuals, which increase the adhesion of the population to this type of "
+"solution.</li> <li>To my knowledge, very few researches are made to create "
+"vulnerability map base on AI and GIS. Most of the scientific literature rely "
+"on principal component analysis or consider only one aspect of the problem "
+"at the time. More research is needed to fully evaluate the potential of this "
+"approach in a climate change context.</li>"
+msgstr ""
+"<li>L’algorithme ne peut pas extrapoler des données. Par exemple, un "
+"algorithme bien entraîné n’aurait pas pu prédire adéquatement le nombre de "
+"morts en valeur absolue dans l’importante vague de chaleur que la Colombie-"
+"Britannique a vécu cet été. Puisque les changements climatiques apporteront "
+"des évènements extrêmes qui n’ont jamais été observés, seul un ordre de "
+"grandeur peut être fourni. Ceci étant dit, cela demeure vrai pour n’importe "
+"quel outil qui tente d’effectuer des prédictions. L’IA possède l’avantage "
+"d’être flexible et d’intégrer rapidement ces nouvelles données.  </li> "
+"<li>La notion de vie privée est très importante à considérer dans une "
+"éventuelle implantation d’une solution basée sur l’IA. Ma méthodologie "
+"évalue les données au niveau populationnel et n’utilise pas de données qui "
+"permettent d’identifier des individus, ce qui augmente l’adhésion de la "
+"population à ce type de solution.  </li> <li>À ma connaissance, très peu de "
+"recherches sont effectuées pour créer des cartes de vulnérabilités basées "
+"sur l’IA et les SIG. La majorité de la littérature scientifique semble "
+"s’appuyer sur les analyses en composante principale pour le moment ou ne "
+"considérer qu’un seul aspect à la fois. Plus de recherches sont nécessaires "
+"pour pleinement évaluer le potentiel de cette approche en contexte de "
+"changements climatiques. </li> "
 
 #: templates/research.html:13
 msgid ""
@@ -1180,13 +2058,12 @@ msgid ""
 msgstr ""
 "J’ai créé quelques tutoriels pour aider d’autres étudiants et ceux qui "
 "débutent dans le domaine des SIG. Je ne suis en aucun cas un ingénieur "
-"logiciel et je ne prétends pas que mon code et mes solutions sont "
-"optimaux. Par contre, j’ai passé plusieurs heures à comprendre comment tout "
-"ça pouvait fonctionner ensemble. Il n’y a pas beaucoup de ressources en "
-"ligne pour aider les professionnels en SIG. De plus, j’ai trouvé les "
-"exemples pour Django plutôt de base, ce qui rendait difficile la compréhension "
-"des trucs plus avancés lorsqu’on n’est pas un développeur web. </p> <p> Dans "
-"mon  "
+"logiciel et je ne prétends pas que mon code et mes solutions sont optimaux. "
+"Par contre, j’ai passé plusieurs heures à comprendre comment tout ça pouvait "
+"fonctionner ensemble. Il n’y a pas beaucoup de ressources en ligne pour "
+"aider les professionnels en SIG. De plus, j’ai trouvé les exemples pour "
+"Django plutôt de base, ce qui rendait difficile la compréhension des trucs "
+"plus avancés lorsqu’on n’est pas un développeur web. </p> <p> Dans mon  "
 
 #: templates/tutorials.html:50
 msgid "Django for GIS tutorials"
@@ -1215,13 +2092,13 @@ msgid ""
 "could. I will only reference sources I found interesting. </p> <p> I also "
 "cover a bit the"
 msgstr ""
-" J’ai aussi ajouté des conseils sur les parties où j’ai rencontré des difficultés, comme sur la "
-"façon de créer un site bilingue et d’autres aspects que j’ai probablement "
-"pris beaucoup trop de temps à trouver par moi-même, comme le fonctionnement "
-"d’Ajax avec Django. Par contre, je ne passe pas en revue les bases, puisque "
-"plusieurs autres personnes le font beaucoup mieux que moi. Je vais seulement "
-"mettre des liens vers les références que je trouve pertinentes. </p> <p>Je "
-"couvre aussi un peu la technologie"
+" J’ai aussi ajouté des conseils sur les parties où j’ai rencontré des "
+"difficultés, comme sur la façon de créer un site bilingue et d’autres "
+"aspects que j’ai probablement pris beaucoup trop de temps à trouver par moi-"
+"même, comme le fonctionnement d’Ajax avec Django. Par contre, je ne passe "
+"pas en revue les bases, puisque plusieurs autres personnes le font beaucoup "
+"mieux que moi. Je vais seulement mettre des liens vers les références que je "
+"trouve pertinentes. </p> <p>Je couvre aussi un peu la technologie"
 
 #: templates/tutorials.html:73
 msgid ""
@@ -1231,8 +2108,8 @@ msgid ""
 "programming in general, feel free to"
 msgstr ""
 "pour échantillonner des données en temps réel. Je ne suis pas un expert sur "
-"le sujet, mais j’ai appris quelques leçons par essais et erreurs. </p> <p> Si "
-"vous êtes un expert ou juste meilleur que moi avec ces technologies et la "
+"le sujet, mais j’ai appris quelques leçons par essais et erreurs. </p> <p> "
+"Si vous êtes un expert ou juste meilleur que moi avec ces technologies et la "
 "programmation en général, n’hésitez pas à"
 
 #: templates/tutorials.html:80
@@ -1245,10 +2122,10 @@ msgid ""
 "facing those challenges. You can also contact me if you have questions "
 "regarding the content that would be unclear to you."
 msgstr ""
-"Je vais améliorer ces sections en fonction de votre rétroaction pour en faire "
-"profiter tous ceux qui doivent affronter les mêmes défis. Vous pouvez aussi "
-"me contacter si vous avez des questions sur des sections qui ne sont pas "
-"claires pour vous. "
+"Je vais améliorer ces sections en fonction de votre rétroaction pour en "
+"faire profiter tous ceux qui doivent affronter les mêmes défis. Vous pouvez "
+"aussi me contacter si vous avez des questions sur des sections qui ne sont "
+"pas claires pour vous. "
 
 #: templates/vulnerability_essay.html:13
 msgid "Summary and full master's essay on vulnerability"

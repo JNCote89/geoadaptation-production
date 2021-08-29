@@ -90,7 +90,7 @@ def create_legend(color, min_temp, max_temp):
 def create_map_frame(num_date, num_time, opacity, color):
     # It's easier to control the rendering of the map in the HTML file if you put it in a figure.
     f = folium.Figure(width=700, height=500)
-    m = folium.Map(location=[45.2670, -72.1445], zoom_start=15).add_to(f)
+    m = folium.Map(location=[45.2670, -72.1445], zoom_start=15, tiles='carto db positron').add_to(f)
 
     # Working with custompane allow to control the order in which the layers are rendered via the z_index parameter.
     # Look at the doc to get the default parameters. Here the pane is inititialized and will be used later in the
@@ -210,22 +210,22 @@ def create_legend_COVID():
     fig.set_figheight(4)
     fig.set_figwidth(2)
 
-    plt.title("Légende", fontdict={'fontsize': 24, 'fontweight': "bold"})
+    plt.title(_("Legend"), fontdict={'fontsize': 24, 'fontweight': "bold"})
 
     ax.add_patch(patches.Rectangle((0, 0), 1, 1.5, facecolor=(26 / 255, 150 / 255, 65 / 255, 0.8), fill=True))
-    plt.text(1.25, 0.75, "Niveau d'hospitalisation 1", fontsize=18)
+    plt.text(1.25, 0.75, _("Hospitalization level 1"), fontsize=18)
 
     ax.add_patch(patches.Rectangle((0, 2), 1, 1.5, facecolor=(166 / 255, 217 / 255, 106 / 255, 0.8), fill=True))
-    plt.text(1.25, 2.75, "Niveau d'hospitalisation 2", fontsize=18)
+    plt.text(1.25, 2.75, _("Hospitalization level 2"), fontsize=18)
 
     ax.add_patch(patches.Rectangle((0, 4), 1, 1.5, facecolor=(244 / 255, 252 / 255, 3 / 255, 0.8), fill=True))
-    plt.text(1.25, 4.75, "Niveau d'hospitalisation 3", fontsize=18)
+    plt.text(1.25, 4.75, _("Hospitalization level 3"), fontsize=18)
 
     ax.add_patch(patches.Rectangle((0, 6), 1, 1.5, facecolor=(253 / 255, 174 / 255, 97 / 255, 0.8), fill=True))
-    plt.text(1.25, 6.75, "Niveau d'hospitalisation 4", fontsize=18)
+    plt.text(1.25, 6.75, _("Hospitalization level 4"), fontsize=18)
 
     ax.add_patch(patches.Rectangle((0, 8), 1, 1.5, facecolor=(215 / 255, 25 / 250, 28 / 255, 0.8), fill=True))
-    plt.text(1.25, 8.75, "Niveau d'hospitalisation 5", fontsize=18)
+    plt.text(1.25, 8.75, _("Hospitalization level 5"), fontsize=18)
 
     plt.xlim([0, 2])
     plt.ylim([0, 10])
@@ -276,13 +276,21 @@ def create_map_COVID(matrix):
         else:
             return '#d7191c'
 
+    # The reason why we have to convert to string the aliases is because of a quirk of Django having a hard time
+    # with Json serializer. You can't mix a Json format with the one Django uses for translation, thus having to
+    # convert every single item to string before using the translation.
     folium.GeoJson(data=RSS_rf_result_stats,
                    style_function=lambda x: {'fillColor': custom_color(x), 'fillOpacity': 0.8, 'color': 'black',
                                              'weight': 1, 'opacity': 0.4}, name="Niveaux d'hospitalisation",
                    ).add_child(folium.features.GeoJsonPopup(
         fields=['Etiquette', 'Alerte', 'first_dose', 'second_dose', 'CONNECT_lag', 'low_income', 'immigration'],
-        aliases=["Région", "Niveau d'hospitalisation", "Première dose", "Deuxième dose", "Contacts sociaux",
-                 "Faibles revenus (65 ans et +)", "Immigration récente"])).add_to(m)
+        aliases=[str(_("Region")),
+                 str(_("Hospitalization level")),
+                 str(_("First dose")),
+                 str(_("Second dose")),
+                 str(_("Social contacts")),
+                 str(_("Low incomes (65 years old +)")),
+                 str(_("Recent immigration"))])).add_to(m)
 
     folium.LayerControl().add_to(m)
 

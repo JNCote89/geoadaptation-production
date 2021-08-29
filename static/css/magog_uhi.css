@@ -83,7 +83,7 @@
 #stats_table td {
 	text-align: center;
 }
-.max_stats{
+.color_stats{
 	background-color: rgba(2,91,72,0.10);
 }
 #param {
@@ -174,4 +174,25 @@
 	font-size: 14px;
 	font-family: 'Lexend', sans-serif;
 	color:white;
+}
+.black-text {
+	color:black;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
+}
+
+.magog-uhi-study-zone{
+	margin-top: 24px;
+	padding-top: 24px;
+	padding-right: 12px;
+	padding-left: 12px;
+	padding-bottom: 24px;
+	margin-bottom: 24px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1024px;
+	font-family: 'Lexend', sans-serif;
 }

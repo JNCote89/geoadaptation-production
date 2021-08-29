@@ -116,3 +116,15 @@ table, th, td {
     margin: auto;
     width: 600px;
 }
+#loadingLayerCOVID {
+	display: none;
+}
+#loadingLabelCOVID {
+	text-align: center;
+	border-radius: 5px;
+	font-weight: bold;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	background: forestgreen;
+    color: white;
+}
