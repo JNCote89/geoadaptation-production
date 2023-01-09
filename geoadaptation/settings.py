@@ -233,9 +233,11 @@ CSP_SCRIPT_SRC = ("'self'",
                   'https://www.gstatic.com/recaptcha/',
                   'https://unpkg.com',
                   'https://cdn.jsdelivr.net',
-                  'https://fonts.googleapis.com/',
-                  'https://fonts.gstatic.com/',)
-CSP_FONT_SRC = ("'self'",)
+                  'https://fonts.googleapis.com',
+                  'https://fonts.gstatic.com',)
+CSP_FONT_SRC = ("'self'",
+                'https://fonts.googleapis.com',
+                'https://fonts.gstatic.com',)
 CSP_CONNECT_SRC = ("'self'",)
 CSP_OBJECT_SRC = ("'self'", )
 CSP_BASE_URI = ("'self'", )

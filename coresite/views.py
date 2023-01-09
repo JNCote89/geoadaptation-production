@@ -234,9 +234,7 @@ def proof_concept_COVID(request):
         return render(request, 'proof_concept_COVID.html', context={"data": data})
 
 
-class VulnerabityDashboard(View):
+@csp_exempt
+def vulnerability_dashboard(request):
 
-    template_name = 'vulnerability_dashboard.html'
-
-    def get(self, request):
-        return render(request, self.template_name)
+    return render(request, 'vulnerability_dashboard.html')

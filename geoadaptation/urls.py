@@ -26,8 +26,6 @@ from django.conf.urls.i18n import i18n_patterns
 # Import your views from your app (mine is coresite)
 from coresite import views, plotly_vulnerability
 
-from coresite.views import VulnerabityDashboard
-
 # Import admin module to manage the admin panel
 from django.contrib import admin
 admin.autodiscover()
@@ -67,6 +65,6 @@ urlpatterns += i18n_patterns (
     path(pgettext_lazy(u'url', u'About'), views.contact_view, name='About'),
     path(pgettext_lazy(u'url', u'Email_sent'), views.email_sent, name='Email_sent'),
     path(_('Proof_concept_COVID'), views.proof_concept_COVID, name='Proof_concept_COVID'),
-    path(_('Vulnerability-dashboard'), VulnerabityDashboard.as_view(), name='Vulnerability-dashboard'),
+    path(_('Vulnerability-dashboard'), views.vulnerability_dashboard, name='Vulnerability-dashboard'),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 )
