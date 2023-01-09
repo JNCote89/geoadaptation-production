@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # Those module are standard to manage the URL paths
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import TemplateView, RedirectView
 from django.contrib.staticfiles.storage import staticfiles_storage
 
@@ -24,7 +24,9 @@ from django.utils.translation import pgettext_lazy
 from django.conf.urls.i18n import i18n_patterns
 
 # Import your views from your app (mine is coresite)
-from coresite import views
+from coresite import views, plotly_vulnerability
+
+from coresite.views import VulnerabityDashboard
 
 # Import admin module to manage the admin panel
 from django.contrib import admin
@@ -65,4 +67,6 @@ urlpatterns += i18n_patterns (
     path(pgettext_lazy(u'url', u'About'), views.contact_view, name='About'),
     path(pgettext_lazy(u'url', u'Email_sent'), views.email_sent, name='Email_sent'),
     path(_('Proof_concept_COVID'), views.proof_concept_COVID, name='Proof_concept_COVID'),
+    path(_('Vulnerability-dashboard'), VulnerabityDashboard.as_view(), name='Vulnerability-dashboard'),
+    path('django_plotly_dash/', include('django_plotly_dash.urls')),
 )

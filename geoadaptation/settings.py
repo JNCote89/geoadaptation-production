@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'dpd_static_support',
     # Add your app here (mine is called coresite) so Django knows where to look for your scripts
     'coresite.apps.CoresiteConfig',
     'captcha',
@@ -63,6 +65,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_plotly_dash.middleware.BaseMiddleware',
+    'django_plotly_dash.middleware.ExternalRedirectionMiddleware'
 ]
 
 ROOT_URLCONF = 'geoadaptation.urls'
@@ -198,6 +202,21 @@ RECAPTCHA_PUBLIC_KEY = str(os.getenv('RECAPTCHA_PUBLIC_KEY'))
 RECAPTCHA_PRIVATE_KEY = str(os.getenv('RECAPTCHA_PRIVATE_KEY'))
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django_plotly_dash.finders.DashAssetFinder',
+    'django_plotly_dash.finders.DashComponentFinder',
+    'django_plotly_dash.finders.DashAppDirectoryFinder'
+]
+
+PLOTLY_COMPONENTS = [
+    'dash',
+    'dash_bootstrap_components',
+    'dpd_static_support'
+]
+
 
 CSP_DEFAULT_SRC = ("'self'",)
 CSP_STYLE_SRC = ("'self'",

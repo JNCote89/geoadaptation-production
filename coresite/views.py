@@ -1,6 +1,7 @@
 # Usual librairies to manage rendering, post and get requests
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.views.generic import View
 
 # Librairies of custom scripts
 from .Navigation import initial_navigation, updateTimeList
@@ -231,3 +232,11 @@ def proof_concept_COVID(request):
 
         # Return the rendering for magog_uhi.html file.
         return render(request, 'proof_concept_COVID.html', context={"data": data})
+
+
+class VulnerabityDashboard(View):
+
+    template_name = 'vulnerability_dashboard.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
