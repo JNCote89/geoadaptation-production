@@ -222,11 +222,13 @@ CSP_DEFAULT_SRC = ("'self'",)
 CSP_STYLE_SRC = ("'self'",
                  'https://www.google.com/recaptcha/',
                  'https://recaptcha.google.com/recaptcha/',
-                 'https://www.gstatic.com/recaptcha/',)
+                 'https://www.gstatic.com/recaptcha/',
+                 'https://unpkg.com',)
 CSP_SCRIPT_SRC = ("'self'",
                   'https://www.google.com/recaptcha/',
                   'https://recaptcha.google.com/recaptcha/',
-                  'https://www.gstatic.com/recaptcha/',)
+                  'https://www.gstatic.com/recaptcha/',
+                  'https://unpkg.com',)
 CSP_FONT_SRC = ("'self'",)
 CSP_CONNECT_SRC = ("'self'",)
 CSP_OBJECT_SRC = ("'self'", )
@@ -241,5 +243,6 @@ CSP_FRAME_SRC = ("'self'",
                  'https://weather.gc.ca',
                  'https://www.google.com/recaptcha/',
                  'https://recaptcha.google.com/recaptcha/',
-                 'https://www.gstatic.com/recaptcha/',)
+                 'https://www.gstatic.com/recaptcha/',
+                 'https://unpkg.com',)
 CSP_IMAGE_SRC = ("'self'",)
