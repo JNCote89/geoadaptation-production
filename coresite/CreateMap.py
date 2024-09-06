@@ -28,7 +28,7 @@ import folium.plugins
 from folium.features import DivIcon
 
 # Import to translate text
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 import os
 from django.conf import settings
@@ -58,7 +58,7 @@ def create_legend(color, min_temp, max_temp):
     bbox = TransformedBbox(bbox0, ax.transAxes)
 
     # Since we use the same argument of colormap in the legend and the interpolate layer, the result match. The color
-    # parameter is set by the user from the color_selector in the magog_uhi.html file
+    # parameter is set by the user from the color_selector in the magog-uhi.html file
     bbox_image = BboxImage(bbox, cmap=cm.get_cmap(color, 256))
     fig.set_figheight(1.5)
     fig.set_figwidth(6)
@@ -183,7 +183,7 @@ def create_map_frame(num_date, num_time, opacity, color):
             # for temperature.
             folium.LayerControl().add_to(m)
 
-            # Return a HTML frame to be displayed in magog_uhi.html
+            # Return a HTML frame to be displayed in magog-uhi.html
             f = m._repr_html_()
             return f
 
@@ -298,5 +298,23 @@ def create_map_COVID(matrix):
     folium.plugins.FloatImage(legend, bottom=5, left=65).add_to(m)
 
     f = m._repr_html_()
+
+    return f
+
+
+def create_map_adaptation():
+    # It's easier to control the rendering of the map in the HTML file if you put it in a figure.
+    f = folium.Figure(width=700, height=500)
+    m = folium.Map(location=[46.1570, -72.5345], zoom_start=8, max_zoom=16, min_zoom=5,
+                   tiles='carto db positron').add_to(f)
+
+    #
+    DA = gpd.read_file(os.path.join(settings.MEDIA_ROOT, 'DA_to_region.gpkg'), layer='DA_to_region',
+                       bbox=(-73, 46, -72, 47))
+    DA['geometry'] = DA.simplify(tolerance=0.01)
+    folium.GeoJson(data=DA['geometry']).add_to(m)
+    f = m._repr_html_()
+
+    # 1 degree = 111139m
 
     return f

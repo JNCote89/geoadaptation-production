@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'leaflet',
     'dpd_static_support',
     # Add your app here (mine is called coresite) so Django knows where to look for your scripts
     'coresite.apps.CoresiteConfig',
@@ -206,17 +206,12 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'django_plotly_dash.finders.DashAssetFinder',
-    'django_plotly_dash.finders.DashComponentFinder',
-    'django_plotly_dash.finders.DashAppDirectoryFinder'
 ]
 
-PLOTLY_COMPONENTS = [
-    'dash',
-    'dash_bootstrap_components',
-    'dpd_static_support'
-]
-
+LEAFLET_CONFIG = {'PLUGINS': {'name-of-plugins': {
+    'js': ["https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"],
+    'auto-include': True}}
+}
 
 CSP_DEFAULT_SRC = ("'self'",)
 CSP_STYLE_SRC = ("'self'",

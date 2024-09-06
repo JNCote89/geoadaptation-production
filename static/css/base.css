@@ -361,7 +361,7 @@ a {
 	padding-bottom: 24px;
 }
 
- #ScrollTopBtn {
+#ScrollTopBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 15px; /* Place the button at the bottom of the page */

@@ -14,17 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # Those module are standard to manage the URL paths
-from django.urls import path, include
+from django.urls import path, re_path
 from django.views.generic import TemplateView, RedirectView
 from django.contrib.staticfiles.storage import staticfiles_storage
 
 # Import those module to translate text and add language patterns to your URL
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.utils.translation import pgettext_lazy
 from django.conf.urls.i18n import i18n_patterns
 
+# from djgeojson.views import GeoJSONLayerView, TiledGeoJSONLayerView
+
 # Import your views from your app (mine is coresite)
-from coresite import views, plotly_vulnerability
+from coresite import views
+
 
 # Import admin module to manage the admin panel
 from django.contrib import admin
@@ -39,8 +42,12 @@ urlpatterns = [
     # Hide the admin path to avoid BOT trying to brute force the default admin path
     path(str(os.getenv('RANDOM_ADMIN_URL')), admin.site.urls),
     # Point the path to the favicon in your static files.
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/geoadaptation.ico')))
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/geoadaptation.ico'))),
 
+    # Layers must be in srid 3857 !!!
+    path('layer/ADA-census-2018/<int:zoom>/<int:x>/<int:y>/<str:vulnerability>', views.mvt_tiles_ada_census_2018, name='ada_census_2018'),
+    path('layer/DA-census-2018/<int:zoom>/<int:x>/<int:y>/<str:vulnerability>', views.mvt_tiles_da_census_2018, name='da_census_2018'),
+    path('layer/household-vegetation-2018/<int:zoom>/<int:x>/<int:y>/<str:vulnerability>', views.mvt_tiles_household_vegetation_2018, name='household_vegetation_2018'),
 ]
 
 # The patterns can be tweak to put the langage in the URL (/en/ or /fr/) with the i18n_ppaterns and then translate with
@@ -52,19 +59,17 @@ urlpatterns = [
 # views. It wasn't worth the extra effort in my case, since reusability wasn't my main concern.
 urlpatterns += i18n_patterns (
     path("", TemplateView.as_view(template_name="home.html"), name="redirect"),
-    path(_('Home'), TemplateView.as_view(template_name="home.html"), name='Home'),
+    path(_('home'), TemplateView.as_view(template_name="home.html"), name='home'),
     path(_('CCAP'), TemplateView.as_view(template_name="ccap.html"), name='CCAP'),
-    path(_('Magog_ccap'), TemplateView.as_view(template_name="magog_ccap.html"), name='Magog_ccap'),
-    path(_('Research'), TemplateView.as_view(template_name="research.html"), name='Research'),
-    path(_('Magog_uhi'), views.magog_uhi, name='Magog_uhi'),
-    path(_('Vulnerability_essay'), TemplateView.as_view(template_name="vulnerability_essay.html"),
-         name='vulnerability_essay'),
-    path(_('Tutorials'), TemplateView.as_view(template_name="tutorials.html"), name='Tutorials'),
-    path(_('LoRa_tutorial'), TemplateView.as_view(template_name="lora_tutorial.html"), name='LoRa_tutorial'),
-    path(_('Django_tutorial'), TemplateView.as_view(template_name="django_tutorial.html"), name='Django_tutorial'),
-    path(pgettext_lazy(u'url', u'About'), views.contact_view, name='About'),
-    path(pgettext_lazy(u'url', u'Email_sent'), views.email_sent, name='Email_sent'),
-    path(_('Proof_concept_COVID'), views.proof_concept_COVID, name='Proof_concept_COVID'),
-    path(_('Vulnerability-dashboard'), views.vulnerability_dashboard, name='Vulnerability-dashboard'),
-    path('django_plotly_dash/', include('django_plotly_dash.urls')),
+    path(_('magog-ccap'), TemplateView.as_view(template_name="magog-ccap.html"), name='magog-ccap'),
+    path(_('research'), TemplateView.as_view(template_name="research.html"), name='research'),
+    path(_('magog-uhi'), views.magog_uhi, name='magog-uhi'),
+    path(_('vulnerability-essay'), TemplateView.as_view(template_name="vulnerability-essay.html"),
+         name='vulnerability-essay'),
+    path(_('tutorials'), TemplateView.as_view(template_name="tutorials.html"), name='Tutorials'),
+    path(_('LoRa-tutorial'), TemplateView.as_view(template_name="lora-tutorial.html"), name='LoRa_tutorial'),
+    path(_('django-tutorial'), TemplateView.as_view(template_name="django-tutorial.html"), name='Django_tutorial'),
+    path(pgettext_lazy(u'url', u'about'), views.contact_view, name='About'),
+    path(pgettext_lazy(u'url', u'email-sent'), views.email_sent, name='Email-sent'),
+    path(_('vulnerability-dashboard'), views.VulnerabilityDashboard.as_view(), name='vulnerability-dashboard'),
 )

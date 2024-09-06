@@ -83,7 +83,6 @@ $("#inputDate,#inputTime,#opacitySlider,#inputColor").change(function() {
     /* In the case the date is not valid, a message is displayed to ask the user to choose between the first date of the
     * database and the last entry */
     else {
-
         min_date = document.getElementById("inputDate").getAttribute("min");
         max_date = document.getElementById("inputDate").getAttribute("max");
         document.getElementById("invalidDate").setAttribute("style", "display:inline;");

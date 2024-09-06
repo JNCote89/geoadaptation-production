@@ -59,7 +59,7 @@ django-admin compilemessages to apply those translatations. The doc give all the
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="nav nav-list">
             <li class="nav-item">
-                <a href="{% translate "Home" %}"
+                <a href="{% translate "home" %}"
                    class="nav-link">{% translate "Home" %}</a>
             </li>
             <li class="nav-item dropdown">
@@ -67,40 +67,40 @@ django-admin compilemessages to apply those translatations. The doc give all the
                    class="nav-link" id="navbarDropdown" role="button" aria-expanded="false" >{% translate "CCAP" %}</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
             <li>
-                <a href="{% translate "Magog_ccap" %}"
+                <a href="{% translate "magog-ccap" %}"
                    class="dropdown-item">{% translate "Magog's climate change adaptation plan (CCAP)" %}</a>
             </li>
         </ul>
             <li class="nav-item dropdown">
-                <a href="{% translate "Research" %}"
+                <a href="{% translate "research" %}"
                    class="nav-link" id="navbarDropdown" role="button"
                    aria-expanded="false">{% translate "Research" %}</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
             <li>
-                <a href="{% translate "Magog_uhi" %}"
+                <a href="{% translate "magog-uhi" %}"
                    class="dropdown-item">{% translate "Urban heat islands monitoring at Espace Saint-Luc in Magog" %}</a>
             </li>
             <li>
-                <a href="{% translate "Vulnerability_essay" %}"
+                <a href="{% translate "vulnerability-essay" %}"
                    class="dropdown-item">{% translate "Master's essay on heat waves vulnerability assesment" %}</a>
             </li>
             <li>
-                <a href="{% translate "Proof_concept_COVID" %}"
-                   class="dropdown-item">{% translate "PhD project with AI and GIS for public health" %}</a>
+                <a href="{% translate "vulnerability-dashboard" %}"
+                   class="dropdown-item">{% translate "Vulnerability dashboard" %}</a>
             </li>
         </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="{% translate "Tutorials"%}"
+                <a href="{% translate "tutorials"%}"
                    class="nav-link" id="navbarDropdown" role="button"
                    aria-expanded="false">{% translate "Tutorials" %}</a>
         <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
             <li>
-                <a href="{% translate "Django_tutorial" %}"
+                <a href="{% translate "django-tutorial" %}"
                    class="dropdown-item">{% translate "Django for GIS projects tutorial" %}</a>
             </li>
             <li>
-                <a href="{% translate "LoRa_tutorial" %}"
+                <a href="{% translate "LoRa-tutorial" %}"
                    class="dropdown-item">{% translate "LoRa, LoRaWan and MQTT" %}</a>
             </li>
         </ul>
@@ -109,7 +109,7 @@ django-admin compilemessages to apply those translatations. The doc give all the
                 <!-- When using translate tags, a context can be added to translate in different ways the same word. Here
                  I needed to slugify the french translation of about, so I add an URL context to differentiate it from
                    the about title -->
-                <a href="{% translate "About" context "url" %}"
+                <a href="{% translate "about" context "url" %}"
                    class="nav-link">{% translate "About" %}</a>
             </li>
         </ul>

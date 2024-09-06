@@ -16,7 +16,7 @@ from .models import magog_uhi
 from django.db.models import Max, Avg
 
 # Import to translate text
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 # Import to manipulate date and time
 import datetime
