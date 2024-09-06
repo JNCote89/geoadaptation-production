@@ -213,6 +213,8 @@ LEAFLET_CONFIG = {'PLUGINS': {'name-of-plugins': {
 
 CSP_DEFAULT_SRC = ("'self'",)
 CSP_STYLE_SRC = ("'self'",
+                # To be fixed later, problems with leaflet tag
+                "'unsafe-inline'",
                  'https://www.google.com/recaptcha/',
                  'https://recaptcha.google.com/recaptcha/',
                  'https://www.gstatic.com/recaptcha/',

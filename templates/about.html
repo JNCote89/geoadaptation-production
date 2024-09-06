@@ -85,29 +85,30 @@
     {% endblocktranslate %}
     </p>
 </div>
-<div class="main-content-title">
-    <h1>{% translate "Contact me" %}</h1>
-</div>
-<div class="main-content-no-border">
-<noscript>
-    <p>
-        {% blocktranslate trimmed %}
-        The contact form requires JavaScript to work for security reasons. Contact me via LinkedIn if you don't want
-        or can't turn it on.
-        {% endblocktranslate %}
-    </p>
-</noscript>
-    <br>
-        <form method="post">
-            {% csrf_token %}
-            <table class="table-form-about">
-            {{ form }}
-            </table>
-            <div class="form-actions">
-              <button type="submit" id="send-button-about">{% translate "Send" %}</button>
-            </div>
-        </form>
-</div>
+    {#    Problem with GMAIL SMTP SERVER, to be investigated later#}
+{#<div class="main-content-title">#}
+{#    <h1>{% translate "Contact me" %}</h1>#}
+{#</div>#}
+{#<div class="main-content-no-border">#}
+{#<noscript>#}
+{#    <p>#}
+{#        {% blocktranslate trimmed %}#}
+{#        The contact form requires JavaScript to work for security reasons. Contact me via LinkedIn if you don't want#}
+{#        or can't turn it on.#}
+{#        {% endblocktranslate %}#}
+{#    </p>#}
+{#</noscript>#}
+{#    <br>#}
+{#        <form method="post">#}
+{#            {% csrf_token %}#}
+{#            <table class="table-form-about">#}
+{#            {{ form }}#}
+{#            </table>#}
+{#            <div class="form-actions">#}
+{#              <button type="submit" id="send-button-about">{% translate "Send" %}</button>#}
+{#            </div>#}
+{#        </form>#}
+{#</div>#}
 {%  endblock %}
 
 {% block footer %}
