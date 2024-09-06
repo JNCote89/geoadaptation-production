@@ -78,9 +78,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 #     "127.0.0.1",
 # ]
 #
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:8000",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://127.0.0.1:8000",
+# ]
 
 ROOT_URLCONF = 'geoadaptation.urls'
 
@@ -174,8 +174,7 @@ USE_L10N = True
 USE_TZ = True
 
 SESSION_COOKIE_SECURE = True
-# Problem with leaflet
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 2592000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
