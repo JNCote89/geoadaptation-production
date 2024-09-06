@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'dpd_static_support',
     # Add your app here (mine is called coresite) so Django knows where to look for your scripts
     'coresite.apps.CoresiteConfig',
-    'captcha',
 ]
 
 MIDDLEWARE = [
