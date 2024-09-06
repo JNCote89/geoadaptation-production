@@ -62,6 +62,7 @@ MIDDLEWARE = [
     # Add this line to detect user's browser language. Must be between SessionMiddleware and CommonMiddleware
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     # Add this line to enforce csp policy 
     # 'csp.middleware.CSPMiddleware',
     "django.middleware.common.CommonMiddleware",
