@@ -200,7 +200,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 RECAPTCHA_PUBLIC_KEY = str(os.getenv('RECAPTCHA_PUBLIC_KEY'))
 RECAPTCHA_PRIVATE_KEY = str(os.getenv('RECAPTCHA_PRIVATE_KEY'))
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+# Problem with Leaflet and vectorgrid
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
