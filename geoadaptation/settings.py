@@ -39,6 +39,7 @@ ALLOWED_HOSTS = ['139.177.197.87','.geoadaptation.ca']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # Add this line to detect user's browser language. Must be between SessionMiddleware and CommonMiddleware
@@ -62,11 +64,13 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     # Add this line to enforce csp policy 
     # 'csp.middleware.CSPMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'geoadaptation.urls'
 
