@@ -211,9 +211,12 @@ LEAFLET_CONFIG = {'PLUGINS': {'name-of-plugins': {
     'auto-include': True}}
 }
 
-CSP_DEFAULT_SRC = ("'self'",)
+
+CSP_DEFAULT_SRC = ("'self'",
+# To be fixed later, problems with leaflet tag
+                   "'unsafe-inline'",)
 CSP_STYLE_SRC = ("'self'",
-                # To be fixed later, problems with leaflet tag
+# To be fixed later, problems with leaflet tag
                 "'unsafe-inline'",
                  'https://www.google.com/recaptcha/',
                  'https://recaptcha.google.com/recaptcha/',
@@ -223,6 +226,8 @@ CSP_STYLE_SRC = ("'self'",
                  'https://fonts.googleapis.com/',
                  'https://fonts.gstatic.com/',)
 CSP_SCRIPT_SRC = ("'self'",
+# To be fixed later, problems with leaflet tag
+                  "'unsafe-inline'",
                   'https://www.google.com/recaptcha/',
                   'https://recaptcha.google.com/recaptcha/',
                   'https://www.gstatic.com/recaptcha/',
