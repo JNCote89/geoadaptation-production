@@ -72,15 +72,7 @@ MIDDLEWARE = [
 ]
 
 # To be changed, quickfixed to make leaflet and fetching tile from database with mvt_view
-# CORS_ALLOW_ALL_ORIGINS = True
-
-# ALLOWED_HOSTS = [
-#     "127.0.0.1",
-# ]
-#
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:8000",
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'geoadaptation.urls'
 
