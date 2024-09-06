@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        Geoadaptation
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        Email sent confirmation
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block title %}
+    {% translate "Email sent" %}
+{% endblock %}
+
+{% block script_link %}
+        <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+
+{% block head %}
+<a href="{% translate "about" context "url" %}" class="no-decoration">
+    <div class="header" id="about-header">
+        <div class="section-text-title">
+            <h1><span>{% translate "About" %}</span></h1>
+        </div>
+    </div>
+</a>
+{% endblock %}
+
+{%  block content %}
+
+<div class = "main-content-center">
+        {% blocktranslate trimmed %}
+        Thank you for your message. Your email has been transmitted successfully.
+        I'll try to get in touch with you as soon as possible.
+        {% endblocktranslate %}
+</div>
+
+{%  endblock %}
+
+{% block footer %}
+{% endblock %}

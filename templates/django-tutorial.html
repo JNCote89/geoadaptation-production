@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+
+{% block metakeywords %}
+    {% blocktranslate trimmed %}
+        Django, Python, Matplotlib, Scipy, Numpy, GIS, Folium
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block description %}
+    {% blocktranslate trimmed %}
+        Tutorial on how to create a GIS dashboard with Django and Folium.
+    {% endblocktranslate %}
+{% endblock %}
+
+{% block title %}
+    {% translate "Django for GIS projects tutorial" %}
+{% endblock %}
+
+{% block head %}
+<a href="{% translate "Tutorials" %}" class="no-decoration">
+    <div class="header" id="tutorial-header" >
+            <div class="section-text-title">
+                <h1><span>{% translate "Tutorials" %}</span></h1>
+            </div>
+    </div>
+</a>
+{% endblock %}
+
+{%  block content %}
+<div class="main-content-title">
+    <h1>{% translate "Django for GIS projects tutorial" %}</h1>
+</div>
+    <div class = "main-content-no-border">
+    <p>
+        {% blocktranslate trimmed %}
+            I am not going to go through the basics of Django and Python, since there are people way more qualify
+            than me to do this.
+    </p>
+    <p>
+            If you are completely new to programming in general, I strongly recommend you take a look at
+        {% endblocktranslate %}
+            <a href="https://www.techwithtim.net/tutorials/django/"
+               >{% translate "TechWithTim" %}</a>
+        {% blocktranslate trimmed %}
+            website. He has some of the best tutorials on basic programming in different languages and a very nice introduction
+            series to Django. I am not affiliated with him in any way, I just enjoyed its tutorials in my journey to
+            improve my skills as a self-taught coder.
+    </p>
+    <p>
+            Another nice resource is the
+        {% endblocktranslate %}
+
+        <a href="https://simpleisbetterthancomplex.com/"
+               >{% translate "simpleisbetterthancomplex" %}</a>
+        {% blocktranslate trimmed %}
+            website that targets Django specifically. It helped me to better understand how to deploy my website using Nginx
+            and Gunicorn.
+    </p>
+    <p>
+            Obviously, it goes without saying that you should absolutely read the
+        {% endblocktranslate %}
+
+            <a href="https://www.djangoproject.com/start/"
+               >{% translate "official documentation" %}</a>.
+
+        {% blocktranslate trimmed %}
+            There is also the
+        {% endblocktranslate %}
+
+        <a href="https://learndjango.com/"
+               >{% translate "LearnDjango" %}</a>
+
+        {% blocktranslate trimmed %}
+        website from one of the Board Members of the Django Software Foundation.
+        {% endblocktranslate %}
+    </p>
+    <p>
+        {% blocktranslate trimmed %}
+        I am a bit short on time right now, so I don't have time to write an extensive tutorial (but it will come!). In
+        the meantime, you can have a look at my
+        {% endblocktranslate %}
+
+        <a href="https://github.com/JNCote89/geoadaptation-production"
+               >GitHub</a>.
+
+        {% blocktranslate trimmed %}
+        I have tried to put as many comments as I could in each file, but I acknowledged that a Django project is
+        overwhelming when you don't know where to start. I'll try to write the tutorial as soon as possible.
+        {% endblocktranslate %}
+    </p>
+</div>
+{%  endblock %}
+
+{% block footer %}
+    <div class="footer">
+    </div>
+{% endblock %}
