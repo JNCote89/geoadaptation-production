@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django_recaptcha',
+    # 'django_recaptcha',
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'leaflet',
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     # Add this line to enforce csp policy 
     # 'csp.middleware.CSPMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -160,7 +160,8 @@ USE_L10N = True
 USE_TZ = True
 
 SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# Problem with leaflet
+CSRF_COOKIE_SECURE = False
 SECURE_HSTS_SECONDS = 2592000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
