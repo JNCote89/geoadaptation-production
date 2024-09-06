@@ -39,7 +39,6 @@ ALLOWED_HOSTS = ['139.177.197.87','.geoadaptation.ca']
 # Application definition
 
 INSTALLED_APPS = [
-    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
