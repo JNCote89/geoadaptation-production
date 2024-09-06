@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     # Add this line to enforce csp policy 
-    'csp.middleware.CSPMiddleware',
+    # 'csp.middleware.CSPMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -83,7 +83,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 #add csp context processors to use nonce in your template for the csp policy
-                'csp.context_processors.nonce',
+                # 'csp.context_processors.nonce',
             ],
         },
     },
@@ -213,48 +213,48 @@ LEAFLET_CONFIG = {'PLUGINS': {'name-of-plugins': {
 }
 
 
-CSP_DEFAULT_SRC = ("'self'",
-# To be fixed later, problems with leaflet tag
-                   "'unsafe-inline'",)
-CSP_STYLE_SRC = ("'self'",
-# To be fixed later, problems with leaflet tag
-                "'unsafe-inline'",
-                 'https://www.google.com/recaptcha/',
-                 'https://recaptcha.google.com/recaptcha/',
-                 'https://www.gstatic.com/recaptcha/',
-                 'https://unpkg.com',
-                 'https://cdn.jsdelivr.net',
-                 'https://fonts.googleapis.com/',
-                 'https://fonts.gstatic.com/',)
-CSP_SCRIPT_SRC = ("'self'",
-# To be fixed later, problems with leaflet tag
-                  "'unsafe-inline'",
-                  'https://www.google.com/recaptcha/',
-                  'https://recaptcha.google.com/recaptcha/',
-                  'https://www.gstatic.com/recaptcha/',
-                  'https://unpkg.com',
-                  'https://cdn.jsdelivr.net',
-                  'https://fonts.googleapis.com',
-                  'https://fonts.gstatic.com',)
-CSP_FONT_SRC = ("'self'",
-                'https://fonts.googleapis.com',
-                'https://fonts.gstatic.com',)
-CSP_CONNECT_SRC = ("'self'",)
-CSP_OBJECT_SRC = ("'self'", )
-CSP_BASE_URI = ("'self'", )
-CSP_FRAME_ANCESTORS = ("'self'",)
-CSP_FORM_ACTION = ("'self'",)
-CSP_INCLUDE_NONCE_IN = ("'self'","script-src","style-src")
-CSP_MANIFEST_SRC = ("'self'",)
-CSP_WORKER_SRC = ("'self'",)
-CSP_MEDIA_SRC = ("'self'",)
-CSP_FRAME_SRC = ("'self'",
-                 'https://weather.gc.ca',
-                 'https://www.google.com/recaptcha/',
-                 'https://recaptcha.google.com/recaptcha/',
-                 'https://www.gstatic.com/recaptcha/',
-                 'https://unpkg.com',
-                 'https://cdn.jsdelivr.net',
-                 'https://fonts.googleapis.com/',
-                 'https://fonts.gstatic.com/',)
-CSP_IMAGE_SRC = ("'self'",)
+# CSP_DEFAULT_SRC = ("'self'",
+# # To be fixed later, problems with leaflet tag
+#                    "'unsafe-inline'",)
+# CSP_STYLE_SRC = ("'self'",
+# # To be fixed later, problems with leaflet tag
+#                 "'unsafe-inline'",
+#                  'https://www.google.com/recaptcha/',
+#                  'https://recaptcha.google.com/recaptcha/',
+#                  'https://www.gstatic.com/recaptcha/',
+#                  'https://unpkg.com',
+#                  'https://cdn.jsdelivr.net',
+#                  'https://fonts.googleapis.com/',
+#                  'https://fonts.gstatic.com/',)
+# CSP_SCRIPT_SRC = ("'self'",
+# # To be fixed later, problems with leaflet tag
+#                   "'unsafe-inline'",
+#                   'https://www.google.com/recaptcha/',
+#                   'https://recaptcha.google.com/recaptcha/',
+#                   'https://www.gstatic.com/recaptcha/',
+#                   'https://unpkg.com',
+#                   'https://cdn.jsdelivr.net',
+#                   'https://fonts.googleapis.com',
+#                   'https://fonts.gstatic.com',)
+# CSP_FONT_SRC = ("'self'",
+#                 'https://fonts.googleapis.com',
+#                 'https://fonts.gstatic.com',)
+# CSP_CONNECT_SRC = ("'self'",)
+# CSP_OBJECT_SRC = ("'self'", )
+# CSP_BASE_URI = ("'self'", )
+# CSP_FRAME_ANCESTORS = ("'self'",)
+# CSP_FORM_ACTION = ("'self'",)
+# CSP_INCLUDE_NONCE_IN = ("'self'","script-src","style-src")
+# CSP_MANIFEST_SRC = ("'self'",)
+# CSP_WORKER_SRC = ("'self'",)
+# CSP_MEDIA_SRC = ("'self'",)
+# CSP_FRAME_SRC = ("'self'",
+#                  'https://weather.gc.ca',
+#                  'https://www.google.com/recaptcha/',
+#                  'https://recaptcha.google.com/recaptcha/',
+#                  'https://www.gstatic.com/recaptcha/',
+#                  'https://unpkg.com',
+#                  'https://cdn.jsdelivr.net',
+#                  'https://fonts.googleapis.com/',
+#                  'https://fonts.gstatic.com/',)
+# CSP_IMAGE_SRC = ("'self'",)
