@@ -45,9 +45,9 @@ urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/geoadaptation.ico'))),
 
     # Layers must be in srid 3857 !!!
-    path('layer/ADA-census-2018/<int:zoom>/<int:x>/<int:y>/<str:vulnerability>', views.mvt_tiles_ada_census_2018, name='ada_census_2018'),
-    path('layer/DA-census-2018/<int:zoom>/<int:x>/<int:y>/<str:vulnerability>', views.mvt_tiles_da_census_2018, name='da_census_2018'),
-    path('layer/household-vegetation-2018/<int:zoom>/<int:x>/<int:y>/<str:vulnerability>', views.mvt_tiles_household_vegetation_2018, name='household_vegetation_2018'),
+    path('layer/ADA-census-2018/<int:zoom>/<int:x>/<int:y>/<str:vulnerability>/', views.mvt_tiles_ada_census_2018, name='ada_census_2018'),
+    path('layer/DA-census-2018/<int:zoom>/<int:x>/<int:y>/<str:vulnerability>/', views.mvt_tiles_da_census_2018, name='da_census_2018'),
+    path('layer/household-vegetation-2018/<int:zoom>/<int:x>/<int:y>/<str:vulnerability>/', views.mvt_tiles_household_vegetation_2018, name='household_vegetation_2018'),
 ]
 
 # The patterns can be tweak to put the langage in the URL (/en/ or /fr/) with the i18n_ppaterns and then translate with
